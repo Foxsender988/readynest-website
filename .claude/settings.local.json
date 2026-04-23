@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx create-next-app@latest . --typescript --tailwind --eslint --app --src-dir=no --import-alias=\"@/*\" --yes)",
+      "Read(//c/Program Files/**)",
+      "Read(//c/Users/foxse/AppData/Roaming/**)",
+      "Bash(cmd.exe /c \"node --version && npm --version && npx --version\")",
+      "Bash(powershell.exe -Command \"node --version; npm --version; npx --version\")",
+      "Bash(powershell.exe -Command \"winget --version\")",
+      "Bash(powershell.exe -Command \"winget install OpenJS.NodeJS.LTS --silent --accept-package-agreements --accept-source-agreements\")",
+      "Bash(powershell.exe -Command ':*)"
+    ]
+  }
+}
