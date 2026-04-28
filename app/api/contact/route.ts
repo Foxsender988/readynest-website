@@ -29,7 +29,7 @@ export async function POST(request: NextRequest) {
     }
 
     await resend.emails.send({
-      from: "ReadyNest Website <onboarding@resend.dev>",
+      from: "ReadyNest Website <noreply@readynestpa.com>",
       to: "info@readynestpa.com",
       subject: `New Quote Request from ${body.name}`,
       html: `
