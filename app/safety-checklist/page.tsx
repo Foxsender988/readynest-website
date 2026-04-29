@@ -1,18 +1,18 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, Bath, ArrowUpDown, DoorOpen, Bed, ClipboardList } from "lucide-react";
 import AnimatedSection from "@/components/sections/AnimatedSection";
 import LeadMagnetForm from "@/components/LeadMagnetForm";
 
 export const metadata: Metadata = {
-  title: { absolute: "Free Home Safety Checklist | ReadyNest PA — 40-Item Fall Prevention Guide" },
+  title: { absolute: "Free Home Safety Checklist | ReadyNest — 40-Item Fall Prevention Guide" },
   description:
-    "Download the free ReadyNest PA home safety checklist — 40 items covering every room to identify fall risks before they become emergencies. Serving Bucks County, PA.",
+    "Download the free ReadyNest home safety checklist — 40 items covering every room to identify fall risks before they become emergencies. Serving Bucks County, PA.",
   alternates: { canonical: "https://readynestpa.com/safety-checklist" },
   openGraph: {
-    title: "Free Home Safety Checklist | ReadyNest PA",
+    title: "Free Home Safety Checklist | ReadyNest",
     description:
-      "40 items. Every room. 10 minutes. Identify the fall risks in your home before they become emergencies. Free from ReadyNest PA.",
+      "40 items. Every room. 10 minutes. Identify the fall risks in your home before they become emergencies. Free from ReadyNest.",
     url: "https://readynestpa.com/safety-checklist",
   },
 };
@@ -156,7 +156,7 @@ export default function SafetyChecklistPage() {
             </h2>
             <p className="text-gray-600 text-lg leading-relaxed mb-5">
               This checklist is a starting point. Many of the hazards it identifies require
-              professional installation to fix safely — which is exactly what ReadyNest PA does.
+              professional installation to fix safely — which is exactly what ReadyNest does.
             </p>
             <p className="text-gray-600 text-lg leading-relaxed mb-8">
               Book a free assessment and Slav will walk through your home and give you a

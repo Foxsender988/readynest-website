@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Link from "next/link";
 import {
   ShieldCheck,
@@ -19,12 +19,12 @@ import HeroIllustration from "@/components/sections/HeroIllustration";
 import AnimatedSection from "@/components/sections/AnimatedSection";
 
 export const metadata: Metadata = {
-  title: { absolute: "Aging-in-Place Home Safety Modifications | ReadyNest PA — Bucks County, PA" },
+  title: { absolute: "Aging-in-Place Home Safety Modifications | ReadyNest — Bucks County, PA" },
   description:
-    "ReadyNest PA installs aging-in-place home safety modifications in Bucks County, PA — grab bars, ramps, stair railings, smart home safety. Free home assessment. Call 267-717-9119.",
+    "ReadyNest installs aging-in-place home safety modifications in Bucks County, PA — grab bars, ramps, stair railings, smart home safety. Free home assessment. Call 267-717-9119.",
   alternates: { canonical: "https://readynestpa.com/" },
   openGraph: {
-    title: "Aging-in-Place Home Safety | ReadyNest PA — Bucks County, PA",
+    title: "Aging-in-Place Home Safety | ReadyNest — Bucks County, PA",
     description:
       "Home safety modifications for seniors — grab bars, ramps, stair railings & smart home safety. Personally installed by Slav in Bucks County, PA. Free assessment.",
     url: "https://readynestpa.com/",
@@ -138,7 +138,7 @@ export default function HomePage() {
                 <a
                   href="tel:+12677179119"
                   className="inline-flex items-center justify-center gap-2 border-2 border-charcoal text-charcoal font-semibold px-7 py-4 rounded-xl hover:border-gold hover:text-gold transition-colors text-base"
-                  aria-label="Call ReadyNest PA at 267-717-9119"
+                  aria-label="Call ReadyNest at 267-717-9119"
                 >
                   <Phone size={18} />
                   267-717-9119
@@ -155,7 +155,7 @@ export default function HomePage() {
       </section>
 
       {/* ── TRUST BAR ────────────────────────────────────────── */}
-      <section className="bg-white border-y border-soft-gray py-10" aria-label="Why choose ReadyNest PA">
+      <section className="bg-white border-y border-soft-gray py-10" aria-label="Why choose ReadyNest">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
             {trustPoints.map((point) => (
@@ -193,7 +193,7 @@ export default function HomePage() {
                 Falls are the leading cause of injury in older adults — but the vast majority happen because of hazards a professional can identify and fix in a single visit. A grab bar in the shower. A railing on both sides of the stairs. Better lighting in a hallway.
               </p>
               <p className="text-gray-600 leading-relaxed mb-8">
-                ReadyNest PA works with older adults and their families throughout Bucks County to address these risks before they become emergencies. Small changes. Real peace of mind.
+                ReadyNest works with older adults and their families throughout Bucks County to address these risks before they become emergencies. Small changes. Real peace of mind.
               </p>
               <Link
                 href="/for-families"
@@ -263,7 +263,7 @@ export default function HomePage() {
                 Every Room. Every Risk. Covered.
               </h2>
               <p className="text-gray-500 text-lg max-w-2xl mx-auto">
-                From the bathroom floor to the front door, ReadyNest PA addresses every fall risk and mobility challenge — one trusted installer, start to finish.
+                From the bathroom floor to the front door, ReadyNest addresses every fall risk and mobility challenge — one trusted installer, start to finish.
               </p>
             </div>
           </AnimatedSection>
@@ -382,7 +382,7 @@ export default function HomePage() {
                   <h3 className="font-serif text-2xl text-charcoal">For Seniors</h3>
                 </div>
                 <p className="text-gray-600 leading-relaxed mb-5">
-                  You&apos;ve built a life in your home. You know its rooms, its rhythms, its history. ReadyNest PA helps you stay there — safely and on your own terms.
+                  You&apos;ve built a life in your home. You know its rooms, its rhythms, its history. ReadyNest helps you stay there — safely and on your own terms.
                 </p>
                 <ul className="space-y-3 mb-8 flex-1">
                   {[
@@ -416,7 +416,7 @@ export default function HomePage() {
                   <h3 className="font-serif text-2xl text-white">For Families</h3>
                 </div>
                 <p className="text-gray-400 leading-relaxed mb-5">
-                  You worry about your parent&apos;s safety every time you drive home after a visit. ReadyNest PA gives you a way to act on that worry — practically, quickly, and affordably.
+                  You worry about your parent&apos;s safety every time you drive home after a visit. ReadyNest gives you a way to act on that worry — practically, quickly, and affordably.
                 </p>
                 <ul className="space-y-3 mb-8 flex-1">
                   {[
@@ -475,7 +475,7 @@ export default function HomePage() {
                 Hi, I&apos;m Slav.
               </h2>
               <p className="text-gray-600 leading-relaxed mb-8">
-                I started ReadyNest PA because I watched my own family struggle to find someone trustworthy to help make their home safer as they got older. Every job I take on in Bucks County, I do myself — no crews, no subcontractors, no surprises. You get my direct number, and I show up when I say I will.
+                I grew up in Ukraine. I&apos;ve worked in fire safety, electrical, and handyman work across Bucks County. I started ReadyNest to be the person I wish more older people had — local, dependable, fairly priced, and serious about the work. Every install is done by me. No crews, no subcontractors, no surprises.
               </p>
               <Link
                 href="/about"
@@ -537,7 +537,7 @@ export default function HomePage() {
                   <a
                     href="tel:+12677179119"
                     className="flex items-center gap-2 text-gold font-semibold hover:text-white transition-colors"
-                    aria-label="Call ReadyNest PA"
+                    aria-label="Call ReadyNest"
                   >
                     <Phone size={16} />
                     267-717-9119
@@ -546,7 +546,7 @@ export default function HomePage() {
                   <a
                     href="mailto:info@readynestpa.com"
                     className="text-gold font-semibold hover:text-white transition-colors"
-                    aria-label="Email ReadyNest PA"
+                    aria-label="Email ReadyNest"
                   >
                     info@readynestpa.com
                   </a>

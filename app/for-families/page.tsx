@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Link from "next/link";
 import {
   ClipboardList,
@@ -10,12 +10,12 @@ import {
 import AnimatedSection from "@/components/sections/AnimatedSection";
 
 export const metadata: Metadata = {
-  title: { absolute: "For Families | ReadyNest PA — Home Safety for Aging Parents, Bucks County, PA" },
+  title: { absolute: "For Families | ReadyNest — Home Safety for Aging Parents, Bucks County, PA" },
   description:
-    "ReadyNest PA helps adult children in Bucks County make a parent's home safer. Free assessment, written report within 24 hours, and affordable aging-in-place modifications — no pressure, no upsell.",
+    "ReadyNest helps adult children in Bucks County make a parent's home safer. Free assessment, written report within 24 hours, and affordable aging-in-place modifications — no pressure, no upsell.",
   alternates: { canonical: "https://readynestpa.com/for-families" },
   openGraph: {
-    title: "For Families | ReadyNest PA — Home Safety for Aging Parents",
+    title: "For Families | ReadyNest — Home Safety for Aging Parents",
     description:
       "We help adult children identify and fix fall hazards in a parent's home. Free assessment, written report, and modifications that fit your budget.",
     url: "https://readynestpa.com/for-families",
@@ -113,7 +113,7 @@ export default function ForFamiliesPage() {
               Your parent&apos;s home should feel safe to both of you.
             </h1>
             <p className="text-gray-500 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed mb-10">
-              ReadyNest PA works with adult children across Bucks County to
+              ReadyNest works with adult children across Bucks County to
               identify and fix the hazards most likely to cause a fall — before
               something happens. No pressure, no upsell, just an honest
               assessment and a clear plan.
@@ -162,7 +162,7 @@ export default function ForFamiliesPage() {
             </p>
             <hr className="border-charcoal/15 mb-8" />
             <p className="text-gray-600 text-lg leading-relaxed">
-              ReadyNest PA was built specifically for this moment — to give
+              ReadyNest was built specifically for this moment — to give
               families a trusted local professional to call, a clear process to
               follow, and an affordable way to make home genuinely safer.
             </p>

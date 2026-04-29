@@ -1,15 +1,15 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import { Phone, Mail, Clock, MapPin } from "lucide-react";
 import ContactForm from "@/components/ContactForm";
 import AnimatedSection from "@/components/sections/AnimatedSection";
 
 export const metadata: Metadata = {
-  title: { absolute: "Contact ReadyNest PA | Book a Free Home Safety Assessment, Bucks County" },
+  title: { absolute: "Contact ReadyNest | Book a Free Home Safety Assessment, Bucks County" },
   description:
     "Book a free aging-in-place home safety assessment with Slav in Bucks County, PA. Call 267-717-9119 or fill out the form. We respond within 24 hours — usually the same day.",
   alternates: { canonical: "https://readynestpa.com/contact" },
   openGraph: {
-    title: "Contact ReadyNest PA | Book a Free Home Safety Assessment | Bucks County",
+    title: "Contact ReadyNest | Book a Free Home Safety Assessment | Bucks County",
     description:
       "Slav visits your home, walks through every room, and gives you a written safety report — at no cost and no obligation. Serving Bucks County, PA.",
     url: "https://readynestpa.com/contact",
@@ -79,7 +79,7 @@ export default async function ContactPage({
                         <a
                           href="tel:+12677179119"
                           className="text-white font-medium text-sm hover:text-gold transition-colors"
-                          aria-label="Call ReadyNest PA at 267-717-9119"
+                          aria-label="Call ReadyNest at 267-717-9119"
                         >
                           267-717-9119
                         </a>
@@ -96,7 +96,7 @@ export default async function ContactPage({
                         <a
                           href="mailto:info@readynestpa.com"
                           className="text-white font-medium text-sm hover:text-gold transition-colors"
-                          aria-label="Email ReadyNest PA"
+                          aria-label="Email ReadyNest"
                         >
                           info@readynestpa.com
                         </a>

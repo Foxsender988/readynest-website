@@ -1,17 +1,17 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, Phone, Users } from "lucide-react";
 import AnimatedSection from "@/components/sections/AnimatedSection";
 
 export const metadata: Metadata = {
-  title: { absolute: "About Slav | ReadyNest PA — Aging-in-Place Specialist, Bucks County, PA" },
+  title: { absolute: "About Slav | ReadyNest — Aging-in-Place Specialist, Bucks County, PA" },
   description:
-    "Meet Slav, the owner of ReadyNest PA. Licensed and insured aging-in-place specialist personally installing every safety modification in Bucks County, PA.",
+    "Meet Slav, the owner of ReadyNest. Licensed and insured aging-in-place specialist personally installing every safety modification in Bucks County, PA.",
   alternates: { canonical: "https://readynestpa.com/about" },
   openGraph: {
-    title: "About Slav | ReadyNest PA — Aging-in-Place Specialist, Bucks County",
+    title: "About Slav | ReadyNest — Aging-in-Place Specialist, Bucks County",
     description:
-      "I started ReadyNest PA because I couldn't find anyone I trusted to do this work the right way. Every job I take on in Bucks County, I do myself.",
+      "One local owner. Every job personally installed by Slav in Bucks County, PA. Licensed, insured, no subcontractors.",
     url: "https://readynestpa.com/about",
   },
 };
@@ -61,8 +61,7 @@ export default function AboutPage() {
           </p>
           <h1 className="font-serif text-5xl md:text-6xl text-charcoal mb-5">About Slav</h1>
           <p className="text-gray-500 text-xl max-w-2xl mx-auto leading-relaxed">
-            I started ReadyNest PA because I couldn&apos;t find anyone I trusted to do this work
-            the right way.
+            One local owner. Every job done personally. No subcontractors, no surprises.
           </p>
         </div>
       </section>
@@ -100,25 +99,24 @@ export default function AboutPage() {
             <AnimatedSection delay={0.12}>
               <div className="space-y-6 text-gray-600 text-base leading-relaxed pt-4">
                 <p>
-                  I grew up watching my grandparents struggle with a home that wasn&apos;t
-                  designed for how they moved as they got older. When my own family went through
-                  the same thing — trying to find someone trustworthy to install grab bars and
-                  assess the stairs — I realized how hard it was to find a single person who did
-                  this work well, showed up when they said they would, and charged a fair price.
-                  That&apos;s what ReadyNest PA is.
+                  I grew up in Ukraine. When older relatives needed help making their home safer
+                  — a grab bar, a stair rail, a ramp at the door — family handled it. There was
+                  no business to call. There was no service.
                 </p>
                 <p>
-                  Every job I take on in Bucks County, I do myself. I don&apos;t send crews. I
-                  don&apos;t subcontract. When you call my number, I pick up. When I say I&apos;ll
-                  be there at 9 AM, I&apos;m there at 9 AM. After years of working in home
-                  services, I know that what families actually want is someone they can trust —
-                  not the cheapest price, not the slickest website.
+                  When I came to the United States, I worked in sales for ADT, ran fire safety
+                  projects with Oliver Fire Protection, and spent years in handyman and electrical
+                  work. I learned how to do this kind of work the right way. But I also saw
+                  something: in Bucks County, the help exists, but it&apos;s hard to find. Big
+                  remodelers won&apos;t take a $200 job. Handymen are unreliable. The seniors and
+                  their families are the ones who lose — left to figure it out alone.
                 </p>
                 <p>
-                  I&apos;m licensed and insured in Pennsylvania. I carry everything I need to
-                  complete most jobs in a single visit. I&apos;ve done this work in Doylestown,
-                  New Hope, Newtown, Yardley, Warrington, and throughout Bucks County — and I
-                  treat every home like it belongs to someone I care about. Because it does.
+                  I started ReadyNest to be the person I wish more older people had — local,
+                  dependable, fairly priced, and serious about the work. Every install on every
+                  job is done by me. No subcontractors, no surprises, no strangers in your
+                  parent&apos;s home. I&apos;m licensed and insured in Pennsylvania. I treat every
+                  home like it belongs to someone I care about. Because it does.
                 </p>
               </div>
             </AnimatedSection>
@@ -187,7 +185,7 @@ export default function AboutPage() {
               <a
                 href="tel:+12677179119"
                 className="text-gold font-semibold hover:underline"
-                aria-label="Call ReadyNest PA at 267-717-9119"
+                aria-label="Call ReadyNest at 267-717-9119"
               >
                 267-717-9119
               </a>
@@ -218,7 +216,7 @@ export default function AboutPage() {
               <a
                 href="tel:+12677179119"
                 className="inline-flex items-center gap-2 border-2 border-white/30 text-white font-semibold px-7 py-4 rounded-xl hover:border-gold hover:text-gold transition-colors"
-                aria-label="Call ReadyNest PA at 267-717-9119"
+                aria-label="Call ReadyNest at 267-717-9119"
               >
                 <Phone size={18} />
                 267-717-9119

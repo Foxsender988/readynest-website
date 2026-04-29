@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import { DM_Sans, DM_Serif_Display } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
@@ -21,11 +21,11 @@ const dmSerifDisplay = DM_Serif_Display({
 export const metadata: Metadata = {
   metadataBase: new URL("https://readynestpa.com"),
   title: {
-    default: "ReadyNest PA — Aging-in-Place Home Safety | Bucks County, PA",
-    template: "%s | ReadyNest PA",
+    default: "ReadyNest — Aging-in-Place Home Safety | Bucks County, PA",
+    template: "%s | ReadyNest",
   },
   description:
-    "ReadyNest PA installs aging-in-place home safety modifications for seniors and families in Bucks County, PA — grab bars, ramps, stair railings, smart home safety, and more. Personally installed by Slav.",
+    "ReadyNest installs aging-in-place home safety modifications for seniors and families in Bucks County, PA — grab bars, ramps, stair railings, smart home safety, and more. Personally installed by Slav.",
   keywords: [
     "aging in place Bucks County PA",
     "home safety modifications seniors",
@@ -38,25 +38,25 @@ export const metadata: Metadata = {
     "stair railing installation Bucks County",
     "senior home modifications Newtown PA",
     "handicap accessibility home modifications",
-    "ReadyNest PA aging in place",
+    "ReadyNest aging in place",
   ],
   openGraph: {
     type: "website",
     locale: "en_US",
     url: "https://readynestpa.com",
-    siteName: "ReadyNest PA",
+    siteName: "ReadyNest",
     images: [
       {
         url: "/images/ReadyNest_home_prep_logo.png",
         width: 800,
         height: 600,
-        alt: "ReadyNest PA — Aging-in-Place Home Safety",
+        alt: "ReadyNest — Aging-in-Place Home Safety",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "ReadyNest PA — Aging-in-Place Home Safety | Bucks County, PA",
+    title: "ReadyNest — Aging-in-Place Home Safety | Bucks County, PA",
     description:
       "Home safety modifications for seniors — grab bars, ramps, stair railings & smart home safety. Personally installed by Slav in Bucks County, PA.",
     images: ["/images/ReadyNest_home_prep_logo.png"],
@@ -74,7 +74,7 @@ export const metadata: Metadata = {
 const structuredData = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
-  name: "ReadyNest PA",
+  name: "ReadyNest",
   description:
     "Aging-in-place home safety modifications for seniors and families in Bucks County, PA — grab bars, ramps, stair railings, smart home safety, and more. Personally installed by Slav.",
   url: "https://readynestpa.com",

@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
@@ -45,10 +45,10 @@ export default function Navbar() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16 md:h-20">
             {/* Logo */}
-            <Link href="/" className="flex items-center shrink-0" aria-label="ReadyNest PA Home">
+            <Link href="/" className="flex items-center shrink-0" aria-label="ReadyNest Home">
               <Image
                 src="/images/ReadyNest_home_prep_logo.png"
-                alt="ReadyNest PA — Aging-in-Place Home Safety"
+                alt="ReadyNest — Aging-in-Place Home Safety"
                 width={160}
                 height={52}
                 priority
@@ -77,7 +77,7 @@ export default function Navbar() {
               <a
                 href="tel:+12677179119"
                 className="flex items-center gap-1.5 text-sm font-medium text-charcoal hover:text-gold transition-colors"
-                aria-label="Call ReadyNest PA"
+                aria-label="Call ReadyNest"
               >
                 <Phone size={15} />
                 267-717-9119
@@ -129,7 +129,7 @@ export default function Navbar() {
               <div className="flex items-center justify-between p-5 border-b border-soft-gray">
                 <Image
                   src="/images/ReadyNest_home_prep_logo.png"
-                  alt="ReadyNest PA"
+                  alt="ReadyNest"
                   width={130}
                   height={42}
                   className="h-9 w-auto object-contain"

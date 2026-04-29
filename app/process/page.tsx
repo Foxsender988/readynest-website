@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Link from "next/link";
 import {
   Phone,
@@ -12,12 +12,12 @@ import {
 import AnimatedSection from "@/components/sections/AnimatedSection";
 
 export const metadata: Metadata = {
-  title: { absolute: "Our Process | ReadyNest PA — How Home Safety Modifications Work" },
+  title: { absolute: "Our Process | ReadyNest — How Home Safety Modifications Work" },
   description:
     "A clear 5-step process for aging-in-place home safety modifications in Bucks County, PA. Free phone call, in-home assessment, written quote, professional installation, and 30-day follow-up.",
   alternates: { canonical: "https://readynestpa.com/process" },
   openGraph: {
-    title: "Our Process | ReadyNest PA — How Home Safety Modifications Work",
+    title: "Our Process | ReadyNest — How Home Safety Modifications Work",
     description:
       "No surprises. No pressure. A clear 5-step process designed around you and your family. Free home safety assessment in Bucks County, PA.",
     url: "https://readynestpa.com/process",
@@ -189,7 +189,7 @@ export default function ProcessPage() {
               <a
                 href="tel:+12677179119"
                 className="inline-flex items-center gap-2 border-2 border-white/30 text-white font-semibold px-7 py-4 rounded-xl hover:border-gold hover:text-gold transition-colors"
-                aria-label="Call ReadyNest PA at 267-717-9119"
+                aria-label="Call ReadyNest at 267-717-9119"
               >
                 <Phone size={18} />
                 267-717-9119

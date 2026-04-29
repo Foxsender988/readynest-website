@@ -1,4 +1,4 @@
-import Link from "next/link";
+﻿import Link from "next/link";
 import Image from "next/image";
 import { Phone, Mail, Clock, MapPin } from "lucide-react";
 
@@ -28,7 +28,7 @@ export default function Footer() {
           <div>
             <Image
               src="/images/ReadyNest_home_prep_logo.png"
-              alt="ReadyNest PA — Aging-in-Place Home Safety"
+              alt="ReadyNest — Aging-in-Place Home Safety"
               width={150}
               height={48}
               className="h-11 w-auto object-contain mb-4"
@@ -105,7 +105,7 @@ export default function Footer() {
       <div className="border-t border-white/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 flex flex-col sm:flex-row items-center justify-between gap-2">
           <p className="text-gray-500 text-xs">
-            &copy; {new Date().getFullYear()} ReadyNest PA · Insured · Bucks County, Pennsylvania · Site by Slav
+            &copy; {new Date().getFullYear()} ReadyNest · Insured · Bucks County, Pennsylvania · Site by Slav
           </p>
           <p className="text-gray-500 text-xs">
             Aging-in-Place Specialists

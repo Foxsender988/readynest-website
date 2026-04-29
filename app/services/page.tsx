@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Link from "next/link";
 import {
   ShieldCheck,
@@ -15,12 +15,12 @@ import {
 import AnimatedSection from "@/components/sections/AnimatedSection";
 
 export const metadata: Metadata = {
-  title: { absolute: "Home Safety Services | ReadyNest PA — Aging-in-Place Modifications, Bucks County, PA" },
+  title: { absolute: "Home Safety Services | ReadyNest — Aging-in-Place Modifications, Bucks County, PA" },
   description:
-    "Safety packages, subscriptions, and Trash Valet from ReadyNest PA in Bucks County, PA. Free in-home assessment included with every inquiry. Call 267-717-9119.",
+    "Safety packages, subscriptions, and Trash Valet from ReadyNest in Bucks County, PA. Free in-home assessment included with every inquiry. Call 267-717-9119.",
   alternates: { canonical: "https://readynestpa.com/services" },
   openGraph: {
-    title: "Home Safety Services | ReadyNest PA — Bucks County, PA",
+    title: "Home Safety Services | ReadyNest — Bucks County, PA",
     description:
       "Bathroom safety packages from $675, Whole-Home aging-in-place from $2,950, Safety Watch subscriptions, and weekly Trash Valet. Personally installed by Slav in Bucks County, PA.",
     url: "https://readynestpa.com/services",
@@ -263,7 +263,7 @@ export default function ServicesPage() {
               name: "Bathroom Safety Package",
               description:
                 "ADA-rated grab bars, non-slip treatment, shower bench, nightlight, and safety walkthrough. $895.",
-              provider: { "@type": "LocalBusiness", name: "ReadyNest PA" },
+              provider: { "@type": "LocalBusiness", name: "ReadyNest" },
               areaServed: "Bucks County, PA",
               offers: { "@type": "Offer", price: "895", priceCurrency: "USD" },
             },
@@ -273,7 +273,7 @@ export default function ServicesPage() {
               name: "Entry & Exit Safety Package",
               description:
                 "Threshold ramp, lever door handles, motion-sensor exterior light, and entry lighting. $675.",
-              provider: { "@type": "LocalBusiness", name: "ReadyNest PA" },
+              provider: { "@type": "LocalBusiness", name: "ReadyNest" },
               areaServed: "Bucks County, PA",
               offers: { "@type": "Offer", price: "675", priceCurrency: "USD" },
             },
@@ -283,7 +283,7 @@ export default function ServicesPage() {
               name: "Stair & Hallway Safety Package",
               description:
                 "Handrail installation, non-slip stair treads, motion-sensor lighting, and nightlights. $795.",
-              provider: { "@type": "LocalBusiness", name: "ReadyNest PA" },
+              provider: { "@type": "LocalBusiness", name: "ReadyNest" },
               areaServed: "Bucks County, PA",
               offers: { "@type": "Offer", price: "795", priceCurrency: "USD" },
             },
@@ -293,7 +293,7 @@ export default function ServicesPage() {
               name: "Whole-Home Aging-in-Place Package",
               description:
                 "Comprehensive whole-home assessment plus Bathroom, Entry, and Stair packages with smart doorbell and door lever upgrades. From $2,950.",
-              provider: { "@type": "LocalBusiness", name: "ReadyNest PA" },
+              provider: { "@type": "LocalBusiness", name: "ReadyNest" },
               areaServed: "Bucks County, PA",
               offers: { "@type": "Offer", price: "2950", priceCurrency: "USD" },
             },
@@ -303,7 +303,7 @@ export default function ServicesPage() {
               name: "Trash Valet",
               description:
                 "Weekly trash and recycling bin service — bins moved to the curb and returned same day, year-round. From $35/week.",
-              provider: { "@type": "LocalBusiness", name: "ReadyNest PA" },
+              provider: { "@type": "LocalBusiness", name: "ReadyNest" },
               areaServed: "Bucks County, PA",
             },
           ]),
@@ -669,7 +669,7 @@ export default function ServicesPage() {
               <a
                 href="tel:+12677179119"
                 className="inline-flex items-center gap-2 bg-gold text-white font-semibold px-7 py-4 rounded-xl hover:bg-[#a07d46] transition-colors"
-                aria-label="Call ReadyNest PA at 267-717-9119"
+                aria-label="Call ReadyNest at 267-717-9119"
               >
                 <Phone size={18} />
                 Call for a Quote
@@ -722,7 +722,7 @@ export default function ServicesPage() {
                   ))}
                 </ul>
                 <p className="mt-5 text-xs text-gray-400 leading-relaxed">
-                  ReadyNest PA only installs ADA-rated, US-brand-name safety hardware
+                  ReadyNest only installs ADA-rated, US-brand-name safety hardware
                   (Moen, Bobrick, Delta, KOHLER) and uses commercial-grade anchors.
                 </p>
               </div>
@@ -831,7 +831,7 @@ export default function ServicesPage() {
               <a
                 href="tel:+12677179119"
                 className="inline-flex items-center justify-center gap-2 border-2 border-white/30 text-white font-semibold px-7 py-4 rounded-xl hover:border-gold hover:text-gold transition-colors"
-                aria-label="Call ReadyNest PA at 267-717-9119"
+                aria-label="Call ReadyNest at 267-717-9119"
               >
                 <Phone size={16} />
                 Call 267-717-9119

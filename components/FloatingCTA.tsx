@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
@@ -30,7 +30,7 @@ export default function FloatingCTA() {
             <a
               href="tel:+12677179119"
               className="flex-1 flex items-center justify-center gap-2 bg-charcoal text-white py-4 font-semibold text-sm hover:bg-[#333] transition-colors"
-              aria-label="Call ReadyNest PA now"
+              aria-label="Call ReadyNest now"
             >
               <Phone size={18} />
               Call Now

@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, Tag } from "lucide-react";
 import AnimatedSection from "@/components/sections/AnimatedSection";
@@ -6,12 +6,12 @@ import AnimatedSection from "@/components/sections/AnimatedSection";
 // TODO: Build out full resources/blog section. Add more articles over time.
 
 export const metadata: Metadata = {
-  title: { absolute: "Home Safety Resources | ReadyNest PA — Fall Prevention Guides, Bucks County, PA" },
+  title: { absolute: "Home Safety Resources | ReadyNest — Fall Prevention Guides, Bucks County, PA" },
   description:
-    "Practical guides for older adults and their families — fall prevention, aging-in-place planning, and home safety resources from ReadyNest PA in Bucks County.",
+    "Practical guides for older adults and their families — fall prevention, aging-in-place planning, and home safety resources from ReadyNest in Bucks County.",
   alternates: { canonical: "https://readynestpa.com/resources" },
   openGraph: {
-    title: "Home Safety Resources | ReadyNest PA",
+    title: "Home Safety Resources | ReadyNest",
     description:
       "Practical guides for older adults and their families — fall prevention, aging-in-place planning, and more. Bucks County, PA.",
     url: "https://readynestpa.com/resources",
