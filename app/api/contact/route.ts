@@ -7,7 +7,10 @@ interface ContactPayload {
   name: string;
   email: string;
   phone?: string;
+  forWhom?: string;
   service: string;
+  address?: string;
+  preferredContact?: string;
   message?: string;
 }
 
@@ -31,15 +34,15 @@ export async function POST(request: NextRequest) {
     await resend.emails.send({
       from: "ReadyNest Website <noreply@readynestpa.com>",
       to: "info@readynestpa.com",
-      subject: `New Quote Request from ${body.name}`,
+      subject: `New Assessment Request from ${body.name}`,
       html: `
         <div style="font-family: sans-serif; max-width: 600px; margin: 0 auto;">
           <h2 style="color: #B8975A; border-bottom: 2px solid #B8975A; padding-bottom: 8px;">
-            New Quote Request — ReadyNest
+            New Assessment Request — ReadyNest PA
           </h2>
           <table style="width: 100%; border-collapse: collapse; margin-top: 16px;">
             <tr>
-              <td style="padding: 10px; background: #F7F4EF; font-weight: bold; width: 140px;">Name</td>
+              <td style="padding: 10px; background: #F7F4EF; font-weight: bold; width: 170px;">Name</td>
               <td style="padding: 10px; border-bottom: 1px solid #E8E5E0;">${body.name}</td>
             </tr>
             <tr>
@@ -55,8 +58,20 @@ export async function POST(request: NextRequest) {
               </td>
             </tr>
             <tr>
-              <td style="padding: 10px; background: #F7F4EF; font-weight: bold;">Service</td>
+              <td style="padding: 10px; background: #F7F4EF; font-weight: bold;">This is for</td>
+              <td style="padding: 10px; border-bottom: 1px solid #E8E5E0;">${body.forWhom ?? "Not specified"}</td>
+            </tr>
+            <tr>
+              <td style="padding: 10px; background: #F7F4EF; font-weight: bold;">Service Requested</td>
               <td style="padding: 10px; border-bottom: 1px solid #E8E5E0;">${body.service}</td>
+            </tr>
+            <tr>
+              <td style="padding: 10px; background: #F7F4EF; font-weight: bold;">Home Address</td>
+              <td style="padding: 10px; border-bottom: 1px solid #E8E5E0;">${body.address || "Not provided"}</td>
+            </tr>
+            <tr>
+              <td style="padding: 10px; background: #F7F4EF; font-weight: bold;">Best way to reach</td>
+              <td style="padding: 10px; border-bottom: 1px solid #E8E5E0;">${body.preferredContact ?? "Not specified"}</td>
             </tr>
             <tr>
               <td style="padding: 10px; background: #F7F4EF; font-weight: bold; vertical-align: top;">Message</td>

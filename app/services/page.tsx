@@ -1,205 +1,514 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import {
-  Paintbrush,
-  Sparkles,
+  ShieldCheck,
+  DoorOpen,
+  ArrowUpDown,
   Trash2,
-  Wrench,
-  Wind,
-  PackageCheck,
   ArrowRight,
+  Phone,
 } from "lucide-react";
 import AnimatedSection from "@/components/sections/AnimatedSection";
 
 export const metadata: Metadata = {
-  title: "Home Prep Services | ReadyNest — Painting, Cleaning, Repairs | Bucks County, PA",
+  title: { absolute: "Home Safety Services | ReadyNest PA — Aging-in-Place Modifications, Bucks County, PA" },
   description:
-    "Full home prep services in Bucks County, PA: painting touch-ups, deep cleaning, junk removal, minor repairs, exterior cleaning & move-out prep. Get a free quote today.",
+    "Grab bars, stair handrails, threshold ramps, door lever conversions, and weekly Trash Valet. ReadyNest PA provides aging-in-place home safety modifications for seniors in Bucks County, PA.",
   alternates: { canonical: "https://readynestpa.com/services" },
   openGraph: {
-    title: "Home Prep Services | ReadyNest — Bucks County, PA",
+    title: "Home Safety Services | ReadyNest PA — Bucks County, PA",
     description:
-      "Painting, cleaning, junk removal, repairs & more. One team handles everything your home needs in Bucks County, PA.",
+      "Full range of aging-in-place safety modifications — grab bars, ramps, handrails, and Trash Valet weekly service. Proudly serving Bucks County, PA.",
     url: "https://readynestpa.com/services",
   },
 };
 
-const services = [
+// ─── Data ────────────────────────────────────────────────────────────────────
+
+const alaCarteItems = [
   {
-    icon: <Paintbrush size={36} strokeWidth={1.4} />,
-    name: "Painting Touch-Ups",
-    slug: "painting-touch-ups",
-    description:
-      "First impressions matter. Our painting team handles everything from scuff coverage to full accent wall refreshes, ensuring every room looks clean, bright, and move-in ready. We use color-matched precision so repairs are invisible and finishes are consistent throughout your home.",
-    includes: [
-      "Scuff, mark, and ding coverage on interior walls",
-      "Accent wall refreshes and full-room repaints",
-      "Trim and baseboard touch-ups",
-      "Ceiling spot repairs and painting",
-      "Color-matched precision work on any paint color",
-    ],
+    service: "Grab bar, single location",
+    price: "$125",
+    notes: "Includes hardware, anchored to stud",
   },
   {
-    icon: <Sparkles size={36} strokeWidth={1.4} />,
-    name: "Deep Cleaning",
-    slug: "deep-cleaning",
-    description:
-      "A truly clean home sells faster and makes a lasting impression at every showing. Our deep cleaning service goes far beyond a standard clean — we tackle every surface, appliance, and corner so your home sparkles from top to bottom. Ideal for pre-listing, move-in, and move-out scenarios.",
-    includes: [
-      "Kitchen deep clean: appliances, cabinets, counters, and range hood",
-      "Bathroom sanitization: tile, grout, fixtures, and vanities",
-      "Floor cleaning: hardwood, tile, laminate, and carpet",
-      "Interior window and sill cleaning",
-      "Baseboard, vent, and light fixture dusting",
-    ],
+    service: "Grab bars, two locations",
+    price: "$209",
+    notes: "Most popular — shower + toilet area",
   },
   {
-    icon: <Trash2 size={36} strokeWidth={1.4} />,
-    name: "Junk Removal",
-    slug: "junk-removal",
-    description:
-      "Clutter kills deals and complicates moves. ReadyNest handles the full haul-away so you don't have to rent a truck, sort donations, or make multiple dump runs. From single-item pickups to complete estate cleanouts in Bucks County, we take care of it all.",
-    includes: [
-      "Garage and basement full cleanouts",
-      "Old furniture, appliances, and electronics removal",
-      "Construction and renovation debris hauling",
-      "Estate cleanout support and coordination",
-      "Donation drop-off coordination for eligible items",
-    ],
+    service: "Toilet safety rail",
+    price: "$139",
+    notes: "Tool-free install, 300 lb rated",
   },
   {
-    icon: <Wrench size={36} strokeWidth={1.4} />,
-    name: "Minor Repairs",
-    slug: "minor-repairs",
-    description:
-      "Small defects create big red flags for buyers and inspectors. Our handyman team addresses the common issues that every home accumulates over time — patching, caulking, hardware, and more — so your home passes inspections and wows buyers at first glance.",
-    includes: [
-      "Drywall patching, skim coating, and finishing",
-      "Door and cabinet hardware replacement",
-      "Light fixture and outlet cover swaps",
-      "Caulking around tubs, windows, and trim",
-      "Weatherstripping, door sweeps, and door alignment",
-    ],
+    service: "Non-slip bath/shower treatment",
+    price: "$89",
+    notes: "Applied surface treatment, invisible",
   },
   {
-    icon: <Wind size={36} strokeWidth={1.4} />,
-    name: "Exterior Cleaning",
-    slug: "exterior-cleaning",
-    description:
-      "Curb appeal is the first thing buyers see — and the first thing they photograph. Our exterior cleaning service transforms the outside of your property with professional-grade power washing and cleaning to restore siding, driveways, decks, and more throughout Bucks County.",
-    includes: [
-      "House siding and soffit power washing",
-      "Driveway and walkway deep cleaning",
-      "Deck and patio surface restoration",
-      "Gutter exterior cleaning and brightening",
-      "Fence washing and restoration",
-    ],
+    service: "Threshold ramp, portable (up to 2\")",
+    price: "$149",
+    notes: "No drilling, removable",
   },
   {
-    icon: <PackageCheck size={36} strokeWidth={1.4} />,
-    name: "Move-Out Prep",
-    slug: "move-out-prep",
-    description:
-      "Our most comprehensive service — everything your property needs before the next chapter begins. Whether you're a landlord turning over a rental, a homeowner vacating before a sale, or an executor handling an estate, we handle the full scope and deliver a walkthrough-ready result.",
-    includes: [
-      "Full property sweep: clean, patch, and paint",
-      "Carpet cleaning coordination or removal assessment",
-      "Wall patching from mounted TVs, artwork, and shelving",
-      "Complete appliance cleaning inside and out",
-      "Final walkthrough-ready handoff with quality check",
-    ],
+    service: "Threshold ramp, built-up (up to 4\")",
+    price: "$259",
+    notes: "Permanent, painted to match",
+  },
+  {
+    service: "Stair handrail, one side (per flight)",
+    price: "$225",
+    notes: "Code-compliant, wood or metal",
+  },
+  {
+    service: "Stair handrails, both sides (per flight)",
+    price: "$379",
+    notes: "Recommended for balance support",
+  },
+  {
+    service: "Door lever conversion (per door)",
+    price: "$89",
+    notes: "Replaces round knobs",
+  },
+  {
+    service: "Motion night lights, set of 3",
+    price: "$79",
+    notes: "Plug-in, auto-sensing",
   },
 ];
+
+const packages = [
+  {
+    name: "Bathroom Essentials",
+    slug: "Bathroom Essentials Package",
+    price: "$349",
+    tagline: "Our most-requested package.",
+    badge: "Most Popular",
+    badgeStyle: "bg-gold text-white",
+    includes: [
+      "2 grab bars (shower + toilet area)",
+      "Toilet safety rail",
+      "Non-slip bath treatment",
+    ],
+    icon: <ShieldCheck size={28} strokeWidth={1.4} />,
+  },
+  {
+    name: "Entry & Stairs",
+    slug: "Entry & Stairs Package",
+    price: "$449",
+    tagline: "For safe arrivals and departures.",
+    badge: null,
+    badgeStyle: "",
+    includes: [
+      "Double handrail (one flight)",
+      "Threshold ramp",
+      "Exterior motion light",
+    ],
+    icon: <DoorOpen size={28} strokeWidth={1.4} />,
+  },
+  {
+    name: "Full Home Safety",
+    slug: "Full Home Safety Package",
+    price: "$949",
+    tagline: "Comprehensive whole-home coverage.",
+    badge: "Best Value",
+    badgeStyle: "bg-accent-dark text-white",
+    includes: [
+      "Everything in Bathroom Essentials",
+      "Everything in Entry & Stairs",
+      "2 door lever conversions",
+    ],
+    icon: <ArrowUpDown size={28} strokeWidth={1.4} />,
+  },
+];
+
+// ─── Page ─────────────────────────────────────────────────────────────────────
 
 export default function ServicesPage() {
   return (
     <>
-      {/* Hero Banner */}
+      {/* ── Schema.org JSON-LD ── */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify([
+            {
+              "@context": "https://schema.org",
+              "@type": "Service",
+              name: "Bathroom Safety",
+              description:
+                "Grab bars, toilet safety rails, and non-slip treatments to reduce fall risk in the bathroom.",
+              provider: {
+                "@type": "LocalBusiness",
+                name: "ReadyNest PA",
+              },
+              areaServed: "Bucks County, PA",
+            },
+            {
+              "@context": "https://schema.org",
+              "@type": "Service",
+              name: "Entry & Exit Safety",
+              description:
+                "Threshold ramps and motion lighting for safe entry and exit from the home.",
+              provider: {
+                "@type": "LocalBusiness",
+                name: "ReadyNest PA",
+              },
+              areaServed: "Bucks County, PA",
+            },
+            {
+              "@context": "https://schema.org",
+              "@type": "Service",
+              name: "Stairs & Hallways",
+              description:
+                "Code-compliant stair handrail installation on one or both sides to support balance and stability.",
+              provider: {
+                "@type": "LocalBusiness",
+                name: "ReadyNest PA",
+              },
+              areaServed: "Bucks County, PA",
+            },
+            {
+              "@context": "https://schema.org",
+              "@type": "Service",
+              name: "Trash Valet",
+              description:
+                "Weekly trash and recycling bin service — bins moved to the curb and returned same day, year-round.",
+              provider: {
+                "@type": "LocalBusiness",
+                name: "ReadyNest PA",
+              },
+              areaServed: "Bucks County, PA",
+            },
+          ]),
+        }}
+      />
+
+      {/* ── 1. Hero ── */}
       <section className="bg-beige py-16 md:py-24 border-b border-soft-gray">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <p className="text-gold text-sm font-semibold tracking-wider uppercase mb-4">What We Offer</p>
+          <p className="text-gold text-sm font-semibold tracking-wider uppercase mb-4">
+            What We Offer
+          </p>
           <h1 className="font-serif text-5xl md:text-6xl text-charcoal mb-5">
-            Our Services
+            Home Safety Services
           </h1>
           <p className="text-gray-500 text-xl max-w-2xl mx-auto leading-relaxed">
-            One team handles it all — from painting to hauling, we get your home ready for the market or move-in. Proudly serving homeowners and realtors across Bucks County, PA.
+            A full range of aging-in-place modifications — from bathroom grab
+            bars and non-slip treatments to entry ramps, stair handrails, and
+            weekly Trash Valet. Everything you need to stay safe and independent
+            at home.
           </p>
         </div>
       </section>
 
-      {/* Services Detail Sections */}
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16 space-y-24">
-        {services.map((service, i) => (
-          <AnimatedSection key={service.slug} delay={0.05}>
-            <article
-              id={service.slug}
-              className={`grid md:grid-cols-5 gap-10 items-start ${i % 2 !== 0 ? "md:direction-rtl" : ""}`}
-            >
-              {/* Icon + Title Column */}
-              <div className="md:col-span-2">
-                <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-beige text-gold mb-5">
-                  {service.icon}
-                </div>
-                <h2 className="font-serif text-3xl md:text-4xl text-charcoal mb-4 gold-underline pb-3">
-                  {service.name}
-                </h2>
-                <Link
-                  href="/contact"
-                  className="inline-flex items-center gap-2 bg-gold text-white font-semibold px-5 py-2.5 rounded-lg text-sm hover:bg-[#a07d46] transition-colors"
-                >
-                  Get a Quote <ArrowRight size={15} />
-                </Link>
-              </div>
+      {/* ── 2. Quick Wins — A La Carte ── */}
+      <AnimatedSection>
+        <section className="py-16 md:py-20 border-b border-soft-gray">
+          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <p className="text-gold text-sm font-semibold tracking-wider uppercase mb-2">
+              Quick Wins · A La Carte
+            </p>
+            <h2 className="font-serif text-4xl text-charcoal mb-4">
+              Individual Modifications
+            </h2>
+            <p className="text-gray-500 text-base mb-10 max-w-2xl">
+              Individual modifications, priced by item. Parts and labor
+              included. No hidden fees.
+            </p>
 
-              {/* Description + Bullets Column */}
-              <div className="md:col-span-3">
-                <p className="text-gray-600 text-base leading-relaxed mb-6">{service.description}</p>
-                <div className="bg-beige rounded-2xl p-6">
-                  <p className="text-charcoal font-semibold text-sm mb-4 uppercase tracking-wide">What&apos;s Included</p>
-                  <ul className="space-y-3">
-                    {service.includes.map((item) => (
-                      <li key={item} className="flex items-start gap-3 text-gray-600 text-sm">
+            {/* TODO: Verify all prices against Pricing & Sourcing Reference */}
+            <div className="overflow-x-auto rounded-2xl border border-soft-gray">
+              <table className="w-full text-sm">
+                <thead>
+                  <tr className="bg-charcoal text-white text-left">
+                    <th className="px-5 py-3.5 font-semibold">Service</th>
+                    <th className="px-5 py-3.5 font-semibold text-right whitespace-nowrap">
+                      Price
+                    </th>
+                    <th className="px-5 py-3.5 font-semibold hidden sm:table-cell">
+                      Notes
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {alaCarteItems.map((item, i) => (
+                    <tr
+                      key={item.service}
+                      className={`border-t border-soft-gray ${
+                        i % 2 === 0 ? "bg-white" : "bg-beige"
+                      }`}
+                    >
+                      <td className="px-5 py-3.5 text-charcoal font-medium">
+                        {item.service}
+                      </td>
+                      <td className="px-5 py-3.5 text-gold font-semibold text-right whitespace-nowrap">
+                        {item.price}
+                      </td>
+                      <td className="px-5 py-3.5 text-gray-500 hidden sm:table-cell">
+                        {item.notes}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+
+            <p className="mt-6 text-center">
+              <Link
+                href={`/contact?service=${encodeURIComponent("A La Carte")}`}
+                className="inline-flex items-center gap-2 bg-gold text-white font-semibold px-6 py-3 rounded-xl hover:bg-[#a07d46] transition-colors text-sm"
+              >
+                Book Free Assessment <ArrowRight size={15} />
+              </Link>
+            </p>
+          </div>
+        </section>
+      </AnimatedSection>
+
+      {/* ── 3. Safety Packages ── */}
+      <AnimatedSection delay={0.05}>
+        <section className="py-16 md:py-20 bg-beige border-b border-soft-gray">
+          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <p className="text-gold text-sm font-semibold tracking-wider uppercase mb-2">
+              Safety Packages · Best Value
+            </p>
+            <h2 className="font-serif text-4xl text-charcoal mb-4">
+              Bundled for More Savings
+            </h2>
+            <p className="text-gray-500 text-base mb-12 max-w-2xl">
+              Our most popular combinations, priced below buying each item
+              individually.
+            </p>
+
+            <div className="grid md:grid-cols-3 gap-6">
+              {packages.map((pkg) => (
+                <div
+                  key={pkg.name}
+                  className="bg-white rounded-2xl border border-soft-gray p-6 flex flex-col relative"
+                >
+                  {pkg.badge && (
+                    <span
+                      className={`absolute top-4 right-4 text-xs font-semibold px-2.5 py-1 rounded-full ${pkg.badgeStyle}`}
+                    >
+                      {pkg.badge}
+                    </span>
+                  )}
+
+                  <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-beige text-gold mb-4">
+                    {pkg.icon}
+                  </div>
+
+                  <h3 className="font-serif text-2xl text-charcoal mb-1">
+                    {pkg.name}
+                  </h3>
+                  <p className="text-3xl font-bold text-gold mb-1">
+                    {pkg.price}
+                  </p>
+                  <p className="text-gray-500 text-sm mb-5">{pkg.tagline}</p>
+
+                  <ul className="space-y-2 mb-8 flex-1">
+                    {pkg.includes.map((item) => (
+                      <li
+                        key={item}
+                        className="flex items-start gap-2.5 text-gray-600 text-sm"
+                      >
                         <span className="mt-0.5 shrink-0 w-5 h-5 rounded-full bg-gold/15 flex items-center justify-center">
-                          <svg width="10" height="8" viewBox="0 0 10 8" fill="none" aria-hidden="true">
-                            <path d="M1 4L3.5 6.5L9 1" stroke="#B8975A" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+                          <svg
+                            width="10"
+                            height="8"
+                            viewBox="0 0 10 8"
+                            fill="none"
+                            aria-hidden="true"
+                          >
+                            <path
+                              d="M1 4L3.5 6.5L9 1"
+                              stroke="#B8975A"
+                              strokeWidth="1.8"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                            />
                           </svg>
                         </span>
                         {item}
                       </li>
                     ))}
                   </ul>
+
+                  <Link
+                    href={`/contact?service=${encodeURIComponent(pkg.slug)}`}
+                    className="inline-flex items-center justify-center gap-2 bg-gold text-white font-semibold px-5 py-3 rounded-xl hover:bg-[#a07d46] transition-colors text-sm w-full"
+                  >
+                    Request This Package
+                  </Link>
                 </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      </AnimatedSection>
+
+      {/* ── 4. Subscriptions Table ── */}
+      <AnimatedSection delay={0.05}>
+        <section
+          id="subscriptions"
+          className="py-16 md:py-20 border-b border-soft-gray"
+        >
+          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <p className="text-gold text-sm font-semibold tracking-wider uppercase mb-2">
+              Ongoing Services · Monthly &amp; Annual
+            </p>
+            <h2 className="font-serif text-4xl text-charcoal mb-4">
+              Ongoing Peace of Mind
+            </h2>
+            <p className="text-gray-500 text-base mb-10 max-w-2xl">
+              Ongoing peace of mind, billed monthly or annually.
+            </p>
+
+            <div className="overflow-x-auto rounded-2xl border border-soft-gray">
+              <table className="w-full text-sm">
+                <thead>
+                  <tr className="bg-charcoal text-white text-left">
+                    <th className="px-5 py-3.5 font-semibold">Service</th>
+                    <th className="px-5 py-3.5 font-semibold text-right whitespace-nowrap">
+                      Monthly
+                    </th>
+                    <th className="px-5 py-3.5 font-semibold text-right whitespace-nowrap">
+                      Annual
+                    </th>
+                    <th className="px-5 py-3.5 font-semibold hidden sm:table-cell">
+                      Notes
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr className="bg-white border-t border-soft-gray">
+                    <td className="px-5 py-3.5 text-charcoal font-medium">
+                      Trash Valet
+                    </td>
+                    <td className="px-5 py-3.5 text-gold font-semibold text-right whitespace-nowrap">
+                      $49/mo
+                    </td>
+                    <td className="px-5 py-3.5 text-gold font-semibold text-right whitespace-nowrap">
+                      $529/yr
+                    </td>
+                    <td className="px-5 py-3.5 text-gray-500 hidden sm:table-cell">
+                      Save $59 vs monthly
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+      </AnimatedSection>
+
+      {/* ── 5. Trash Valet Detail ── */}
+      <AnimatedSection delay={0.05}>
+        <section
+          id="trash-valet"
+          className="py-16 md:py-20 bg-beige border-b border-soft-gray"
+        >
+          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid md:grid-cols-2 gap-12 items-center">
+              {/* Text column */}
+              <div>
+                <p className="text-gold text-sm font-semibold tracking-wider uppercase mb-3">
+                  Trash Valet · Weekly Service
+                </p>
+                <h2 className="font-serif text-4xl md:text-5xl text-charcoal mb-5">
+                  We Handle the Bins. Every Week.
+                </h2>
+                <p className="text-gray-600 text-base leading-relaxed mb-7">
+                  For seniors who shouldn&apos;t be hauling heavy bins down icy
+                  driveways or navigating uneven paths, ReadyNest&apos;s Trash
+                  Valet service handles it all — trash and recycling to the curb
+                  and back, every week, year-round.
+                </p>
+                <Link
+                  href="/contact?service=Trash+Valet"
+                  className="inline-flex items-center gap-2 bg-gold text-white font-semibold px-6 py-3.5 rounded-xl hover:bg-[#a07d46] transition-colors"
+                >
+                  Start Trash Valet <ArrowRight size={16} />
+                </Link>
               </div>
-            </article>
 
-            {/* Divider */}
-            {i < services.length - 1 && (
-              <div className="border-t border-soft-gray mt-16" aria-hidden="true" />
-            )}
-          </AnimatedSection>
-        ))}
-      </div>
+              {/* Bullets column */}
+              <div className="bg-white rounded-2xl border border-soft-gray p-7">
+                <div className="flex items-center gap-3 mb-5">
+                  <div className="w-10 h-10 rounded-xl bg-beige text-gold flex items-center justify-center shrink-0">
+                    <Trash2 size={22} strokeWidth={1.5} />
+                  </div>
+                  <p className="font-semibold text-charcoal">
+                    What&apos;s Included
+                  </p>
+                </div>
+                <ul className="space-y-3">
+                  {[
+                    "Weekly trash bins to curb before pickup",
+                    "Bins returned same day",
+                    "Recycling included",
+                    "No contracts, cancel anytime",
+                    "Works with any municipal pickup schedule",
+                  ].map((item) => (
+                    <li
+                      key={item}
+                      className="flex items-start gap-3 text-gray-600 text-sm"
+                    >
+                      <span className="mt-0.5 shrink-0 w-5 h-5 rounded-full bg-gold/15 flex items-center justify-center">
+                        <svg
+                          width="10"
+                          height="8"
+                          viewBox="0 0 10 8"
+                          fill="none"
+                          aria-hidden="true"
+                        >
+                          <path
+                            d="M1 4L3.5 6.5L9 1"
+                            stroke="#B8975A"
+                            strokeWidth="1.8"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                          />
+                        </svg>
+                      </span>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+      </AnimatedSection>
 
-      {/* CTA Banner */}
-      <section className="bg-charcoal py-20" aria-labelledby="services-cta">
+      {/* ── 7. Bottom CTA ── */}
+      <section className="bg-accent-dark py-20" aria-labelledby="services-cta">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 id="services-cta" className="font-serif text-4xl text-white mb-4">
+          <h2
+            id="services-cta"
+            className="font-serif text-4xl md:text-5xl text-white mb-4"
+          >
             Not Sure What You Need?
           </h2>
-          <p className="text-gray-400 text-lg mb-8">
-            Schedule a free walk-through and we&apos;ll assess exactly what your home needs — no pressure, no obligation.
+          <p className="text-gray-400 text-lg mb-10">
+            Every home is different. Book a free in-home safety assessment and
+            Slav will walk through your space, identify the risks, and recommend
+            exactly what makes sense — no pressure, no obligation.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/contact"
               className="inline-flex items-center justify-center gap-2 bg-gold text-white font-semibold px-7 py-4 rounded-xl hover:bg-[#a07d46] transition-colors"
             >
-              Book a Free Walk-Through <ArrowRight size={18} />
+              Book Free Assessment <ArrowRight size={18} />
             </Link>
             <a
               href="tel:+12677179119"
               className="inline-flex items-center justify-center gap-2 border-2 border-white/30 text-white font-semibold px-7 py-4 rounded-xl hover:border-gold hover:text-gold transition-colors"
             >
+              <Phone size={16} />
               Call 267-717-9119
             </a>
           </div>

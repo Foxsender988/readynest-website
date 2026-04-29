@@ -9,24 +9,36 @@ type FormData = {
   name: string;
   email: string;
   phone: string;
+  forWhom: string;
   service: string;
+  address: string;
+  preferredContact: string;
   message: string;
 };
 
 const services = [
-  "Pre-Listing Prep",
-  "Move-In Prep",
-  "Move-Out Prep",
-  "Junk Removal",
-  "Exterior Cleaning",
-  "Other",
+  "Bathroom Safety",
+  "Entry & Exit Safety",
+  "Stairs & Hallways",
+  "Smart Home Safety",
+  "Trash Valet",
+  "Bathroom Essentials Package",
+  "Entry & Stairs Package",
+  "Full Home Safety Package",
+  "A La Carte",
+  "Multiple Services",
+  "Not Sure — Need Assessment",
 ];
+
+const forWhomOptions = ["Myself", "A parent or family member", "Other"];
+const contactOptions = ["Phone call", "Text message", "Email"];
 
 interface ContactFormProps {
   dark?: boolean;
+  defaultService?: string;
 }
 
-export default function ContactForm({ dark = false }: ContactFormProps) {
+export default function ContactForm({ dark = false, defaultService = "" }: ContactFormProps) {
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
 
   const {
@@ -34,7 +46,9 @@ export default function ContactForm({ dark = false }: ContactFormProps) {
     handleSubmit,
     reset,
     formState: { errors },
-  } = useForm<FormData>();
+  } = useForm<FormData>({
+    defaultValues: { service: defaultService },
+  });
 
   const onSubmit = async (data: FormData) => {
     setStatus("loading");
@@ -64,17 +78,30 @@ export default function ContactForm({ dark = false }: ContactFormProps) {
     dark ? "text-white/80" : "text-charcoal"
   );
 
-  const errorClass = "text-red-400 text-xs mt-1";
+  const groupLabelClass = clsx(
+    "block text-sm font-medium mb-2",
+    dark ? "text-white/80" : "text-charcoal"
+  );
+
+  const pillClass = clsx(
+    "flex items-center px-4 min-h-[44px] rounded-lg border text-sm font-medium transition-all cursor-pointer select-none",
+    "peer-checked:bg-gold peer-checked:text-white peer-checked:border-gold",
+    dark
+      ? "border-white/20 text-white/70 hover:border-gold/60"
+      : "border-soft-gray text-charcoal hover:border-gold"
+  );
+
+  const errorClass = "text-red-400 text-xs mt-1.5";
 
   if (status === "success") {
     return (
       <div className="flex flex-col items-center justify-center py-12 text-center">
         <CheckCircle size={48} className="text-gold mb-4" />
         <h3 className={clsx("font-serif text-2xl mb-2", dark ? "text-white" : "text-charcoal")}>
-          Message Sent!
+          Request Received!
         </h3>
-        <p className={clsx("text-sm", dark ? "text-white/70" : "text-gray-500")}>
-          We&apos;ll be in touch within 24 hours to schedule your free walk-through.
+        <p className={clsx("text-sm max-w-sm leading-relaxed", dark ? "text-white/70" : "text-gray-500")}>
+          Thank you — Slav will be in touch within 24 hours to schedule your free home safety assessment.
         </p>
         <button
           onClick={() => setStatus("idle")}
@@ -90,11 +117,11 @@ export default function ContactForm({ dark = false }: ContactFormProps) {
     <form onSubmit={handleSubmit(onSubmit)} noValidate className="space-y-5">
       {/* Name */}
       <div>
-        <label htmlFor="name" className={labelClass}>
+        <label htmlFor="cf-name" className={labelClass}>
           Full Name <span className="text-gold">*</span>
         </label>
         <input
-          id="name"
+          id="cf-name"
           type="text"
           placeholder="Jane Smith"
           className={clsx(inputClass, errors.name && "border-red-400")}
@@ -105,11 +132,11 @@ export default function ContactForm({ dark = false }: ContactFormProps) {
 
       {/* Email */}
       <div>
-        <label htmlFor="email" className={labelClass}>
+        <label htmlFor="cf-email" className={labelClass}>
           Email Address <span className="text-gold">*</span>
         </label>
         <input
-          id="email"
+          id="cf-email"
           type="email"
           placeholder="jane@example.com"
           className={clsx(inputClass, errors.email && "border-red-400")}
@@ -126,11 +153,11 @@ export default function ContactForm({ dark = false }: ContactFormProps) {
 
       {/* Phone */}
       <div>
-        <label htmlFor="phone" className={labelClass}>
+        <label htmlFor="cf-phone" className={labelClass}>
           Phone Number
         </label>
         <input
-          id="phone"
+          id="cf-phone"
           type="tel"
           placeholder="(267) 555-0100"
           className={inputClass}
@@ -138,13 +165,34 @@ export default function ContactForm({ dark = false }: ContactFormProps) {
         />
       </div>
 
+      {/* Who is this for */}
+      <div>
+        <p className={groupLabelClass}>
+          Who is this for? <span className="text-gold">*</span>
+        </p>
+        <div className="flex flex-wrap gap-2">
+          {forWhomOptions.map((option) => (
+            <label key={option} className="flex items-center cursor-pointer">
+              <input
+                type="radio"
+                value={option}
+                className="sr-only peer"
+                {...register("forWhom", { required: "Please select who this is for" })}
+              />
+              <span className={pillClass}>{option}</span>
+            </label>
+          ))}
+        </div>
+        {errors.forWhom && <p className={errorClass}>{errors.forWhom.message}</p>}
+      </div>
+
       {/* Service */}
       <div>
-        <label htmlFor="service" className={labelClass}>
+        <label htmlFor="cf-service" className={labelClass}>
           Service Needed <span className="text-gold">*</span>
         </label>
         <select
-          id="service"
+          id="cf-service"
           className={clsx(inputClass, errors.service && "border-red-400")}
           {...register("service", { required: "Please select a service" })}
         >
@@ -158,15 +206,53 @@ export default function ContactForm({ dark = false }: ContactFormProps) {
         {errors.service && <p className={errorClass}>{errors.service.message}</p>}
       </div>
 
+      {/* Address */}
+      <div>
+        <label htmlFor="cf-address" className={labelClass}>
+          Address of Home{" "}
+          <span className={clsx("font-normal text-xs", dark ? "text-white/40" : "text-gray-400")}>
+            (optional)
+          </span>
+        </label>
+        <input
+          id="cf-address"
+          type="text"
+          placeholder="123 Main St, Doylestown, PA"
+          className={inputClass}
+          {...register("address")}
+        />
+      </div>
+
+      {/* Preferred Contact */}
+      <div>
+        <p className={groupLabelClass}>
+          Best way to reach you <span className="text-gold">*</span>
+        </p>
+        <div className="flex flex-wrap gap-2">
+          {contactOptions.map((option) => (
+            <label key={option} className="flex items-center cursor-pointer">
+              <input
+                type="radio"
+                value={option}
+                className="sr-only peer"
+                {...register("preferredContact", { required: "Please select a contact method" })}
+              />
+              <span className={pillClass}>{option}</span>
+            </label>
+          ))}
+        </div>
+        {errors.preferredContact && <p className={errorClass}>{errors.preferredContact.message}</p>}
+      </div>
+
       {/* Message */}
       <div>
-        <label htmlFor="message" className={labelClass}>
-          Message
+        <label htmlFor="cf-message" className={labelClass}>
+          Anything else we should know?
         </label>
         <textarea
-          id="message"
+          id="cf-message"
           rows={4}
-          placeholder="Tell us about your home and what you need..."
+          placeholder="Describe any safety concerns, specific areas of the home, or mobility considerations..."
           className={clsx(inputClass, "resize-none")}
           {...register("message")}
         />
@@ -196,7 +282,7 @@ export default function ContactForm({ dark = false }: ContactFormProps) {
         ) : (
           <>
             <Send size={16} />
-            Send My Request
+            Book Free Assessment
           </>
         )}
       </button>

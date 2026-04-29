@@ -4,163 +4,143 @@ import ContactForm from "@/components/ContactForm";
 import AnimatedSection from "@/components/sections/AnimatedSection";
 
 export const metadata: Metadata = {
-  title: "Contact ReadyNest | Get a Free Home Prep Quote | Bucks County, PA",
+  title: { absolute: "Contact ReadyNest PA | Book a Free Home Safety Assessment, Bucks County" },
   description:
-    "Get a free home prep quote from ReadyNest. Call 267-717-9119 or fill out our form. We serve Doylestown, Bucks County, PA. Walk-throughs scheduled within 48 hours.",
+    "Book a free aging-in-place home safety assessment with Slav in Bucks County, PA. Call 267-717-9119 or fill out the form. We respond within 24 hours — usually the same day.",
   alternates: { canonical: "https://readynestpa.com/contact" },
   openGraph: {
-    title: "Contact ReadyNest | Free Home Prep Quote | Bucks County, PA",
+    title: "Contact ReadyNest PA | Book a Free Home Safety Assessment | Bucks County",
     description:
-      "Contact ReadyNest for a free walk-through and quote. Call 267-717-9119 or send us a message. Serving Doylestown and all of Bucks County, PA.",
+      "Slav visits your home, walks through every room, and gives you a written safety report — at no cost and no obligation. Serving Bucks County, PA.",
     url: "https://readynestpa.com/contact",
   },
 };
 
-const contactDetails = [
-  {
-    icon: <Phone size={20} strokeWidth={1.5} />,
-    label: "Phone",
-    value: "267-717-9119",
-    href: "tel:+12677179119",
-    ariaLabel: "Call ReadyNest at 267-717-9119",
-  },
-  {
-    icon: <Mail size={20} strokeWidth={1.5} />,
-    label: "Email",
-    value: "info@readynestpa.com",
-    href: "mailto:info@readynestpa.com",
-    ariaLabel: "Email ReadyNest",
-  },
-  {
-    icon: <MapPin size={20} strokeWidth={1.5} />,
-    label: "Service Area",
-    value: "Doylestown, PA & Bucks County",
-    href: null,
-    ariaLabel: null,
-  },
-  {
-    icon: <Clock size={20} strokeWidth={1.5} />,
-    label: "Business Hours",
-    value: "Monday–Saturday, 7 AM – 6 PM",
-    href: null,
-    ariaLabel: null,
-  },
-];
+// Next.js 15 — searchParams is a Promise
+export default async function ContactPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ service?: string }>;
+}) {
+  const params = await searchParams;
+  const defaultService = params.service ?? "";
 
-export default function ContactPage() {
   return (
     <>
-      {/* Hero */}
+      {/* ── HERO ─────────────────────────────────────────────── */}
       <section className="bg-beige py-16 md:py-24 border-b border-soft-gray">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <p className="text-gold text-sm font-semibold tracking-wider uppercase mb-4">Free Walk-Through</p>
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <p className="text-gold text-sm font-semibold tracking-wider uppercase mb-4">
+            Free Home Safety Assessment
+          </p>
           <h1 className="font-serif text-5xl md:text-6xl text-charcoal mb-5">
-            Get In Touch
+            Book Your Free Assessment
           </h1>
           <p className="text-gray-500 text-xl max-w-2xl mx-auto leading-relaxed">
-            Ready to get your home market-ready? Fill out the form below or give us a call. We&apos;ll have a walk-through scheduled within 48 hours.
+            Slav visits your home, walks through every room, and gives you a written safety
+            report — at no cost and no obligation.
           </p>
         </div>
       </section>
 
-      {/* Main Content */}
-      <section className="py-16 md:py-24">
+      {/* ── MAIN CONTENT ─────────────────────────────────────── */}
+      <section className="bg-white py-16 md:py-24">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-5 gap-12">
+
             {/* Form — wider column */}
             <div className="lg:col-span-3">
               <AnimatedSection>
                 <div className="bg-white border border-soft-gray rounded-3xl p-8 md:p-10 shadow-sm">
-                  <h2 className="font-serif text-2xl text-charcoal mb-2">Send Us a Message</h2>
+                  <h2 className="font-serif text-2xl text-charcoal mb-1">Request a Visit</h2>
                   <p className="text-gray-500 text-sm mb-8">
-                    We&apos;ll respond within one business day — usually same day.
+                    We respond within 24 hours — usually the same day.
                   </p>
-                  <ContactForm />
+                  <ContactForm defaultService={defaultService} />
                 </div>
               </AnimatedSection>
             </div>
 
-            {/* Contact Info — narrower column */}
+            {/* Sidebar — narrower column */}
             <div className="lg:col-span-2 space-y-6">
               <AnimatedSection delay={0.1}>
-                {/* Contact Card */}
+                {/* Contact card */}
                 <div className="bg-accent-dark rounded-3xl p-8 text-white">
                   <h2 className="font-serif text-2xl mb-6">Contact Info</h2>
                   <ul className="space-y-5">
-                    {contactDetails.map((detail) => (
-                      <li key={detail.label} className="flex items-start gap-4">
-                        <div className="shrink-0 w-10 h-10 rounded-xl bg-gold/15 flex items-center justify-center text-gold">
-                          {detail.icon}
-                        </div>
-                        <div>
-                          <p className="text-gray-400 text-xs uppercase tracking-wide mb-0.5">{detail.label}</p>
-                          {detail.href ? (
-                            <a
-                              href={detail.href}
-                              className="text-white font-medium text-sm hover:text-gold transition-colors"
-                              aria-label={detail.ariaLabel ?? undefined}
-                            >
-                              {detail.value}
-                            </a>
-                          ) : (
-                            <p className="text-white font-medium text-sm">{detail.value}</p>
-                          )}
-                        </div>
-                      </li>
-                    ))}
+                    <li className="flex items-start gap-4">
+                      <div className="shrink-0 w-10 h-10 rounded-xl bg-gold/15 flex items-center justify-center text-gold">
+                        <Phone size={20} strokeWidth={1.5} />
+                      </div>
+                      <div>
+                        <p className="text-gray-400 text-xs uppercase tracking-wide mb-0.5">
+                          Phone
+                        </p>
+                        <a
+                          href="tel:+12677179119"
+                          className="text-white font-medium text-sm hover:text-gold transition-colors"
+                          aria-label="Call ReadyNest PA at 267-717-9119"
+                        >
+                          267-717-9119
+                        </a>
+                      </div>
+                    </li>
+                    <li className="flex items-start gap-4">
+                      <div className="shrink-0 w-10 h-10 rounded-xl bg-gold/15 flex items-center justify-center text-gold">
+                        <Mail size={20} strokeWidth={1.5} />
+                      </div>
+                      <div>
+                        <p className="text-gray-400 text-xs uppercase tracking-wide mb-0.5">
+                          Email
+                        </p>
+                        <a
+                          href="mailto:info@readynestpa.com"
+                          className="text-white font-medium text-sm hover:text-gold transition-colors"
+                          aria-label="Email ReadyNest PA"
+                        >
+                          info@readynestpa.com
+                        </a>
+                      </div>
+                    </li>
+                    <li className="flex items-start gap-4">
+                      <div className="shrink-0 w-10 h-10 rounded-xl bg-gold/15 flex items-center justify-center text-gold">
+                        <Clock size={20} strokeWidth={1.5} />
+                      </div>
+                      <div>
+                        <p className="text-gray-400 text-xs uppercase tracking-wide mb-0.5">
+                          Hours
+                        </p>
+                        <p className="text-white font-medium text-sm">
+                          Mon–Fri 7 AM–7 PM · Sat 8 AM–4 PM
+                        </p>
+                      </div>
+                    </li>
+                    <li className="flex items-start gap-4">
+                      <div className="shrink-0 w-10 h-10 rounded-xl bg-gold/15 flex items-center justify-center text-gold">
+                        <Clock size={20} strokeWidth={1.5} />
+                      </div>
+                      <div>
+                        <p className="text-gray-400 text-xs uppercase tracking-wide mb-0.5">
+                          Response Time
+                        </p>
+                        <p className="text-white font-medium text-sm">Usually same day</p>
+                      </div>
+                    </li>
                   </ul>
                 </div>
               </AnimatedSection>
 
               <AnimatedSection delay={0.15}>
-                {/* Quick CTA */}
+                {/* Service area card */}
                 <div className="bg-beige rounded-3xl p-8 border border-soft-gray">
-                  <h3 className="font-serif text-xl text-charcoal mb-3">Prefer to Call?</h3>
-                  <p className="text-gray-500 text-sm mb-5 leading-relaxed">
-                    Speak directly with our team — no menus, no hold music. We pick up.
-                  </p>
-                  <a
-                    href="tel:+12677179119"
-                    className="flex items-center justify-center gap-2 w-full bg-gold text-white font-semibold px-5 py-3.5 rounded-xl hover:bg-[#a07d46] transition-colors text-sm"
-                    aria-label="Call ReadyNest now"
-                  >
-                    <Phone size={16} />
-                    Call 267-717-9119
-                  </a>
-                </div>
-              </AnimatedSection>
-
-              <AnimatedSection delay={0.2}>
-                {/* Map placeholder */}
-                <div className="rounded-3xl overflow-hidden border border-soft-gray bg-beige aspect-video flex items-center justify-center">
-                  {/*
-                    TODO: Replace this placeholder with a Google Maps embed.
-                    Coordinates for Doylestown, PA: 40.3101, -75.1299
-                    Example iframe:
-                    <iframe
-                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3042...!2d-75.1299!3d40.3101..."
-                      width="100%"
-                      height="100%"
-                      style={{ border: 0 }}
-                      allowFullScreen
-                      loading="lazy"
-                      referrerPolicy="no-referrer-when-downgrade"
-                      title="ReadyNest location in Doylestown, PA"
-                    />
-                  */}
-                  <div className="text-center p-6">
-                    <MapPin size={32} className="text-gold mx-auto mb-3" />
-                    <p className="font-serif text-lg text-charcoal mb-1">Doylestown, PA</p>
-                    <p className="text-gray-500 text-sm">Bucks County, Pennsylvania</p>
-                    <a
-                      href="https://maps.google.com/?q=Doylestown,PA"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="mt-4 inline-block text-gold text-xs font-medium underline hover:no-underline"
-                    >
-                      Open in Google Maps
-                    </a>
+                  <div className="flex items-center gap-3 mb-4">
+                    <MapPin size={20} className="text-gold shrink-0" />
+                    <h3 className="font-serif text-xl text-charcoal">Service Area</h3>
                   </div>
+                  <p className="text-gray-600 text-sm leading-relaxed">
+                    Doylestown, New Hope, Newtown, Buckingham, Plumsteadville, Warrington,
+                    Chalfont, Yardley, Richboro, Southampton, Langhorne, and Ottsville.
+                  </p>
                 </div>
               </AnimatedSection>
             </div>
@@ -168,32 +148,41 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* FAQ-style reassurance */}
-      <section className="bg-beige border-t border-soft-gray py-16" aria-labelledby="contact-faq">
+      {/* ── WHAT TO EXPECT ───────────────────────────────────── */}
+      <section
+        className="bg-beige border-t border-soft-gray py-16 md:py-20"
+        aria-labelledby="expect-heading"
+      >
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <AnimatedSection>
-            <h2 id="contact-faq" className="font-serif text-3xl text-charcoal mb-8 text-center">
+            <h2
+              id="expect-heading"
+              className="font-serif text-3xl text-charcoal mb-8 text-center"
+            >
               What to Expect After You Reach Out
             </h2>
           </AnimatedSection>
+
           <div className="grid sm:grid-cols-3 gap-6">
             {[
               {
                 step: "Within 24 hours",
-                text: "We'll respond to your message or form submission and confirm your walk-through window.",
+                text: "Slav calls or texts to confirm your preferred visit window.",
               },
               {
-                step: "Within 48 hours",
-                text: "A member of the ReadyNest team visits your home for a free, no-obligation walk-through.",
+                step: "Assessment day",
+                text: "60–90 minute walk-through — free, no obligation, every room covered.",
               },
               {
-                step: "Within 24 hrs after",
-                text: "You receive an itemized quote with clear pricing and a proposed start date. You decide if you want to move forward.",
+                step: "Within 24 hours after",
+                text: "Written report emailed to your family contact with findings and recommendations.",
               },
             ].map((item, i) => (
               <AnimatedSection key={item.step} delay={i * 0.08}>
-                <div className="bg-white rounded-2xl p-6 border-t-4 border-gold card-hover h-full">
-                  <p className="text-gold text-xs font-semibold uppercase tracking-wider mb-3">{item.step}</p>
+                <div className="bg-white rounded-2xl p-6 border-t-4 border-gold h-full">
+                  <p className="text-gold text-xs font-semibold uppercase tracking-wider mb-3">
+                    {item.step}
+                  </p>
                   <p className="text-gray-600 text-sm leading-relaxed">{item.text}</p>
                 </div>
               </AnimatedSection>
