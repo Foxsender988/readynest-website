@@ -80,20 +80,22 @@ const situations = [
 
 const pricingItems = [
   {
-    label: "Single modification",
-    range: "Starts at $79",
-    description: "Individual items like a grab bar, door lever, or night lights.",
-  },
-  {
-    label: "Safety package",
-    range: "$349–$949",
+    label: "Entry packages",
+    range: "From $675",
     description:
-      "Bundled modifications covering bathroom, entry, or the full home.",
+      "Entry & Exit or Stair & Hallway safety — installed in a single visit, labor and materials included.",
   },
   {
-    label: "Ongoing service",
-    range: "From $49/mo",
-    description: "Trash Valet for weekly bin management.",
+    label: "Bathroom Safety Package",
+    range: "$895",
+    description:
+      "Most-referred package. Grab bars, non-slip treatment, shower bench, nightlight, and safety walkthrough.",
+  },
+  {
+    label: "Whole-home safety",
+    range: "From $2,950",
+    description:
+      "Comprehensive aging-in-place modifications across every area of the home.",
   },
 ];
 

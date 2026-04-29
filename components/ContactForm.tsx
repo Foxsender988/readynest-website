@@ -17,17 +17,18 @@ type FormData = {
 };
 
 const services = [
-  "Bathroom Safety",
-  "Entry & Exit Safety",
-  "Stairs & Hallways",
-  "Smart Home Safety",
-  "Trash Valet",
-  "Bathroom Essentials Package",
-  "Entry & Stairs Package",
-  "Full Home Safety Package",
-  "A La Carte",
-  "Multiple Services",
-  "Not Sure — Need Assessment",
+  "Free Home Safety Assessment",
+  "Bathroom Safety Package — $895",
+  "Bathroom Safety Premium — $1,650",
+  "Entry & Exit Safety Package — $675",
+  "Stair & Hallway Safety Package — $795",
+  "Whole-Home Aging-in-Place Package",
+  "Whole-Home Premium",
+  "Safety Watch Subscription",
+  "Home Care Plan Subscription",
+  "Trash Valet Service",
+  "Quick Wins / Individual Service",
+  "Other / Not sure yet",
 ];
 
 const forWhomOptions = ["Myself", "A parent or family member", "Other"];
