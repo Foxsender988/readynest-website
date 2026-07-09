@@ -34,7 +34,7 @@ export default function Footer() {
               className="h-11 w-auto object-contain mb-4"
             />
             <p className="text-gray-400 text-sm leading-relaxed mb-4">
-              Aging-in-place home safety modifications for seniors and their families — installed personally by Slav in Bucks County, PA.
+              Aging-in-place home safety modifications for seniors and their families in Bucks County, PA — assessed and overseen personally by Slav on every project.
             </p>
             <div className="flex items-start gap-2 text-gray-400 text-sm">
               <MapPin size={14} className="text-gold shrink-0 mt-0.5" />

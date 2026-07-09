@@ -65,8 +65,8 @@ const services = [
 const trustPoints = [
   {
     icon: <User size={20} strokeWidth={1.5} />,
-    title: "Personally Installed by Slav",
-    body: "Every job is done by Slav — not a subcontractor. You get consistent quality and someone you can actually reach.",
+    title: "One Point of Accountability",
+    body: "Slav personally assesses your home and signs off on every job, whether he's the one installing it or one of our vetted local trade partners. One number, one person responsible, start to finish.",
   },
   {
     icon: <BadgeCheck size={20} strokeWidth={1.5} />,
@@ -389,7 +389,7 @@ export default function HomePage() {
                     "Stay in the home you love — no nursing home, no uprooting",
                     "Move through every room with confidence",
                     "Simple modifications that don't look institutional",
-                    "Work directly with Slav — one face, one number",
+                    "Work directly with Slav from first visit to final walkthrough — one face, one number",
                   ].map((item) => (
                     <li key={item} className="flex items-start gap-3 text-sm text-gray-600">
                       <span className="text-gold mt-0.5 shrink-0">✓</span>
@@ -475,7 +475,7 @@ export default function HomePage() {
                 Hi, I&apos;m Slav.
               </h2>
               <p className="text-gray-600 leading-relaxed mb-8">
-                I grew up in Ukraine. I&apos;ve worked in fire safety, electrical, and handyman work across Bucks County. I started ReadyNest to be the person I wish more older people had — local, dependable, fairly priced, and serious about the work. Every install is done by me. No crews, no subcontractors, no surprises.
+                I grew up in Ukraine. I&apos;ve worked in fire safety, electrical, and handyman work across Bucks County. I started ReadyNest to be the person I wish more older people had — local, dependable, fairly priced, and serious about the work. I personally assess every home and I&apos;m on-site for the final walkthrough on every project — no exceptions. For larger jobs, I work with a small, vetted team of local trade partners I&apos;ve used for years, so you still get one accountable person and consistent quality, just with the capacity to take on bigger projects without long wait times.
               </p>
               <Link
                 href="/about"

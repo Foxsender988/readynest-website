@@ -47,7 +47,7 @@ const steps = [
     number: "4",
     icon: <Wrench size={28} strokeWidth={1.5} />,
     title: "Professional Installation",
-    body: "I install everything myself. No subcontractors, no strangers in your home. Most jobs are completed in a single visit. Everything is installed to code and rated for proper weight loads. I clean up completely before I leave.",
+    body: "Core safety work — grab bars, railings, lighting, ramps — is installed by me personally. For larger remodeling-scope projects, I work with vetted local trade partners I&apos;ve used for years. Either way, everything is installed to code, rated for proper weight loads, and I&apos;m on-site for the final walkthrough before the job is done. I clean up completely before I leave.",
   },
   {
     number: "5",

@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     template: "%s | ReadyNest",
   },
   description:
-    "ReadyNest installs aging-in-place home safety modifications for seniors and families in Bucks County, PA — grab bars, ramps, stair railings, smart home safety, and more. Personally installed by Slav.",
+    "ReadyNest provides aging-in-place home safety modifications in Bucks County, PA — grab bars, ramps, stair railings, smart home safety. Free home assessment. Call 267-717-9119.",
   keywords: [
     "aging in place Bucks County PA",
     "home safety modifications seniors",
@@ -58,7 +58,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "ReadyNest — Aging-in-Place Home Safety | Bucks County, PA",
     description:
-      "Home safety modifications for seniors — grab bars, ramps, stair railings & smart home safety. Personally installed by Slav in Bucks County, PA.",
+      "Home safety modifications for seniors — grab bars, ramps, stair railings & smart home safety. Personally overseen by Slav in Bucks County, PA. Free assessment.",
     images: ["/images/ReadyNest_home_prep_logo.png"],
   },
   robots: {
@@ -76,7 +76,7 @@ const structuredData = {
   "@type": "LocalBusiness",
   name: "ReadyNest",
   description:
-    "Aging-in-place home safety modifications for seniors and families in Bucks County, PA — grab bars, ramps, stair railings, smart home safety, and more. Personally installed by Slav.",
+    "Aging-in-place home safety modifications for seniors and families in Bucks County, PA — grab bars, ramps, stair railings, smart home safety, and more. Assessed and overseen personally by Slav.",
   url: "https://readynestpa.com",
   telephone: "+1-267-717-9119",
   email: "info@readynestpa.com",

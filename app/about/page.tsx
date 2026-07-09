@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "About Slav | ReadyNest — Aging-in-Place Specialist, Bucks County",
     description:
-      "One local owner. Every job personally installed by Slav in Bucks County, PA. Licensed, insured, no subcontractors.",
+      "One point of accountability. Slav personally assesses and signs off on every job in Bucks County, PA. Licensed and insured.",
     url: "https://readynestpa.com/about",
   },
 };
@@ -61,7 +61,7 @@ export default function AboutPage() {
           </p>
           <h1 className="font-serif text-5xl md:text-6xl text-charcoal mb-5">About Slav</h1>
           <p className="text-gray-500 text-xl max-w-2xl mx-auto leading-relaxed">
-            One local owner. Every job done personally. No subcontractors, no surprises.
+            One point of accountability. Slav personally assesses every home and signs off on every completed job — no exceptions.
           </p>
         </div>
       </section>
@@ -113,10 +113,14 @@ export default function AboutPage() {
                 </p>
                 <p>
                   I started ReadyNest to be the person I wish more older people had — local,
-                  dependable, fairly priced, and serious about the work. Every install on every
-                  job is done by me. No subcontractors, no surprises, no strangers in your
-                  parent&apos;s home. I&apos;m licensed and insured in Pennsylvania. I treat every
-                  home like it belongs to someone I care about. Because it does.
+                  dependable, fairly priced, and serious about the work. I personally assess
+                  every home and I&apos;m on-site for the final walkthrough on every project —
+                  no exceptions. For larger jobs, I work with a small, vetted team of local
+                  trade partners I&apos;ve used for years, so you still get one accountable
+                  person and consistent quality, just with the capacity to take on bigger
+                  projects without long wait times. I&apos;m licensed and insured in
+                  Pennsylvania. I treat every home like it belongs to someone I care about.
+                  Because it does.
                 </p>
               </div>
             </AnimatedSection>
