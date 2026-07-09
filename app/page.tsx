@@ -21,12 +21,12 @@ import AnimatedSection from "@/components/sections/AnimatedSection";
 export const metadata: Metadata = {
   title: { absolute: "Aging-in-Place Home Safety Modifications | ReadyNest — Bucks County, PA" },
   description:
-    "ReadyNest installs aging-in-place home safety modifications in Bucks County, PA — grab bars, ramps, stair railings, smart home safety. Free home assessment. Call 267-717-9119.",
+    "ReadyNest provides aging-in-place home safety modifications in Bucks County, PA — grab bars, ramps, stair railings, smart home safety. Free home assessment. Call 267-717-9119.",
   alternates: { canonical: "https://readynestpa.com/" },
   openGraph: {
     title: "Aging-in-Place Home Safety | ReadyNest — Bucks County, PA",
     description:
-      "Home safety modifications for seniors — grab bars, ramps, stair railings & smart home safety. Personally installed by Slav in Bucks County, PA. Free assessment.",
+      "Home safety modifications for seniors — grab bars, ramps, stair railings & smart home safety. Personally overseen by Slav in Bucks County, PA. Free assessment.",
     url: "https://readynestpa.com/",
   },
 };

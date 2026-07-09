@@ -152,6 +152,9 @@ const safetyWatchTiers = [
       "Monthly 45-min visit + 10% off any one-time service while subscribed.",
   },
   {
+    // ⚠️ MARGIN REVIEW: Premium Care's effective hourly rate runs below ReadyNest's blended
+    // target once rolled-forward labor hours + priority callback are counted. Intentional as a
+    // retention/relationship product? Confirm with Slav before raising price.
     name: "Premium Care",
     price: "$249/mo",
     description:
@@ -167,6 +170,9 @@ const homeCareTiers = [
       "Annual safety inspection + 15% discount on all services + same-week scheduling priority.",
   },
   {
+    // ⚠️ MARGIN REVIEW: Home Care Plan Plus effective hourly rate is below blended target
+    // once rolled-forward labor hours are counted. May be intentional as a relationship product.
+    // Confirm with Slav before raising price.
     name: "Plus",
     price: "$95/mo",
     description:
@@ -210,6 +216,62 @@ const bundles = [
   {
     combo: "Any Tier 2 package + Trash Valet sign-up",
     discount: "First 4 weeks of trash valet free",
+  },
+];
+
+// ⚠️ SHOWER CONVERSION — PRICES NOT VERIFIED AGAINST REAL SUB QUOTE
+// Built bottom-up from cost components; not confirmed with an actual plumbing/tile partner.
+// Before enabling: get one real quote from the sub Slav would use on a typical job and
+// confirm $6,500 / $11,500 starting prices hold. Also confirm "Most Chosen" badge reflects
+// actual booking mix. Flip SHOW_SHOWER_CONVERSION to true only after Slav signs off.
+const SHOW_SHOWER_CONVERSION = false;
+
+const showerConversionTiers = [
+  {
+    name: "Accessible Conversion",
+    price: "Starting at $6,500",
+    badge: null,
+    note: "Most straightforward layouts land in this range. Homes needing plumbing relocation, custom tile, or significant demo typically run higher — confirmed at your free in-home assessment.",
+    includes: [
+      "Tub removal & haul-away",
+      "Low-threshold or curbless acrylic shower pan and wall surround",
+      "ADA grab bars + fold-down shower bench",
+      "New shower valve/fixture",
+      "Anti-scald valve (where plumbing allows)",
+    ],
+    notIncluded:
+      "Custom tile, permits (if required by township), plumbing line relocation beyond minor adjustment — quoted separately if needed.",
+  },
+  {
+    // ⚠️ Confirm "Most Chosen" badge with Slav — verify this is actually the more common
+    // booking before publishing. If Accessible is equally common, remove the badge entirely.
+    name: "Custom Tile / Curbless Conversion",
+    price: "Starting at $11,500",
+    badge: "Most Chosen",
+    note: "Covers most conversions involving tile, a curbless entry, or a full custom layout. Final price depends on shower size, tile selection, and plumbing scope — confirmed at your free in-home assessment.",
+    includes: [
+      "Everything in Accessible Conversion, plus:",
+      "Custom tile walls and floor",
+      "Linear drain",
+      "Waterproofing membrane",
+      "Frameless glass option",
+    ],
+    notIncluded: null,
+  },
+];
+
+// Quick Wins — individual service pricing
+// ⚠️ DOORBELL: Smart Doorbell is priced at $185 below. Margin is ~24% vs ReadyNest's 50%+
+// target ($140 avg materials cost). If this is intentionally a loss-leader/relationship item,
+// leave as-is. Otherwise bump to $225–$245. Flag to Slav — business-strategy call, not a
+// copy fix.
+const quickWinsItems = [
+  { service: "Single Grab Bar Install", price: "$195" },
+  { service: "Two Grab Bars (same visit)", price: "$325" },
+  {
+    service: "Smart Doorbell Install + App Setup",
+    // ⚠️ See margin note above. Intentional loss-leader or should be $225–$245?
+    price: "$185",
   },
 ];
 
@@ -635,26 +697,126 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* ── 5. Need something specific? ── */}
+      {/* ── 5a. Walk-In Shower Conversions (feature-flagged — SHOW_SHOWER_CONVERSION) ── */}
+      {SHOW_SHOWER_CONVERSION && (
+        <section
+          className="bg-soft-gray py-20 md:py-28 border-b border-soft-gray"
+          aria-labelledby="shower-conversion-heading"
+        >
+          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <AnimatedSection>
+              <p className="text-gold text-sm font-semibold tracking-wider uppercase mb-2">
+                Remodeling Services
+              </p>
+              <h2
+                id="shower-conversion-heading"
+                className="font-serif text-4xl md:text-5xl text-charcoal mb-4"
+              >
+                Walk-In Shower Conversions
+              </h2>
+              <p className="text-gray-500 text-base max-w-2xl leading-relaxed mb-10">
+                Full tub-to-shower conversions, project-managed by Slav and completed by our
+                vetted local trade partners — from your first assessment to the final walkthrough.
+              </p>
+            </AnimatedSection>
+
+            <div className="grid md:grid-cols-2 gap-6 mb-8">
+              {showerConversionTiers.map((tier, i) => (
+                <AnimatedSection key={tier.name} delay={i * 0.08}>
+                  <div className="bg-white rounded-2xl border border-soft-gray p-7 flex flex-col h-full relative shadow-sm hover:shadow-md transition-shadow">
+                    {tier.badge && (
+                      <span className="absolute top-5 right-5 text-xs font-semibold px-2.5 py-1 rounded-full bg-gold text-white">
+                        {tier.badge}
+                      </span>
+                    )}
+                    <h3 className="font-serif text-xl text-charcoal mb-3 pr-24">{tier.name}</h3>
+                    <p className="text-3xl font-bold text-gold mb-4">{tier.price}</p>
+                    <p className="text-gray-500 text-sm italic leading-relaxed mb-5">{tier.note}</p>
+                    <p className="text-gold text-xs font-semibold tracking-wider uppercase mb-3">
+                      INCLUDES
+                    </p>
+                    <ul className="space-y-2.5 mb-5 flex-1">
+                      {tier.includes.map((item) => (
+                        <li key={item} className="flex items-start gap-2.5 text-gray-600 text-sm leading-relaxed">
+                          <Checkmark />
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+                    {tier.notIncluded && (
+                      <p className="text-gray-400 text-xs leading-relaxed border-t border-soft-gray pt-4">
+                        <span className="font-semibold text-gray-500">Not included:</span>{" "}
+                        {tier.notIncluded}
+                      </p>
+                    )}
+                    <Link
+                      href={`/contact?service=${encodeURIComponent("Walk-In Shower Conversion")}`}
+                      className="mt-6 w-full flex items-center justify-center gap-2 bg-gold text-white font-semibold px-5 py-3 rounded-xl hover:bg-[#a07d46] transition-colors text-sm"
+                    >
+                      Request Assessment <ArrowRight size={15} />
+                    </Link>
+                  </div>
+                </AnimatedSection>
+              ))}
+            </div>
+
+            <AnimatedSection delay={0.18}>
+              <p className="text-gray-400 text-sm text-center max-w-2xl mx-auto leading-relaxed">
+                Every project includes a free in-home assessment, a written scope-based estimate
+                before work begins, and final walkthrough sign-off by Slav — whether the
+                installation is completed by Slav or one of our vetted trade partners.
+              </p>
+            </AnimatedSection>
+          </div>
+        </section>
+      )}
+
+      {/* ── 5b. Need something specific? (Quick Wins) ── */}
       <section
         className="bg-beige py-16 md:py-20 border-b border-soft-gray"
         aria-labelledby="quick-wins-heading"
       >
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <AnimatedSection>
             <h2
               id="quick-wins-heading"
-              className="font-serif text-3xl md:text-4xl text-charcoal mb-4"
+              className="font-serif text-3xl md:text-4xl text-charcoal mb-4 text-center"
             >
               Need something specific?
             </h2>
-            <p className="text-gray-600 text-lg leading-relaxed mb-4">
-              We handle small individual jobs too &mdash; grab bars, lever handles,
-              threshold ramps, motion lights, stair treads, smart doorbells, and more.
+            <p className="text-gray-600 text-lg leading-relaxed mb-8 text-center">
+              We handle individual jobs too &mdash; grab bars, lever handles, threshold ramps,
+              motion lights, stair treads, smart doorbells, and more.
             </p>
-            <p className="text-gray-500 text-base mb-8 leading-relaxed">
-              Most small jobs are{" "}
-              <span className="font-semibold text-charcoal">$85&ndash;$395</span>.
+          </AnimatedSection>
+
+          <AnimatedSection delay={0.06}>
+            <div className="overflow-x-auto rounded-2xl border border-soft-gray mb-6">
+              <table className="w-full text-sm">
+                <thead>
+                  <tr className="bg-charcoal text-white text-left">
+                    <th className="px-5 py-3.5 font-semibold">Service</th>
+                    <th className="px-5 py-3.5 font-semibold text-right">Price</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {quickWinsItems.map((item, i) => (
+                    <tr
+                      key={item.service}
+                      className={`border-t border-soft-gray ${i % 2 === 0 ? "bg-white" : "bg-beige/50"}`}
+                    >
+                      <td className="px-5 py-4 text-charcoal">{item.service}</td>
+                      <td className="px-5 py-4 text-gold font-semibold text-right">{item.price}</td>
+                    </tr>
+                  ))}
+                  <tr className="border-t border-soft-gray bg-white">
+                    <td className="px-5 py-4 text-charcoal">Other items</td>
+                    <td className="px-5 py-4 text-gray-400 text-right text-xs">Call for quote</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <p className="text-gray-500 text-sm text-center mb-8">
               Call{" "}
               <a
                 href="tel:+12677179119"

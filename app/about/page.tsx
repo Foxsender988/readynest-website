@@ -128,6 +128,31 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* ── A SMALL, TRUSTED TEAM ────────────────────────────── */}
+      <section className="bg-beige py-16 md:py-20 border-b border-soft-gray" aria-labelledby="team-heading">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+          <AnimatedSection>
+            <h2
+              id="team-heading"
+              className="font-serif text-3xl md:text-4xl text-charcoal mb-5"
+            >
+              A Small, Trusted Team
+            </h2>
+            <p className="text-gray-600 text-base leading-relaxed mb-4">
+              For larger remodeling-scope projects, ReadyNest works with a small group of
+              licensed, insured local trade partners — the same people, project after project.
+              Slav personally scopes every job and inspects every completed project before
+              it&apos;s considered done. You always have one number to call, and one person
+              accountable for the result.
+            </p>
+            <p className="text-gray-500 text-sm leading-relaxed">
+              Core safety installs — grab bars, railings, lighting, ramps — are done by Slav
+              personally, as they always have been.
+            </p>
+          </AnimatedSection>
+        </div>
+      </section>
+
       {/* ── WHAT MAKES US DIFFERENT ──────────────────────────── */}
       <section
         className="bg-beige py-20 md:py-24 border-y border-soft-gray"

@@ -24,6 +24,7 @@ const services = [
   "Stair & Hallway Safety Package — $795",
   "Whole-Home Aging-in-Place Package",
   "Whole-Home Premium",
+  "Walk-In Shower Conversion",
   "Safety Watch Subscription",
   "Home Care Plan Subscription",
   "Trash Valet Service",
