@@ -219,12 +219,10 @@ const bundles = [
   },
 ];
 
-// ⚠️ SHOWER CONVERSION — PRICES NOT VERIFIED AGAINST REAL SUB QUOTE
-// Built bottom-up from cost components; not confirmed with an actual plumbing/tile partner.
-// Before enabling: get one real quote from the sub Slav would use on a typical job and
-// confirm $6,500 / $11,500 starting prices hold. Also confirm "Most Chosen" badge reflects
-// actual booking mix. Flip SHOW_SHOWER_CONVERSION to true only after Slav signs off.
-const SHOW_SHOWER_CONVERSION = false;
+// ⚠️ SHOWER CONVERSION — PRICES CONFIRMED AS STARTING POINT, NOT FINAL
+// Slav has approved $6,500 / $11,500 as launch starting prices. Revisit both numbers — and
+// the "Most Chosen" badge placement below — after the first few real bookings show actual mix.
+const SHOW_SHOWER_CONVERSION = true;
 
 const showerConversionTiers = [
   {
@@ -243,8 +241,9 @@ const showerConversionTiers = [
       "Custom tile, permits (if required by township), plumbing line relocation beyond minor adjustment — quoted separately if needed.",
   },
   {
-    // ⚠️ Confirm "Most Chosen" badge with Slav — verify this is actually the more common
-    // booking before publishing. If Accessible is equally common, remove the badge entirely.
+    // ⚠️ "Most Chosen" badge is a placeholder pending real booking data — Slav's best estimate
+    // that tile/curbless jobs are more common, not yet confirmed by actual bookings. Revisit
+    // after the first few jobs and move/remove the badge if the mix says otherwise.
     name: "Custom Tile / Curbless Conversion",
     price: "Starting at $11,500",
     badge: "Most Chosen",
