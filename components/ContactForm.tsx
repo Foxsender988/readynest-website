@@ -18,10 +18,10 @@ type FormData = {
 
 const services = [
   "Free Home Safety Assessment",
-  "Bathroom Safety Package — $895",
-  "Bathroom Safety Premium — $1,650",
-  "Entry & Exit Safety Package — $675",
-  "Stair & Hallway Safety Package — $795",
+  "Bathroom Safety Package — $995",
+  "Bathroom Safety Premium — $1,850",
+  "Entry & Exit Safety Package — $725",
+  "Stair & Hallway Safety Package — $945",
   "Whole-Home Aging-in-Place Package",
   "Whole-Home Premium",
   "Walk-In Shower Conversion",

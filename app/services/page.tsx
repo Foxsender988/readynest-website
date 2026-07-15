@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Home Safety Services | ReadyNest — Bucks County, PA",
     description:
-      "Bathroom safety packages from $675, Whole-Home aging-in-place from $2,950, Safety Watch subscriptions, and weekly Trash Valet. Personally installed by Slav in Bucks County, PA.",
+      "Bathroom safety packages from $725, Whole-Home aging-in-place from $3,450, Safety Watch subscriptions, and weekly Trash Valet. Personally installed by Slav in Bucks County, PA.",
     url: "https://readynestpa.com/services",
   },
 };
@@ -32,8 +32,8 @@ export const metadata: Metadata = {
 const packages = [
   {
     name: "Bathroom Safety Package",
-    slug: "Bathroom Safety Package — $895",
-    price: "$895",
+    slug: "Bathroom Safety Package — $995",
+    price: "$995",
     badge: "Most Popular",
     badgeStyle: "bg-gold text-white",
     includesLabel: "WHAT'S INCLUDED",
@@ -50,8 +50,8 @@ const packages = [
   },
   {
     name: "Bathroom Safety Premium",
-    slug: "Bathroom Safety Premium — $1,650",
-    price: "$1,650",
+    slug: "Bathroom Safety Premium — $1,850",
+    price: "$1,850",
     badge: "Premium",
     badgeStyle: "bg-accent-dark text-white",
     includesLabel: "EVERYTHING IN STANDARD, PLUS",
@@ -68,8 +68,8 @@ const packages = [
   },
   {
     name: "Entry & Exit Safety Package",
-    slug: "Entry & Exit Safety Package — $675",
-    price: "$675",
+    slug: "Entry & Exit Safety Package — $725",
+    price: "$725",
     badge: null,
     badgeStyle: "",
     includesLabel: "WHAT'S INCLUDED",
@@ -85,8 +85,8 @@ const packages = [
   },
   {
     name: "Stair & Hallway Safety Package",
-    slug: "Stair & Hallway Safety Package — $795",
-    price: "$795",
+    slug: "Stair & Hallway Safety Package — $945",
+    price: "$945",
     badge: null,
     badgeStyle: "",
     includesLabel: "WHAT'S INCLUDED",
@@ -103,7 +103,7 @@ const packages = [
   {
     name: "Whole-Home Aging-in-Place Package",
     slug: "Whole-Home Aging-in-Place Package",
-    price: "From $2,950",
+    price: "From $3,450",
     badge: "Best Value",
     badgeStyle: "bg-gold text-white",
     includesLabel: "WHAT'S INCLUDED",
@@ -122,7 +122,7 @@ const packages = [
   {
     name: "Whole-Home Premium",
     slug: "Whole-Home Premium",
-    price: "$4,950–$7,500",
+    price: "$5,500–$8,000",
     badge: "Premium",
     badgeStyle: "bg-accent-dark text-white",
     includesLabel: "QUOTED AFTER ASSESSMENT — TYPICALLY INCLUDES",
@@ -260,18 +260,12 @@ const showerConversionTiers = [
 ];
 
 // Quick Wins — individual service pricing
-// ⚠️ DOORBELL: Smart Doorbell is priced at $185 below. Margin is ~24% vs ReadyNest's 50%+
-// target ($140 avg materials cost). If this is intentionally a loss-leader/relationship item,
-// leave as-is. Otherwise bump to $225–$245. Flag to Slav — business-strategy call, not a
-// copy fix.
 const quickWinsItems = [
   { service: "Single Grab Bar Install", price: "$195" },
   { service: "Two Grab Bars (same visit)", price: "$325" },
-  {
-    service: "Smart Doorbell Install + App Setup",
-    // ⚠️ See margin note above. Intentional loss-leader or should be $225–$245?
-    price: "$185",
-  },
+  { service: "Smart Doorbell Install + App Setup (customer supplies doorbell)", price: "$165" },
+  { service: "Smart Doorbell Supplied + Installed — Ring tier", price: "$329" },
+  { service: "Smart Doorbell Supplied + Installed — Premium tier (Nest)", price: "$395" },
 ];
 
 const everythingIncluded = [
@@ -323,40 +317,40 @@ export default function ServicesPage() {
               "@type": "Service",
               name: "Bathroom Safety Package",
               description:
-                "ADA-rated grab bars, non-slip treatment, shower bench, nightlight, and safety walkthrough. $895.",
+                "ADA-rated grab bars, non-slip treatment, shower bench, nightlight, and safety walkthrough. $995.",
               provider: { "@type": "LocalBusiness", name: "ReadyNest" },
               areaServed: "Bucks County, PA",
-              offers: { "@type": "Offer", price: "895", priceCurrency: "USD" },
+              offers: { "@type": "Offer", price: "995", priceCurrency: "USD" },
             },
             {
               "@context": "https://schema.org",
               "@type": "Service",
               name: "Entry & Exit Safety Package",
               description:
-                "Threshold ramp, lever door handles, motion-sensor exterior light, and entry lighting. $675.",
+                "Threshold ramp, lever door handles, motion-sensor exterior light, and entry lighting. $725.",
               provider: { "@type": "LocalBusiness", name: "ReadyNest" },
               areaServed: "Bucks County, PA",
-              offers: { "@type": "Offer", price: "675", priceCurrency: "USD" },
+              offers: { "@type": "Offer", price: "725", priceCurrency: "USD" },
             },
             {
               "@context": "https://schema.org",
               "@type": "Service",
               name: "Stair & Hallway Safety Package",
               description:
-                "Handrail installation, non-slip stair treads, motion-sensor lighting, and nightlights. $795.",
+                "Handrail installation, non-slip stair treads, motion-sensor lighting, and nightlights. $945.",
               provider: { "@type": "LocalBusiness", name: "ReadyNest" },
               areaServed: "Bucks County, PA",
-              offers: { "@type": "Offer", price: "795", priceCurrency: "USD" },
+              offers: { "@type": "Offer", price: "945", priceCurrency: "USD" },
             },
             {
               "@context": "https://schema.org",
               "@type": "Service",
               name: "Whole-Home Aging-in-Place Package",
               description:
-                "Comprehensive whole-home assessment plus Bathroom, Entry, and Stair packages with smart doorbell and door lever upgrades. From $2,950.",
+                "Comprehensive whole-home assessment plus Bathroom, Entry, and Stair packages with smart doorbell and door lever upgrades. From $3,450.",
               provider: { "@type": "LocalBusiness", name: "ReadyNest" },
               areaServed: "Bucks County, PA",
-              offers: { "@type": "Offer", price: "2950", priceCurrency: "USD" },
+              offers: { "@type": "Offer", price: "3450", priceCurrency: "USD" },
             },
             {
               "@context": "https://schema.org",
