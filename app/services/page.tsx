@@ -113,7 +113,7 @@ const packages = [
       "Bathroom Safety Package (Standard tier)",
       "Entry & Exit Safety Package",
       "Stair & Hallway Safety Package",
-      "Smart doorbell + phone app setup",
+      "Smart doorbell + phone app setup (Ring tier supplied)",
       "Up to 4 lever door handles replaced",
       "30-day follow-up check-in visit",
     ],
@@ -263,9 +263,7 @@ const showerConversionTiers = [
 const quickWinsItems = [
   { service: "Single Grab Bar Install", price: "$195" },
   { service: "Two Grab Bars (same visit)", price: "$325" },
-  { service: "Smart Doorbell Install + App Setup (customer supplies doorbell)", price: "$165" },
-  { service: "Smart Doorbell Supplied + Installed — Ring tier", price: "$329" },
-  { service: "Smart Doorbell Supplied + Installed — Premium tier (Nest)", price: "$395" },
+  { service: "Smart Doorbell Install + App Setup", price: "from $165" },
 ];
 
 const everythingIncluded = [
