@@ -1,10 +1,6 @@
 ﻿import type { Metadata } from "next";
 import Link from "next/link";
 import {
-  ShieldCheck,
-  DoorOpen,
-  ArrowUpDown,
-  Trash2,
   Phone,
   ArrowRight,
   BadgeCheck,
@@ -12,11 +8,17 @@ import {
   ClipboardList,
   User,
   Heart,
-  Users,
 } from "lucide-react";
 import ContactForm from "@/components/ContactForm";
 import HeroIllustration from "@/components/sections/HeroIllustration";
 import AnimatedSection from "@/components/sections/AnimatedSection";
+import ServicesGrid from "@/components/ServicesGrid";
+import Headshot from "@/components/Headshot";
+import Credentials from "@/components/Credentials";
+import RecentWork from "@/components/RecentWork";
+import Reviews from "@/components/Reviews";
+import { SITE_URL, GOOGLE_BUSINESS_URL } from "@/lib/site";
+import { towns } from "@/lib/towns";
 
 export const metadata: Metadata = {
   title: { absolute: "Aging-in-Place Home Safety Modifications | ReadyNest — Bucks County, PA" },
@@ -31,36 +33,47 @@ export const metadata: Metadata = {
   },
 };
 
-const services = [
-  {
-    icon: <ShieldCheck size={28} strokeWidth={1.5} />,
-    name: "Bathroom Safety",
-    description:
-      "Grab bars, walk-in shower conversions, raised toilet seats, and non-slip surfaces — the bathroom is where most falls happen.",
-    href: "/services#bathroom-safety",
+const localBusinessSchema = {
+  "@context": "https://schema.org",
+  "@type": "HomeAndConstructionBusiness",
+  "@id": `${SITE_URL}/#business`,
+  name: "ReadyNest",
+  legalName: "Gulko Construction LLC",
+  description:
+    "Aging-in-place home safety modifications for seniors and families in Bucks County, PA — grab bars, ramps, stair railings, walk-in showers, and smart home safety. Every job assessed and signed off by Slav, a Certified Aging-in-Place Specialist.",
+  url: SITE_URL,
+  logo: `${SITE_URL}/images/ReadyNest_home_prep_logo.png`,
+  image: `${SITE_URL}/images/ReadyNest_home_prep_logo.png`,
+  telephone: "+1-267-717-9119",
+  email: "info@readynestpa.com",
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Doylestown",
+    addressRegion: "PA",
+    addressCountry: "US",
   },
-  {
-    icon: <DoorOpen size={28} strokeWidth={1.5} />,
-    name: "Entry & Exit Safety",
-    description:
-      "Threshold ramps, handrails, keyless entry, and exterior lighting so getting in and out of home is confident and safe.",
-    href: "/services#entry-exit",
-  },
-  {
-    icon: <ArrowUpDown size={28} strokeWidth={1.5} />,
-    name: "Stairs & Hallways",
-    description:
-      "Double-sided stair railings, improved hallway lighting, contrast strips, and clear path modifications throughout the home.",
-    href: "/services#stairs-hallways",
-  },
-  {
-    icon: <Trash2 size={28} strokeWidth={1.5} />,
-    name: "Trash Valet",
-    description:
-      "Weekly curb-and-back trash and recycling service. No heavy lifting, no icy driveways — just taken care of.",
-    href: "/services#trash-valet",
-  },
-];
+  areaServed: [
+    { "@type": "AdministrativeArea", name: "Bucks County, PA" },
+    ...towns.map((town) => ({ "@type": "City", name: `${town.name}, PA` })),
+    { "@type": "City", name: "Ottsville, PA" },
+  ],
+  openingHoursSpecification: [
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      opens: "07:00",
+      closes: "19:00",
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: "Saturday",
+      opens: "08:00",
+      closes: "16:00",
+    },
+  ],
+  priceRange: "$$",
+  ...(GOOGLE_BUSINESS_URL ? { sameAs: [GOOGLE_BUSINESS_URL] } : {}),
+};
 
 const trustPoints = [
   {
@@ -99,13 +112,18 @@ const steps = [
   {
     number: "3",
     title: "Expert Installation",
-    body: "Slav installs everything to code with clean, professional results. Most jobs are completed in a single visit.",
+    body: "Installed to code by Slav or his trained, insured team — and Slav personally does the final walkthrough with you. Most jobs are completed in a single visit.",
   },
 ];
 
 export default function HomePage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
+      />
+
       {/* ── HERO ─────────────────────────────────────────────── */}
       <section className="relative hero-pattern overflow-hidden py-20 md:py-28 lg:py-36">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -263,46 +281,12 @@ export default function HomePage() {
                 Every Room. Every Risk. Covered.
               </h2>
               <p className="text-gray-500 text-lg max-w-2xl mx-auto">
-                From the bathroom floor to the front door, ReadyNest addresses every fall risk and mobility challenge — one trusted installer, start to finish.
+                From the bathroom floor to the front door, ReadyNest addresses every fall risk and mobility challenge — one accountable owner, start to finish.
               </p>
             </div>
           </AnimatedSection>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {services.map((service, i) => (
-              <AnimatedSection key={service.name} delay={i * 0.08}>
-                <div className="bg-beige rounded-2xl p-7 card-hover h-full flex flex-col">
-                  <div className="text-gold mb-4">{service.icon}</div>
-                  <h3 className="font-serif text-xl text-charcoal mb-2">{service.name}</h3>
-                  <p className="text-gray-500 text-sm leading-relaxed flex-1">{service.description}</p>
-                  <Link
-                    href={service.href}
-                    className="mt-5 inline-flex items-center gap-1.5 text-gold text-sm font-medium hover:gap-2.5 transition-all"
-                  >
-                    Learn more <ArrowRight size={15} />
-                  </Link>
-                </div>
-              </AnimatedSection>
-            ))}
-
-            {/* CTA card */}
-            <AnimatedSection delay={services.length * 0.08}>
-              <div className="bg-gold rounded-2xl p-7 flex flex-col justify-between min-h-[240px]">
-                <div>
-                  <h3 className="font-serif text-xl text-white mb-3">Not sure where to start?</h3>
-                  <p className="text-white/80 text-sm leading-relaxed">
-                    Book a free walk-through. Slav will assess your home room by room and give you a clear, prioritized plan — no cost, no obligation.
-                  </p>
-                </div>
-                <Link
-                  href="/contact"
-                  className="mt-6 inline-flex items-center gap-2 bg-white text-gold font-semibold px-5 py-3 rounded-xl text-sm hover:bg-beige transition-colors self-start"
-                >
-                  Book Free Assessment <ArrowRight size={15} />
-                </Link>
-              </div>
-            </AnimatedSection>
-          </div>
+          <ServicesGrid />
 
           <div className="text-center mt-12">
             <Link
@@ -448,22 +432,9 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
 
-            {/* Headshot placeholder */}
+            {/* Headshot */}
             <AnimatedSection className="flex justify-center lg:justify-start">
-              <div className="relative">
-                {/* Circular photo placeholder */}
-                <div
-                  className="w-64 h-64 md:w-80 md:h-80 rounded-full bg-beige border-4 border-gold/20 flex items-center justify-center"
-                  aria-label="Photo of Slav — coming soon"
-                >
-                  <div className="text-center text-gray-400">
-                    <Users size={48} strokeWidth={1} className="mx-auto mb-2 text-gold/40" />
-                    <p className="text-xs">Photo coming soon</p>
-                  </div>
-                </div>
-                {/* Gold ring decoration */}
-                <div className="absolute -inset-3 rounded-full border-2 border-gold/15 pointer-events-none" />
-              </div>
+              <Headshot />
             </AnimatedSection>
 
             {/* Text */}
@@ -486,8 +457,19 @@ export default function HomePage() {
             </AnimatedSection>
 
           </div>
+
+          {/* Credentials strip */}
+          <AnimatedSection delay={0.15} className="mt-14">
+            <Credentials />
+          </AnimatedSection>
         </div>
       </section>
+
+      {/* ── RECENT WORK ──────────────────────────────────────── */}
+      <RecentWork />
+
+      {/* ── WHAT CLIENTS SAY ─────────────────────────────────── */}
+      <Reviews />
 
       {/* ── SAFETY CHECKLIST CTA ─────────────────────────────── */}
       <section className="bg-gold py-16 md:py-20" aria-label="Free safety checklist">
@@ -532,17 +514,17 @@ export default function HomePage() {
               <ContactForm dark />
 
               <div className="mt-8 pt-6 border-t border-white/10 text-center space-y-2">
-                <p className="text-gray-400 text-sm">Or reach Slav directly:</p>
-                <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <p className="text-gray-400 text-sm">
+                  Call or text{" "}
                   <a
                     href="tel:+12677179119"
-                    className="flex items-center gap-2 text-gold font-semibold hover:text-white transition-colors"
-                    aria-label="Call ReadyNest"
+                    className="text-gold font-semibold hover:text-white transition-colors"
+                    aria-label="Call or text ReadyNest at 267-717-9119"
                   >
-                    <Phone size={16} />
                     267-717-9119
                   </a>
-                  <span className="hidden sm:block text-white/20">|</span>
+                </p>
+                <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                   <a
                     href="mailto:info@readynestpa.com"
                     className="text-gold font-semibold hover:text-white transition-colors"

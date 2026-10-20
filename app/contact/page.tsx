@@ -1,7 +1,9 @@
 ﻿import type { Metadata } from "next";
-import { Phone, Mail, Clock, MapPin } from "lucide-react";
+import { Phone, Mail, Clock, MapPin, ShieldCheck } from "lucide-react";
 import ContactForm from "@/components/ContactForm";
 import AnimatedSection from "@/components/sections/AnimatedSection";
+import { normalizeServiceParam } from "@/lib/contact";
+import { PA_HIC_LINE } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: { absolute: "Contact ReadyNest | Book a Free Home Safety Assessment, Bucks County" },
@@ -23,7 +25,7 @@ export default async function ContactPage({
   searchParams: Promise<{ service?: string }>;
 }) {
   const params = await searchParams;
-  const defaultService = params.service ?? "";
+  const defaultService = normalizeServiceParam(params.service);
 
   return (
     <>
@@ -124,6 +126,17 @@ export default async function ContactPage({
                           Response Time
                         </p>
                         <p className="text-white font-medium text-sm">Usually same day</p>
+                      </div>
+                    </li>
+                    <li className="flex items-start gap-4">
+                      <div className="shrink-0 w-10 h-10 rounded-xl bg-gold/15 flex items-center justify-center text-gold">
+                        <ShieldCheck size={20} strokeWidth={1.5} />
+                      </div>
+                      <div>
+                        <p className="text-gray-400 text-xs uppercase tracking-wide mb-0.5">
+                          License &amp; Insurance
+                        </p>
+                        <p className="text-white font-medium text-sm">{PA_HIC_LINE}</p>
                       </div>
                     </li>
                   </ul>
