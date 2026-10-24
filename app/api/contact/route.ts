@@ -1,8 +1,6 @@
 ﻿import { NextRequest, NextResponse } from "next/server";
 import { Resend } from "resend";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
-
 interface ContactPayload {
   name: string;
   email: string;
@@ -30,6 +28,9 @@ export async function POST(request: NextRequest) {
     if (!emailRegex.test(body.email)) {
       return NextResponse.json({ error: "Invalid email address" }, { status: 400 });
     }
+
+    // Created per request so builds (e.g. Vercel previews) don't fail without RESEND_API_KEY.
+    const resend = new Resend(process.env.RESEND_API_KEY);
 
     await resend.emails.send({
       from: "ReadyNest Website <noreply@readynestpa.com>",
