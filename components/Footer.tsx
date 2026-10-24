@@ -16,6 +16,7 @@ const quickLinks = [
   { href: "/process", label: "Our Process" },
   { href: "/for-families", label: "For Families" },
   { href: "/who-pays", label: "Who Pays?" },
+  { href: "/for-clinicians", label: "For OTs, PTs & Discharge Planners" },
   { href: "/faq", label: "FAQ" },
   { href: "/about", label: "About Slav" },
   { href: "/contact", label: "Contact" },
@@ -121,7 +122,7 @@ export default function Footer() {
       <div className="border-t border-white/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 flex flex-col sm:flex-row items-center justify-between gap-2">
           <p className="text-gray-500 text-xs text-center sm:text-left">
-            &copy; {new Date().getFullYear()} ReadyNest, a DBA of Gulko Construction LLC · PA HIC #{PA_HIC_NUMBER} · Insured · Bucks County, Pennsylvania
+            &copy; {new Date().getFullYear()} ReadyNest, a DBA of Gulko Construction LLC · PA HIC #{PA_HIC_NUMBER} · Fully Insured · Bucks County, Pennsylvania
           </p>
           <p className="text-gray-500 text-xs">
             Aging-in-Place Specialists

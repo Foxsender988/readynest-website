@@ -1,4 +1,5 @@
 import { Award, BadgeCheck, ShieldCheck } from "lucide-react";
+import { PA_HIC_NUMBER } from "@/lib/site";
 
 const credentials = [
   {
@@ -7,7 +8,7 @@ const credentials = [
   },
   {
     icon: <BadgeCheck size={20} strokeWidth={1.5} />,
-    label: "PA Licensed Home Improvement Contractor",
+    label: `PA Registered Home Improvement Contractor (#${PA_HIC_NUMBER})`,
   },
   {
     icon: <ShieldCheck size={20} strokeWidth={1.5} />,

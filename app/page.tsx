@@ -17,7 +17,7 @@ import Headshot from "@/components/Headshot";
 import Credentials from "@/components/Credentials";
 import RecentWork from "@/components/RecentWork";
 import Reviews from "@/components/Reviews";
-import { SITE_URL, GOOGLE_BUSINESS_URL } from "@/lib/site";
+import { SITE_URL, GOOGLE_BUSINESS_URL, SHOW_REVIEWS } from "@/lib/site";
 import { towns } from "@/lib/towns";
 
 export const metadata: Metadata = {
@@ -469,7 +469,7 @@ export default function HomePage() {
       <RecentWork />
 
       {/* ── WHAT CLIENTS SAY ─────────────────────────────────── */}
-      <Reviews />
+      {SHOW_REVIEWS && <Reviews />}
 
       {/* ── SAFETY CHECKLIST CTA ─────────────────────────────── */}
       <section className="bg-gold py-16 md:py-20" aria-label="Free safety checklist">

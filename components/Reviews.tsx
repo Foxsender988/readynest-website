@@ -58,16 +58,18 @@ export default function Reviews() {
           ))}
         </div>
 
-        <div className="text-center mt-12">
-          <a
-            href={GOOGLE_REVIEWS_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 border-2 border-gold text-gold font-semibold px-7 py-3.5 rounded-xl hover:bg-gold hover:text-white transition-colors"
-          >
-            Read our Google reviews <ArrowRight size={16} />
-          </a>
-        </div>
+        {GOOGLE_REVIEWS_URL && (
+          <div className="text-center mt-12">
+            <a
+              href={GOOGLE_REVIEWS_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 border-2 border-gold text-gold font-semibold px-7 py-3.5 rounded-xl hover:bg-gold hover:text-white transition-colors"
+            >
+              Read our Google reviews <ArrowRight size={16} />
+            </a>
+          </div>
+        )}
       </div>
     </section>
   );
