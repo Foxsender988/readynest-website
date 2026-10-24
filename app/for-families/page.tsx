@@ -81,7 +81,7 @@ const situations = [
 const pricingItems = [
   {
     label: "Entry packages",
-    range: "From $725",
+    range: "From $1,195",
     description:
       "Entry & Exit or Stair & Hallway safety — installed in a single visit, labor and materials included.",
   },
@@ -89,11 +89,11 @@ const pricingItems = [
     label: "Bathroom Safety Package",
     range: "$995",
     description:
-      "Most-referred package. Grab bars, non-slip treatment, shower bench, nightlight, and safety walkthrough.",
+      "Most-referred package. Up to 3 grab bars, non-slip treatment, motion-sensor nightlight, and a written home safety walkthrough report.",
   },
   {
     label: "Whole-home safety",
-    range: "From $3,450",
+    range: "From $3,950",
     description:
       "Comprehensive aging-in-place modifications across every area of the home.",
   },

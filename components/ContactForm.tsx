@@ -4,6 +4,7 @@ import { useForm } from "react-hook-form";
 import { useState } from "react";
 import { Send, CheckCircle, AlertCircle } from "lucide-react";
 import clsx from "clsx";
+import { SERVICE_OPTIONS } from "@/lib/contact";
 
 type FormData = {
   name: string;
@@ -16,27 +17,12 @@ type FormData = {
   message: string;
 };
 
-const services = [
-  "Free Home Safety Assessment",
-  "Bathroom Safety Package — $995",
-  "Bathroom Safety Premium — $1,850",
-  "Entry & Exit Safety Package — $725",
-  "Stair & Hallway Safety Package — $945",
-  "Whole-Home Aging-in-Place Package",
-  "Whole-Home Premium",
-  "Walk-In Shower Conversion",
-  "Safety Watch Subscription",
-  "Home Care Plan Subscription",
-  "Trash Valet Service",
-  "Quick Wins / Individual Service",
-  "Other / Not sure yet",
-];
-
 const forWhomOptions = ["Myself", "A parent or family member", "Other"];
 const contactOptions = ["Phone call", "Text message", "Email"];
 
 interface ContactFormProps {
   dark?: boolean;
+  /** Must be one of SERVICE_OPTIONS (use normalizeServiceParam for query values). */
   defaultService?: string;
 }
 
@@ -49,7 +35,7 @@ export default function ContactForm({ dark = false, defaultService = "" }: Conta
     reset,
     formState: { errors },
   } = useForm<FormData>({
-    defaultValues: { service: defaultService },
+    defaultValues: { service: defaultService, preferredContact: "Text message" },
   });
 
   const onSubmit = async (data: FormData) => {
@@ -199,7 +185,7 @@ export default function ContactForm({ dark = false, defaultService = "" }: Conta
           {...register("service", { required: "Please select a service" })}
         >
           <option value="">Select a service...</option>
-          {services.map((s) => (
+          {SERVICE_OPTIONS.map((s) => (
             <option key={s} value={s}>
               {s}
             </option>

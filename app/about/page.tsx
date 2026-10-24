@@ -1,12 +1,13 @@
 ﻿import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight, Phone, Users } from "lucide-react";
+import { ArrowRight, Phone } from "lucide-react";
+import Headshot from "@/components/Headshot";
 import AnimatedSection from "@/components/sections/AnimatedSection";
 
 export const metadata: Metadata = {
   title: { absolute: "About Slav | ReadyNest — Aging-in-Place Specialist, Bucks County, PA" },
   description:
-    "Meet Slav, the owner of ReadyNest. Licensed and insured aging-in-place specialist personally installing every safety modification in Bucks County, PA.",
+    "Meet Slav, the owner of ReadyNest. Licensed and insured aging-in-place specialist who assesses and signs off on every safety modification in Bucks County, PA.",
   alternates: { canonical: "https://readynestpa.com/about" },
   openGraph: {
     title: "About Slav | ReadyNest — Aging-in-Place Specialist, Bucks County",
@@ -18,8 +19,8 @@ export const metadata: Metadata = {
 
 const differentiators = [
   {
-    title: "One person does everything",
-    body: "Slav installs every modification himself. You're not getting a rotating crew of strangers — you get the same face at assessment and installation.",
+    title: "One person accountable for everything",
+    body: "Slav assesses every home and signs off on every job. Installation is done by Slav or his trained, insured team — not a rotating crew of strangers — and Slav does the final walkthrough with you.",
   },
   {
     title: "Written reports every time",
@@ -70,29 +71,9 @@ export default function AboutPage() {
       <section className="bg-white py-20 md:py-28" aria-labelledby="story-heading">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-16 items-start">
-            {/* Headshot placeholder */}
+            {/* Headshot */}
             <AnimatedSection className="flex justify-center md:justify-start">
-              {/* TODO: Replace with Slav's headshot photo */}
-              <div className="relative">
-                <div
-                  className="w-64 h-64 md:w-72 md:h-72 rounded-full bg-beige border-4 border-gold/20 flex items-center justify-center"
-                  aria-label="Photo of Slav — coming soon"
-                >
-                  <div className="text-center text-gray-400">
-                    <Users
-                      size={52}
-                      strokeWidth={1}
-                      className="mx-auto mb-2 text-gold/40"
-                    />
-                    <p className="text-xs">Photo coming soon</p>
-                  </div>
-                </div>
-                {/* Gold ring decoration */}
-                <div
-                  className="absolute -inset-3 rounded-full border-2 border-gold/15 pointer-events-none"
-                  aria-hidden="true"
-                />
-              </div>
+              <Headshot size="md" />
             </AnimatedSection>
 
             {/* Story text */}
@@ -146,8 +127,8 @@ export default function AboutPage() {
               accountable for the result.
             </p>
             <p className="text-gray-500 text-sm leading-relaxed">
-              Core safety installs — grab bars, railings, lighting, ramps — are done by Slav
-              personally, as they always have been.
+              Core safety installs — grab bars, railings, lighting, ramps — are assessed and
+              signed off by Slav, and installed by Slav or his trained team.
             </p>
           </AnimatedSection>
         </div>

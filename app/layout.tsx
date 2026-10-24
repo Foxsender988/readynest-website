@@ -71,47 +71,6 @@ export const metadata: Metadata = {
   },
 };
 
-const structuredData = {
-  "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  name: "ReadyNest",
-  description:
-    "Aging-in-place home safety modifications for seniors and families in Bucks County, PA — grab bars, ramps, stair railings, smart home safety, and more. Assessed and overseen personally by Slav.",
-  url: "https://readynestpa.com",
-  telephone: "+1-267-717-9119",
-  email: "info@readynestpa.com",
-  address: {
-    "@type": "PostalAddress",
-    addressLocality: "Doylestown",
-    addressRegion: "PA",
-    addressCountry: "US",
-  },
-  areaServed: [
-    { "@type": "City", name: "Doylestown" },
-    { "@type": "City", name: "New Hope" },
-    { "@type": "City", name: "Newtown" },
-    { "@type": "City", name: "Buckingham" },
-    { "@type": "City", name: "Plumsteadville" },
-    { "@type": "City", name: "Warrington" },
-    { "@type": "City", name: "Chalfont" },
-    { "@type": "City", name: "Yardley" },
-    { "@type": "City", name: "Richboro" },
-    { "@type": "City", name: "Southampton" },
-    { "@type": "City", name: "Langhorne" },
-    { "@type": "City", name: "Ottsville" },
-  ],
-  openingHours: ["Mo-Fr 07:00-19:00", "Sa 08:00-16:00"],
-  priceRange: "$",
-  serviceType: [
-    "Bathroom Safety Modifications",
-    "Entry and Exit Safety",
-    "Stair and Hallway Safety",
-    "Smart Home Safety",
-    "Trash Valet for Seniors",
-    "Aging-in-Place Home Assessment",
-  ],
-};
-
 export default function RootLayout({
   children,
 }: {
@@ -125,10 +84,6 @@ export default function RootLayout({
           rel="preconnect"
           href="https://fonts.gstatic.com"
           crossOrigin="anonymous"
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
         />
       </head>
       <body className="font-sans antialiased">

@@ -4,72 +4,91 @@ import {
   ShieldCheck,
   DoorOpen,
   ArrowUpDown,
-  Trash2,
+  Lightbulb,
   ArrowRight,
   Phone,
   Home,
   Calendar,
-  Tag,
   CheckCircle,
 } from "lucide-react";
 import AnimatedSection from "@/components/sections/AnimatedSection";
+import type { ServiceOption } from "@/lib/contact";
 
 export const metadata: Metadata = {
   title: { absolute: "Home Safety Services | ReadyNest — Aging-in-Place Modifications, Bucks County, PA" },
   description:
-    "Safety packages, subscriptions, and Trash Valet from ReadyNest in Bucks County, PA. Free in-home assessment included with every inquiry. Call 267-717-9119.",
+    "Bathroom, entry, stair, and whole-home safety packages, walk-in shower conversions, and individual installs from ReadyNest in Bucks County, PA. Free in-home assessment. Call 267-717-9119.",
   alternates: { canonical: "https://readynestpa.com/services" },
   openGraph: {
     title: "Home Safety Services | ReadyNest — Bucks County, PA",
     description:
-      "Bathroom safety packages from $725, Whole-Home aging-in-place from $3,450, Safety Watch subscriptions, and weekly Trash Valet. Personally installed by Slav in Bucks County, PA.",
+      "Safety packages from $995, Whole-Home aging-in-place from $3,950, walk-in shower conversions, and individual installs. Assessed and signed off by Slav; installed by Slav or his trained team in Bucks County, PA.",
     url: "https://readynestpa.com/services",
   },
 };
 
 // ─── Data (sourced from ReadyNest_Pricing_Sourcing_Reference.pdf) ─────────────
 
-const packages = [
+type Package = {
+  id?: string;
+  name: string;
+  service: ServiceOption;
+  price: string;
+  badge: string | null;
+  badgeStyle: string;
+  includesLabel: string;
+  note: string | null;
+  includes: string[];
+  addOns?: { item: string; price: string }[];
+  icon: React.ReactNode;
+};
+
+const packages: Package[] = [
   {
+    id: "bathroom-safety",
     name: "Bathroom Safety Package",
-    slug: "Bathroom Safety Package — $995",
+    service: "Bathroom Safety",
     price: "$995",
     badge: "Most Popular",
     badgeStyle: "bg-gold text-white",
     includesLabel: "WHAT'S INCLUDED",
     note: "Most-purchased package. Most-referred-to by physical therapists, OTs, and hospital discharge planners.",
     includes: [
-      "2 ADA-rated stainless grab bars (Moen Home Care or Delta) — shower + toilet area",
+      "Up to 3 ADA-rated stainless grab bars (Moen Home Care or Delta), placed where your assessment shows the risk — typically shower back wall, shower entry, and toilet",
       "Non-slip mat or applied tread in tub/shower",
-      "Folding shower bench OR transfer seat (your choice)",
-      "Comfort-height toilet install (customer supplies)",
       "Plug-in motion-sensor nightlight",
-      "30-minute walkthrough of remaining bathroom hazards with written list",
+      "Written home safety walkthrough report (prioritized list for the rest of the home)",
+    ],
+    addOns: [
+      { item: "Additional grab bar (4th+)", price: "$150 each" },
+      { item: "Fold-down shower bench", price: "$395 installed" },
+      { item: "Comfort-height toilet install (customer supplied)", price: "$275" },
+      { item: "Handheld shower with slide bar", price: "$225" },
+      { item: "Designer finish upgrade (e.g., Brizo, Kohler)", price: "Quoted" },
     ],
     icon: <ShieldCheck size={26} strokeWidth={1.4} />,
   },
   {
     name: "Bathroom Safety Premium",
-    slug: "Bathroom Safety Premium — $1,850",
-    price: "$1,850",
+    service: "Bathroom Safety",
+    price: "$2,695",
     badge: "Premium",
     badgeStyle: "bg-accent-dark text-white",
     includesLabel: "EVERYTHING IN STANDARD, PLUS",
-    note: null,
+    note: "Anti-scald / pressure-balance valve available — quoted after assessment.",
     includes: [
-      "All 6 items from Bathroom Safety Package above, plus:",
       "ADA-rated comfort-height toilet supplied AND installed (KOHLER Cimarron or equivalent)",
-      "3rd grab bar (typically near sink/vanity)",
-      "Curbless or low-threshold mat upgrade",
+      "Fold-down shower bench",
       "Hardwired motion-sensor vanity light",
-      "Anti-scald valve install (if compatible plumbing)",
+      "Handheld shower with slide bar",
     ],
     icon: <ShieldCheck size={26} strokeWidth={1.4} />,
   },
   {
+    id: "entry-exit",
     name: "Entry & Exit Safety Package",
-    slug: "Entry & Exit Safety Package — $725",
-    price: "$725",
+    service: "Stairs, Entry & Lighting",
+    price: "$1,295",
     badge: null,
     badgeStyle: "",
     includesLabel: "WHAT'S INCLUDED",
@@ -84,15 +103,16 @@ const packages = [
     icon: <DoorOpen size={26} strokeWidth={1.4} />,
   },
   {
+    id: "stairs-hallways",
     name: "Stair & Hallway Safety Package",
-    slug: "Stair & Hallway Safety Package — $945",
-    price: "$945",
+    service: "Stairs, Entry & Lighting",
+    price: "$1,195",
     badge: null,
     badgeStyle: "",
     includesLabel: "WHAT'S INCLUDED",
-    note: null,
+    note: "Second-side rail: +$450.",
     includes: [
-      "Sturdy handrail install on one flight (both sides if no existing rail)",
+      "Sturdy handrail installed on one flight (one side)",
       "Non-slip stair treads on one flight",
       "Motion-sensor lighting at top + bottom of stairs",
       "3 hallway plug-in nightlights",
@@ -102,8 +122,8 @@ const packages = [
   },
   {
     name: "Whole-Home Aging-in-Place Package",
-    slug: "Whole-Home Aging-in-Place Package",
-    price: "From $3,450",
+    service: "Free Home Safety Assessment",
+    price: "From $3,950",
     badge: "Best Value",
     badgeStyle: "bg-gold text-white",
     includesLabel: "WHAT'S INCLUDED",
@@ -121,8 +141,8 @@ const packages = [
   },
   {
     name: "Whole-Home Premium",
-    slug: "Whole-Home Premium",
-    price: "$5,500–$8,000",
+    service: "Free Home Safety Assessment",
+    price: "From $6,950",
     badge: "Premium",
     badgeStyle: "bg-accent-dark text-white",
     includesLabel: "QUOTED AFTER ASSESSMENT — TYPICALLY INCLUDES",
@@ -137,6 +157,10 @@ const packages = [
     icon: <Home size={26} strokeWidth={1.4} />,
   },
 ];
+
+// Subscriptions (Safety Watch, Home Care Plan) are paused — data and markup are kept
+// below but not rendered while this is false.
+const SHOW_SUBSCRIPTIONS = false;
 
 const safetyWatchTiers = [
   {
@@ -180,54 +204,15 @@ const homeCareTiers = [
   },
 ];
 
-const trashValetTiers = [
-  {
-    name: "Standard",
-    price: "$35/wk",
-    monthly: "$140/mo",
-    description:
-      "Up to 2 cans (trash + recycling) rolled to curb evening before, returned same-day after pickup. Bucks County collection schedule. Weekly text confirmation.",
-  },
-  {
-    name: "Premium",
-    price: "$55/wk",
-    monthly: "$220/mo",
-    description:
-      "Standard service + monthly bin rinse-out + photo confirmation texted weekly (peace of mind for adult children) + bin labels.",
-  },
-  {
-    name: "Snowbird / Vacation",
-    price: "$25/wk",
-    monthly: null,
-    description:
-      "Same as Standard, billed only during weeks you’re away. 1-week minimum, 12-week max. Useful for Florida-bound seniors November through April.",
-  },
-];
-
-const bundles = [
-  {
-    combo: "Bathroom Safety Package + Safety Watch Quarterly",
-    discount: "10% off package + locked-in subscription rate for 12 months",
-  },
-  {
-    combo: "Whole-Home Audit + Trash Valet + Safety Watch Monthly",
-    discount: "15% off audit + first month of trash valet free",
-  },
-  {
-    combo: "Any Tier 2 package + Trash Valet sign-up",
-    discount: "First 4 weeks of trash valet free",
-  },
-];
-
 // ⚠️ SHOWER CONVERSION — PRICES CONFIRMED AS STARTING POINT, NOT FINAL
-// Slav has approved $6,500 / $11,500 as launch starting prices. Revisit both numbers — and
+// Slav has approved $7,500 / $12,500 as launch starting prices. Revisit both numbers — and
 // the "Most Chosen" badge placement below — after the first few real bookings show actual mix.
 const SHOW_SHOWER_CONVERSION = true;
 
 const showerConversionTiers = [
   {
     name: "Accessible Conversion",
-    price: "Starting at $6,500",
+    price: "Starting at $7,500",
     badge: null,
     note: "Most straightforward layouts land in this range. Homes needing plumbing relocation, custom tile, or significant demo typically run higher — confirmed at your free in-home assessment.",
     includes: [
@@ -237,6 +222,7 @@ const showerConversionTiers = [
       "New shower valve/fixture",
       "Anti-scald valve (where plumbing allows)",
     ],
+    notIncludedLabel: "Not included:",
     notIncluded:
       "Custom tile, permits (if required by township), plumbing line relocation beyond minor adjustment — quoted separately if needed.",
   },
@@ -245,7 +231,7 @@ const showerConversionTiers = [
     // that tile/curbless jobs are more common, not yet confirmed by actual bookings. Revisit
     // after the first few jobs and move/remove the badge if the mix says otherwise.
     name: "Custom Tile / Curbless Conversion",
-    price: "Starting at $11,500",
+    price: "Starting at $12,500",
     badge: "Most Chosen",
     note: "Covers most conversions involving tile, a curbless entry, or a full custom layout. Final price depends on shower size, tile selection, and plumbing scope — confirmed at your free in-home assessment.",
     includes: [
@@ -253,17 +239,52 @@ const showerConversionTiers = [
       "Custom tile walls and floor",
       "Linear drain",
       "Waterproofing membrane",
-      "Frameless glass option",
     ],
-    notIncluded: null,
+    notIncludedLabel: "Optional:",
+    notIncluded: "Frameless glass quoted as an option.",
   },
 ];
 
-// Quick Wins — individual service pricing
-const quickWinsItems = [
-  { service: "Single Grab Bar Install", price: "$195" },
-  { service: "Two Grab Bars (same visit)", price: "$325" },
-  { service: "Smart Doorbell Install + App Setup", price: "from $165" },
+// Individual services — à la carte pricing
+const individualServices = [
+  { service: "Single Grab Bar Install", price: "$225" },
+  { service: "Two Grab Bars (same visit)", price: "$375" },
+  { service: "Three Grab Bars (same visit)", price: "$525" },
+  { service: "Handrail, one flight, one side", price: "$595 (second side same visit $450)" },
+  { service: "Non-slip stair treads, one flight", price: "$195" },
+  { service: "Threshold ramp (up to 4″)", price: "$345" },
+  { service: "Interior lever door handle swap", price: "$95 each" },
+  { service: "Exterior lever/lockset", price: "$165 each" },
+  { service: "Motion-sensor ceiling light (battery)", price: "$95 each installed" },
+  { service: "Motion-sensor wall switch (Lutron Maestro)", price: "$165 single-pole / $265 3-way" },
+  { service: "Exterior motion light swap", price: "$225" },
+  { service: "Smart Doorbell Install + App Setup (customer supplied)", price: "$165" },
+  { service: "Smart Doorbell supplied + installed", price: "$295" },
+  { service: "Smart lock supplied + installed", price: "$395" },
+  { service: "New bathroom GFCI outlet (fished circuit)", price: "from $595" },
+  {
+    service: "Home Safety Assessment with written report (standalone, credited toward any package)",
+    price: "$149",
+  },
+];
+
+const smartHomeItems = [
+  {
+    title: "Motion lighting",
+    body: "Battery motion lights for closets, hallways, and stairs, plus exterior motion light swaps at the entry — lights come on before your parent reaches for a switch.",
+  },
+  {
+    title: "Lutron motion switches",
+    body: "Lutron Maestro motion-sensor wall switches replace the existing switch, so bathroom and hallway lights turn on automatically at night.",
+  },
+  {
+    title: "Smart doorbell",
+    body: "Video doorbell installed and set up on your parent's phone (and yours), so they can see who's at the door without rushing to answer it.",
+  },
+  {
+    title: "Leak & smoke alerts",
+    body: "Water leak sensors near the water heater, washer, and toilets, and smart smoke/CO alerts that notify family by phone. Quoted at your assessment.",
+  },
 ];
 
 const everythingIncluded = [
@@ -271,7 +292,7 @@ const everythingIncluded = [
   "Travel to your home (within service area)",
   "Standard mounting hardware (screws, anchors, brackets)",
   "Cleanup and haul-away of packaging",
-  "30-day workmanship guarantee on installation",
+  "1-year workmanship guarantee on installation",
 ];
 
 const notIncluded = [
@@ -315,7 +336,7 @@ export default function ServicesPage() {
               "@type": "Service",
               name: "Bathroom Safety Package",
               description:
-                "ADA-rated grab bars, non-slip treatment, shower bench, nightlight, and safety walkthrough. $995.",
+                "Up to 3 ADA-rated grab bars, non-slip treatment, motion-sensor nightlight, and a written home safety walkthrough report. $995.",
               provider: { "@type": "LocalBusiness", name: "ReadyNest" },
               areaServed: "Bucks County, PA",
               offers: { "@type": "Offer", price: "995", priceCurrency: "USD" },
@@ -325,39 +346,30 @@ export default function ServicesPage() {
               "@type": "Service",
               name: "Entry & Exit Safety Package",
               description:
-                "Threshold ramp, lever door handles, motion-sensor exterior light, and entry lighting. $725.",
+                "Threshold ramp, lever door handles, motion-sensor exterior light, and entry lighting. $1,295.",
               provider: { "@type": "LocalBusiness", name: "ReadyNest" },
               areaServed: "Bucks County, PA",
-              offers: { "@type": "Offer", price: "725", priceCurrency: "USD" },
+              offers: { "@type": "Offer", price: "1295", priceCurrency: "USD" },
             },
             {
               "@context": "https://schema.org",
               "@type": "Service",
               name: "Stair & Hallway Safety Package",
               description:
-                "Handrail installation, non-slip stair treads, motion-sensor lighting, and nightlights. $945.",
+                "Handrail installation, non-slip stair treads, motion-sensor lighting, and nightlights. $1,195.",
               provider: { "@type": "LocalBusiness", name: "ReadyNest" },
               areaServed: "Bucks County, PA",
-              offers: { "@type": "Offer", price: "945", priceCurrency: "USD" },
+              offers: { "@type": "Offer", price: "1195", priceCurrency: "USD" },
             },
             {
               "@context": "https://schema.org",
               "@type": "Service",
               name: "Whole-Home Aging-in-Place Package",
               description:
-                "Comprehensive whole-home assessment plus Bathroom, Entry, and Stair packages with smart doorbell and door lever upgrades. From $3,450.",
+                "Comprehensive whole-home assessment plus Bathroom, Entry, and Stair packages with smart doorbell and door lever upgrades. From $3,950.",
               provider: { "@type": "LocalBusiness", name: "ReadyNest" },
               areaServed: "Bucks County, PA",
-              offers: { "@type": "Offer", price: "3450", priceCurrency: "USD" },
-            },
-            {
-              "@context": "https://schema.org",
-              "@type": "Service",
-              name: "Trash Valet",
-              description:
-                "Weekly trash and recycling bin service — bins moved to the curb and returned same day, year-round. From $35/week.",
-              provider: { "@type": "LocalBusiness", name: "ReadyNest" },
-              areaServed: "Bucks County, PA",
+              offers: { "@type": "Offer", price: "3950", priceCurrency: "USD" },
             },
           ]),
         }}
@@ -375,7 +387,7 @@ export default function ServicesPage() {
           <p className="text-gray-500 text-xl max-w-2xl mx-auto leading-relaxed">
             Bundled safety packages are the most efficient way to protect a home
             — everything installed in one visit, labor and materials included.
-            Every job personally done by Slav.
+            Every job assessed and signed off by Slav.
           </p>
         </div>
       </section>
@@ -407,7 +419,10 @@ export default function ServicesPage() {
           <div className="grid md:grid-cols-2 gap-6">
             {packages.map((pkg, i) => (
               <AnimatedSection key={pkg.name} delay={i * 0.07}>
-                <div className="bg-white rounded-2xl border border-soft-gray p-7 flex flex-col h-full relative shadow-sm hover:shadow-md transition-shadow">
+                <div
+                  id={pkg.id}
+                  className="bg-white rounded-2xl border border-soft-gray p-7 flex flex-col h-full relative shadow-sm hover:shadow-md transition-shadow scroll-mt-28"
+                >
                   {/* Badge */}
                   {pkg.badge && (
                     <span
@@ -448,6 +463,26 @@ export default function ServicesPage() {
                     ))}
                   </ul>
 
+                  {/* Popular add-ons */}
+                  {pkg.addOns && (
+                    <div className="mb-6 rounded-xl bg-beige px-4 py-4">
+                      <p className="text-charcoal text-xs font-semibold tracking-wider uppercase mb-2.5">
+                        Popular add-ons
+                      </p>
+                      <ul className="space-y-1.5">
+                        {pkg.addOns.map((addOn) => (
+                          <li
+                            key={addOn.item}
+                            className="flex items-start justify-between gap-3 text-gray-600 text-xs leading-relaxed"
+                          >
+                            <span>{addOn.item}</span>
+                            <span className="text-gold font-semibold whitespace-nowrap">{addOn.price}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+
                   {/* Italic note */}
                   {pkg.note && (
                     <p className="text-gray-400 text-xs italic mb-5 leading-relaxed">
@@ -457,7 +492,7 @@ export default function ServicesPage() {
 
                   {/* CTA */}
                   <Link
-                    href={`/contact?service=${encodeURIComponent(pkg.slug)}`}
+                    href={`/contact?service=${encodeURIComponent(pkg.service)}`}
                     className="inline-flex items-center justify-center gap-2 bg-gold text-white font-semibold px-5 py-3 rounded-xl hover:bg-[#a07d46] transition-colors text-sm w-full mt-auto"
                   >
                     Request This Package
@@ -470,7 +505,8 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* ── 3. Subscriptions ── */}
+      {/* ── 3. Subscriptions (feature-flagged — SHOW_SUBSCRIPTIONS) ── */}
+      {SHOW_SUBSCRIPTIONS && (
       <section
         id="subscriptions"
         className="bg-beige py-20 md:py-24 border-b border-soft-gray"
@@ -606,87 +642,7 @@ export default function ServicesPage() {
           </AnimatedSection>
         </div>
       </section>
-
-      {/* ── 4. Trash Valet ── */}
-      <section
-        id="trash-valet"
-        className="bg-white py-20 md:py-24 border-b border-soft-gray"
-        aria-labelledby="trash-valet-heading"
-      >
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <AnimatedSection>
-            <div className="flex items-center gap-3 mb-2">
-              <Trash2 size={20} className="text-gold shrink-0" />
-              <p className="text-gold text-sm font-semibold tracking-wider uppercase">
-                Trash Valet Subscription
-              </p>
-            </div>
-            <h2
-              id="trash-valet-heading"
-              className="font-serif text-4xl text-charcoal mb-3"
-            >
-              We Handle the Bins. Every Week.
-            </h2>
-            <p className="text-gray-500 text-base mb-3 max-w-2xl leading-relaxed">
-              Every week, ReadyNest rolls trash and recycling cans from the side or
-              back of the house to the curb the evening before pickup, then returns
-              them after collection. Confirmation text sent each week. No contracts.
-            </p>
-            <p className="text-gray-400 text-sm mb-10 max-w-2xl">
-              <strong className="text-charcoal font-semibold">Service area:</strong>{" "}
-              Doylestown 18901/18902, New Britain, Buckingham 18912, Plumsteadville
-              18949 &mdash; other zip codes added once route density supports it.
-            </p>
-
-            <div className="overflow-x-auto rounded-2xl border border-soft-gray mb-6">
-              <table className="w-full text-sm">
-                <thead>
-                  <tr className="bg-charcoal text-white text-left">
-                    <th className="px-5 py-3.5 font-semibold">Tier</th>
-                    <th className="px-5 py-3.5 font-semibold text-right whitespace-nowrap">
-                      Weekly
-                    </th>
-                    <th className="px-5 py-3.5 font-semibold text-right whitespace-nowrap">
-                      Monthly equiv.
-                    </th>
-                    <th className="px-5 py-3.5 font-semibold hidden sm:table-cell">
-                      What&apos;s Included
-                    </th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {trashValetTiers.map((tier, i) => (
-                    <tr
-                      key={tier.name}
-                      className={`border-t border-soft-gray ${i % 2 === 0 ? "bg-white" : "bg-beige/50"}`}
-                    >
-                      <td className="px-5 py-4 text-charcoal font-semibold whitespace-nowrap">
-                        {tier.name}
-                      </td>
-                      <td className="px-5 py-4 text-gold font-bold text-right whitespace-nowrap">
-                        {tier.price}
-                      </td>
-                      <td className="px-5 py-4 text-gray-500 text-right whitespace-nowrap">
-                        {tier.monthly ?? "—"}
-                      </td>
-                      <td className="px-5 py-4 text-gray-500 hidden sm:table-cell leading-relaxed">
-                        {tier.description}
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-
-            <Link
-              href={`/contact?service=${encodeURIComponent("Trash Valet Service")}`}
-              className="inline-flex items-center gap-2 bg-gold text-white font-semibold px-6 py-3.5 rounded-xl hover:bg-[#a07d46] transition-colors"
-            >
-              Start Trash Valet <ArrowRight size={16} />
-            </Link>
-          </AnimatedSection>
-        </div>
-      </section>
+      )}
 
       {/* ── 5a. Walk-In Shower Conversions (feature-flagged — SHOW_SHOWER_CONVERSION) ── */}
       {SHOW_SHOWER_CONVERSION && (
@@ -736,12 +692,12 @@ export default function ServicesPage() {
                     </ul>
                     {tier.notIncluded && (
                       <p className="text-gray-400 text-xs leading-relaxed border-t border-soft-gray pt-4">
-                        <span className="font-semibold text-gray-500">Not included:</span>{" "}
+                        <span className="font-semibold text-gray-500">{tier.notIncludedLabel}</span>{" "}
                         {tier.notIncluded}
                       </p>
                     )}
                     <Link
-                      href={`/contact?service=${encodeURIComponent("Walk-In Shower Conversion")}`}
+                      href={`/contact?service=${encodeURIComponent("Walk-In Shower Conversion" satisfies ServiceOption)}`}
                       className="mt-6 w-full flex items-center justify-center gap-2 bg-gold text-white font-semibold px-5 py-3 rounded-xl hover:bg-[#a07d46] transition-colors text-sm"
                     >
                       Request Assessment <ArrowRight size={15} />
@@ -762,9 +718,54 @@ export default function ServicesPage() {
         </section>
       )}
 
-      {/* ── 5b. Need something specific? (Quick Wins) ── */}
+      {/* ── 5b. Smart Home Safety ── */}
       <section
-        className="bg-beige py-16 md:py-20 border-b border-soft-gray"
+        id="smart-home"
+        className="bg-white py-20 md:py-24 border-b border-soft-gray scroll-mt-20"
+        aria-labelledby="smart-home-heading"
+      >
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <AnimatedSection>
+            <div className="flex items-center gap-3 mb-2">
+              <Lightbulb size={20} className="text-gold shrink-0" />
+              <p className="text-gold text-sm font-semibold tracking-wider uppercase">
+                Smart Home Safety
+              </p>
+            </div>
+            <h2
+              id="smart-home-heading"
+              className="font-serif text-4xl text-charcoal mb-3"
+            >
+              Lights That Turn On. Alerts That Reach You.
+            </h2>
+            <p className="text-gray-500 text-base mb-10 max-w-2xl leading-relaxed">
+              Simple, reliable technology that prevents nighttime falls and gives
+              family a heads-up when something&apos;s wrong. Priced individually
+              &mdash; see the{" "}
+              <a href="#individual-services" className="text-gold font-semibold hover:underline">
+                individual services table
+              </a>{" "}
+              below &mdash; or included in the Whole-Home packages.
+            </p>
+          </AnimatedSection>
+
+          <div className="grid sm:grid-cols-2 gap-6">
+            {smartHomeItems.map((item, i) => (
+              <AnimatedSection key={item.title} delay={i * 0.07}>
+                <div className="bg-beige rounded-2xl p-7 border border-soft-gray h-full">
+                  <h3 className="font-serif text-xl text-charcoal mb-2">{item.title}</h3>
+                  <p className="text-gray-500 text-sm leading-relaxed">{item.body}</p>
+                </div>
+              </AnimatedSection>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── 5c. Need something specific? (Individual services) ── */}
+      <section
+        id="individual-services"
+        className="bg-beige py-16 md:py-20 border-b border-soft-gray scroll-mt-20"
         aria-labelledby="quick-wins-heading"
       >
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -791,7 +792,7 @@ export default function ServicesPage() {
                   </tr>
                 </thead>
                 <tbody>
-                  {quickWinsItems.map((item, i) => (
+                  {individualServices.map((item, i) => (
                     <tr
                       key={item.service}
                       className={`border-t border-soft-gray ${i % 2 === 0 ? "bg-white" : "bg-beige/50"}`}
@@ -828,7 +829,7 @@ export default function ServicesPage() {
                 Call for a Quote
               </a>
               <Link
-                href={`/contact?service=${encodeURIComponent("Quick Wins / Individual Service")}`}
+                href={`/contact?service=${encodeURIComponent("Something else / not sure yet" satisfies ServiceOption)}`}
                 className="inline-flex items-center gap-2 border-2 border-charcoal/25 text-charcoal font-semibold px-7 py-4 rounded-xl hover:border-gold hover:text-gold transition-colors"
               >
                 Book Free Assessment
@@ -896,8 +897,8 @@ export default function ServicesPage() {
                   ))}
                 </ul>
                 <p className="mt-5 text-xs text-gray-400 leading-relaxed">
-                  For Whole-Home and Premium packages, any non-standard materials are
-                  itemized at our actual cost (no markup). You see the receipt.
+                  Premium brands and finishes (e.g., designer grab bars) are quoted at
+                  the time of estimate.
                 </p>
               </div>
             </AnimatedSection>
@@ -905,61 +906,7 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* ── 7. Bundle Discounts ── */}
-      <section
-        className="bg-beige py-16 md:py-20 border-b border-soft-gray"
-        aria-labelledby="bundles-heading"
-      >
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <AnimatedSection>
-            <div className="flex items-center gap-3 mb-2">
-              <Tag size={18} className="text-gold shrink-0" />
-              <p className="text-gold text-sm font-semibold tracking-wider uppercase">
-                Bundle Discounts
-              </p>
-            </div>
-            <h2
-              id="bundles-heading"
-              className="font-serif text-3xl md:text-4xl text-charcoal mb-8"
-            >
-              Save When You Bundle
-            </h2>
-          </AnimatedSection>
-
-          <AnimatedSection delay={0.06}>
-            <div className="overflow-x-auto rounded-2xl border border-soft-gray">
-              <table className="w-full text-sm">
-                <thead>
-                  <tr className="bg-charcoal text-white text-left">
-                    <th className="px-5 py-3.5 font-semibold">Bundle</th>
-                    <th className="px-5 py-3.5 font-semibold">Discount</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {bundles.map((bundle, i) => (
-                    <tr
-                      key={bundle.combo}
-                      className={`border-t border-soft-gray ${i % 2 === 0 ? "bg-white" : "bg-beige/50"}`}
-                    >
-                      <td className="px-5 py-4 text-charcoal font-medium leading-relaxed">
-                        {bundle.combo}
-                      </td>
-                      <td className="px-5 py-4 text-gold font-semibold leading-relaxed">
-                        {bundle.discount}
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-            <p className="mt-4 text-gray-500 text-sm text-center">
-              Ask Slav about bundle pricing when you book your free assessment.
-            </p>
-          </AnimatedSection>
-        </div>
-      </section>
-
-      {/* ── 8. Bottom CTA ── */}
+      {/* ── 7. Bottom CTA ── */}
       <section className="bg-accent-dark py-20" aria-labelledby="services-cta">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <AnimatedSection>
