@@ -19,16 +19,17 @@ import RecentWork from "@/components/RecentWork";
 import Reviews from "@/components/Reviews";
 import { SITE_URL, GOOGLE_BUSINESS_URL, SHOW_REVIEWS } from "@/lib/site";
 import { towns } from "@/lib/towns";
+import { packages } from "@/lib/pricing";
 
 export const metadata: Metadata = {
-  title: { absolute: "Aging-in-Place Home Safety Modifications | ReadyNest — Bucks County, PA" },
+  title: { absolute: "Aging-in-Place Home Safety Modifications | ReadyNest, Bucks County, PA" },
   description:
-    "ReadyNest provides aging-in-place home safety modifications in Bucks County, PA — grab bars, ramps, stair railings, smart home safety. Free home assessment. Call 267-717-9119.",
+    `Aging-in-place home safety in Bucks County, PA: grab bars, ramps, stair railings, smart home safety. ${packages.bathroom.name} ${packages.bathroom.display}. Free 10-minute walkthrough. Call 267-717-9119.`,
   alternates: { canonical: "https://readynestpa.com/" },
   openGraph: {
-    title: "Aging-in-Place Home Safety | ReadyNest — Bucks County, PA",
+    title: "Aging-in-Place Home Safety | ReadyNest, Bucks County, PA",
     description:
-      "Home safety modifications for seniors — grab bars, ramps, stair railings & smart home safety. Personally overseen by Slav in Bucks County, PA. Free assessment.",
+      `Home safety modifications for seniors: grab bars, ramps, stair railings & smart home safety. ${packages.bathroom.name} ${packages.bathroom.display}. Overseen by Slav, CAPS, in Bucks County, PA. Free walkthrough.`,
     url: "https://readynestpa.com/",
   },
 };
@@ -38,9 +39,8 @@ const localBusinessSchema = {
   "@type": "HomeAndConstructionBusiness",
   "@id": `${SITE_URL}/#business`,
   name: "ReadyNest",
-  legalName: "Gulko Construction LLC",
   description:
-    "Aging-in-place home safety modifications for seniors and families in Bucks County, PA — grab bars, ramps, stair railings, walk-in showers, and smart home safety. Every job assessed and signed off by Slav, a Certified Aging-in-Place Specialist.",
+    "Aging-in-place home safety modifications for seniors and families in Bucks County, PA: grab bars, ramps, stair railings, walk-in showers, and smart home safety. Every job assessed and signed off by Slav, CAPS (Certified Aging-in-Place Specialist), Owner.",
   url: SITE_URL,
   logo: `${SITE_URL}/images/ReadyNest_home_prep_logo.png`,
   image: `${SITE_URL}/images/ReadyNest_home_prep_logo.png`,
@@ -79,40 +79,40 @@ const trustPoints = [
   {
     icon: <User size={20} strokeWidth={1.5} />,
     title: "One Point of Accountability",
-    body: "Slav personally assesses your home and signs off on every job, whether he's the one installing it or one of our vetted local trade partners. One number, one person responsible, start to finish.",
+    body: "Slav, CAPS (Certified Aging-in-Place Specialist), personally assesses your home and signs off on every job, whether he's the one installing it or one of our vetted local trade partners. One number, one person responsible, start to finish.",
   },
   {
     icon: <BadgeCheck size={20} strokeWidth={1.5} />,
     title: "Fully Insured",
-    body: "Licensed and insured in Pennsylvania. Your home and your family are protected from the first visit through final install.",
+    body: "PA-registered (HIC #PA220398), insured. Your home and your family are protected from the first visit through final install.",
   },
   {
     icon: <MapPin size={20} strokeWidth={1.5} />,
     title: "Serving Doylestown, New Hope, Newtown + 9 more",
-    body: "We're local to Bucks County — always nearby, never sending a crew from hours away.",
+    body: "We're local to Bucks County: always nearby, never sending a crew from hours away.",
   },
   {
     icon: <ClipboardList size={20} strokeWidth={1.5} />,
-    title: "Free Home Safety Assessment",
-    body: "No pressure, no cost. Slav walks through your home, identifies risks, and gives you a clear plan and honest quote.",
+    title: "Free 10-Minute Walkthrough",
+    body: "No pressure, no cost. Slav walks through with you, points out the risks, and gives you a written flat quote.",
   },
 ];
 
 const steps = [
   {
     number: "1",
-    title: "Free Safety Walk-Through",
-    body: "Slav comes to your home, assesses every room for fall risks and mobility challenges, and answers all your questions — at no charge.",
+    title: "Free 10-Minute Walkthrough",
+    body: "Slav comes to your home, looks at what worries you, and answers your questions at no charge.",
   },
   {
     number: "2",
-    title: "Personalized Safety Plan",
+    title: "Written Flat Quote",
     body: "You receive a clear, prioritized list of recommended modifications with upfront pricing. No surprises, no pressure.",
   },
   {
     number: "3",
     title: "Expert Installation",
-    body: "Installed to code by Slav or his trained, insured team — and Slav personally does the final walkthrough with you. Most jobs are completed in a single visit.",
+    body: "Installed to code by Slav or his trained, insured team, and Slav personally does the final walkthrough with you. Most jobs are completed in a single visit.",
   },
 ];
 
@@ -143,14 +143,14 @@ export default function HomePage() {
                 <span className="text-gold">Stay Independent.</span>
               </h1>
               <p className="text-lg md:text-xl text-gray-600 leading-relaxed mb-10 max-w-xl">
-                ReadyNest helps Bucks County families make their parents&apos; homes safer — without the cost or upheaval of a full remodel. One local owner, fair pricing, same-week service.
+                ReadyNest helps Bucks County families make their parents&apos; homes safer, without the cost or upheaval of a full remodel. One local owner, fair pricing, same-week service.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link
                   href="/contact"
                   className="inline-flex items-center justify-center gap-2 bg-gold text-white font-semibold px-7 py-4 rounded-xl hover:bg-[#a07d46] transition-colors text-base"
                 >
-                  Book Free Assessment
+                  Book Free Walkthrough
                   <ArrowRight size={18} />
                 </Link>
                 <a
@@ -208,7 +208,7 @@ export default function HomePage() {
                 <span className="text-gold">most home falls are preventable.</span>
               </h2>
               <p className="text-gray-600 leading-relaxed mb-5">
-                Falls are the leading cause of injury in older adults — but the vast majority happen because of hazards a professional can identify and fix in a single visit. A grab bar in the shower. A railing on both sides of the stairs. Better lighting in a hallway.
+                Falls are the leading cause of injury in older adults, but the vast majority happen because of hazards a professional can identify and fix in a single visit. A grab bar in the shower. A railing on both sides of the stairs. Better lighting in a hallway.
               </p>
               <p className="text-gray-600 leading-relaxed mb-8">
                 ReadyNest works with older adults and their families throughout Bucks County to address these risks before they become emergencies. Small changes. Real peace of mind.
@@ -234,7 +234,7 @@ export default function HomePage() {
                   {
                     stat: "80%",
                     label: "of seniors want to stay in their own home",
-                    followUp: "ReadyNest makes that possible — safely and affordably.",
+                    followUp: "ReadyNest makes that possible, safely and affordably.",
                     source: "Source: AARP",
                   },
                   {
@@ -246,7 +246,7 @@ export default function HomePage() {
                   {
                     stat: "$50B+",
                     label: "in annual fall-related medical costs",
-                    followUp: "Targeted modifications often cost well under $1,000.",
+                    followUp: `Our ${packages.bathroom.name} is ${packages.bathroom.display}.`,
                     source: "Source: CDC",
                   },
                 ].map((item) => (
@@ -281,7 +281,7 @@ export default function HomePage() {
                 Every Room. Every Risk. Covered.
               </h2>
               <p className="text-gray-500 text-lg max-w-2xl mx-auto">
-                From the bathroom floor to the front door, ReadyNest addresses every fall risk and mobility challenge — one accountable owner, start to finish.
+                From the bathroom floor to the front door, ReadyNest addresses every fall risk and mobility challenge, with one accountable owner, start to finish.
               </p>
             </div>
           </AnimatedSection>
@@ -311,7 +311,7 @@ export default function HomePage() {
                 Simple as 1–2–3
               </h2>
               <p className="text-gray-500 text-lg max-w-xl mx-auto">
-                From the first phone call to the final install — a straightforward, low-pressure process designed around you.
+                From the first phone call to the final install: a straightforward, low-pressure process designed around you.
               </p>
             </div>
           </AnimatedSection>
@@ -366,14 +366,14 @@ export default function HomePage() {
                   <h3 className="font-serif text-2xl text-charcoal">For Seniors</h3>
                 </div>
                 <p className="text-gray-600 leading-relaxed mb-5">
-                  You&apos;ve built a life in your home. You know its rooms, its rhythms, its history. ReadyNest helps you stay there — safely and on your own terms.
+                  You&apos;ve built a life in your home. You know its rooms, its rhythms, its history. ReadyNest helps you stay there, safely and on your own terms.
                 </p>
                 <ul className="space-y-3 mb-8 flex-1">
                   {[
-                    "Stay in the home you love — no nursing home, no uprooting",
+                    "Stay in the home you love: no nursing home, no uprooting",
                     "Move through every room with confidence",
                     "Simple modifications that don't look institutional",
-                    "Work directly with Slav from first visit to final walkthrough — one face, one number",
+                    "Work directly with Slav from first visit to final walkthrough: one face, one number",
                   ].map((item) => (
                     <li key={item} className="flex items-start gap-3 text-sm text-gray-600">
                       <span className="text-gold mt-0.5 shrink-0">✓</span>
@@ -385,7 +385,7 @@ export default function HomePage() {
                   href="/contact"
                   className="inline-flex items-center gap-2 text-gold font-semibold hover:underline text-sm"
                 >
-                  Book Free Assessment <ArrowRight size={15} />
+                  Book Free Walkthrough <ArrowRight size={15} />
                 </Link>
               </div>
             </AnimatedSection>
@@ -400,12 +400,12 @@ export default function HomePage() {
                   <h3 className="font-serif text-2xl text-white">For Families</h3>
                 </div>
                 <p className="text-gray-400 leading-relaxed mb-5">
-                  You worry about your parent&apos;s safety every time you drive home after a visit. ReadyNest gives you a way to act on that worry — practically, quickly, and affordably.
+                  You worry about your parent&apos;s safety every time you drive home after a visit. ReadyNest gives you a way to act on that worry: practically, quickly, and affordably.
                 </p>
                 <ul className="space-y-3 mb-8 flex-1">
                   {[
                     "Know their home has been professionally assessed",
-                    "Modifications installed quickly — often in one visit",
+                    "Modifications installed quickly, often in one visit",
                     "Clear documentation of what was done and why",
                     "A trusted local contact you can actually call",
                   ].map((item) => (
@@ -443,16 +443,16 @@ export default function HomePage() {
                 The Person Behind the Work
               </p>
               <h2 id="about-heading" className="font-serif text-4xl md:text-5xl text-charcoal mb-6 leading-tight">
-                Hi, I&apos;m Slav.
+                Hi, I&apos;m Slav, CAPS.
               </h2>
               <p className="text-gray-600 leading-relaxed mb-8">
-                I grew up in Ukraine. I&apos;ve worked in fire safety, electrical, and handyman work across Bucks County. I started ReadyNest to be the person I wish more older people had — local, dependable, fairly priced, and serious about the work. I personally assess every home and I&apos;m on-site for the final walkthrough on every project — no exceptions. For larger jobs, I work with a small, vetted team of local trade partners I&apos;ve used for years, so you still get one accountable person and consistent quality, just with the capacity to take on bigger projects without long wait times.
+                I grew up in Ukraine. I&apos;ve worked in fire safety, electrical, and handyman work across Bucks County. I started ReadyNest to be the person I wish more older people had: local, dependable, fairly priced, and serious about the work. I personally assess every home and I&apos;m on-site for the final walkthrough on every project, no exceptions. For larger jobs, I work with a small, vetted team of local trade partners I&apos;ve used for years, so you still get one accountable person and consistent quality, just with the capacity to take on bigger projects without long wait times.
               </p>
               <Link
                 href="/about"
                 className="inline-flex items-center gap-2 border-2 border-gold text-gold font-semibold px-6 py-3 rounded-xl hover:bg-gold hover:text-white transition-colors text-sm"
               >
-                Meet Slav <ArrowRight size={16} />
+                Meet Slav, CAPS <ArrowRight size={16} />
               </Link>
             </AnimatedSection>
 
@@ -480,7 +480,7 @@ export default function HomePage() {
               Not ready to call yet? That&apos;s okay.
             </h2>
             <p className="text-white/85 text-lg mb-8 max-w-xl mx-auto leading-relaxed">
-              Download the free ReadyNest Home Safety Checklist — 40 items to walk through your home and identify the most common fall risks. No email required.
+              Download the free ReadyNest Home Safety Checklist: 40 items to walk through your home and identify the most common fall risks. No email required.
             </p>
             <Link
               href="/safety-checklist"
@@ -501,10 +501,10 @@ export default function HomePage() {
                 Get Started
               </p>
               <h2 id="cta-heading" className="font-serif text-4xl md:text-5xl text-white mb-4">
-                Book Your Free Home Safety Assessment
+                Book Your Free 10-Minute Walkthrough
               </h2>
               <p className="text-gray-400 text-lg max-w-xl mx-auto">
-                Slav will walk through your home, identify every risk, and give you a clear plan — no cost, no obligation.
+                Slav will look at what worries you and give you a written flat quote. No cost, no obligation.
               </p>
             </div>
           </AnimatedSection>
