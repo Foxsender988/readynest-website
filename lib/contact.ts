@@ -1,7 +1,7 @@
 // ─── Contact form "Service Needed" options ───────────────────────────────────
 
 export const SERVICE_OPTIONS = [
-  "Free Walkthrough and Quote",
+  "Free In-Home Safety Visit and Written Flat Quote",
   "Bathroom Safety",
   "Walk-In Shower Conversion",
   "Stairs, Entry & Lighting",
@@ -25,6 +25,8 @@ export function normalizeServiceParam(raw: string | undefined): ServiceOption | 
   if (/entry|exit|stair|hallway|lighting|smart|doorbell|ramp|rail/.test(v)) {
     return "Stairs, Entry & Lighting";
   }
-  if (/assessment|walkthrough|whole-home|whole home/.test(v)) return "Free Walkthrough and Quote";
+  if (/assessment|walkthrough|safety visit|whole-home|whole home/.test(v)) {
+    return "Free In-Home Safety Visit and Written Flat Quote";
+  }
   return "Something else / not sure yet";
 }

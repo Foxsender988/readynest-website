@@ -16,12 +16,12 @@ import { WORKMANSHIP_GUARANTEE, assessment } from "@/lib/pricing";
 export const metadata: Metadata = {
   title: { absolute: "Our Process | ReadyNest: How Home Safety Modifications Work" },
   description:
-    "A clear 5-step process for aging-in-place home safety modifications in Bucks County, PA. Free phone call, free 10-minute walkthrough, written flat quote, professional installation, and one-month follow-up.",
+    "A clear 5-step process for aging-in-place home safety modifications in Bucks County, PA. Free phone call, free in-home safety visit, written flat quote, professional installation, and one-month follow-up.",
   alternates: { canonical: "https://readynestpa.com/process" },
   openGraph: {
     title: "Our Process | ReadyNest: How Home Safety Modifications Work",
     description:
-      "No surprises. No pressure. A clear 5-step process designed around you and your family. Free 10-minute walkthrough in Bucks County, PA.",
+      "No surprises. No pressure. A clear 5-step process designed around you and your family. Free in-home safety visit in Bucks County, PA.",
     url: "https://readynestpa.com/process",
   },
 };
@@ -36,8 +36,8 @@ const steps = [
   {
     number: "2",
     icon: <Home size={28} strokeWidth={1.5} />,
-    title: "Free 10-Minute Walkthrough",
-    body: `I come to your home and look at what worries you: bathroom, stairs, entries, or lighting. It takes about 10 minutes, it's free, and there's no obligation to book anything. If you'd like every room reviewed, our ${assessment.name} is ${assessment.display}, credited toward any package.`,
+    title: "Free In-Home Safety Visit",
+    body: `I come to your home and look at what worries you: bathroom, stairs, entries, or lighting. It's free, and there's no obligation to book anything. If you'd like every room reviewed, our ${assessment.name} is ${assessment.display}, credited toward any package.`,
   },
   {
     number: "3",
@@ -185,7 +185,7 @@ export default function ProcessPage() {
                 href="/contact"
                 className="inline-flex items-center gap-2 bg-gold text-white font-semibold px-7 py-4 rounded-xl hover:bg-[#a07d46] transition-colors"
               >
-                Book Free Walkthrough
+                Book a Free Safety Visit
                 <ArrowRight size={18} />
               </Link>
               <a

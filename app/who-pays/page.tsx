@@ -32,7 +32,7 @@ const sections = [
     title: "Long-term care insurance",
     body: [
       "Many long-term care insurance policies reimburse home modifications that help someone stay safely at home. Coverage varies by policy, so call the insurer and ask whether \"home modifications\" are a covered benefit and what they need to see.",
-      "We provide what insurers typically ask for: a written assessment of the home, an itemized estimate, an itemized final invoice, and before-and-after photos.",
+      "We provide what insurers typically ask for: a written assessment of the home, an itemized estimate, and an itemized final invoice.",
     ],
   },
   {
@@ -137,7 +137,7 @@ export default function WhoPaysPage() {
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <AnimatedSection>
             <h2 id="who-pays-cta" className="font-serif text-4xl md:text-5xl text-white mb-4">
-              Start With a Free Walkthrough
+              Start With a Free Safety Visit
             </h2>
             <p className="text-gray-400 text-lg mb-10 leading-relaxed">
               Slav, CAPS (Certified Aging-in-Place Specialist), will walk through the home, give you a written flat quote, and
@@ -148,7 +148,7 @@ export default function WhoPaysPage() {
                 href="/contact"
                 className="inline-flex items-center justify-center gap-2 bg-gold text-white font-semibold px-7 py-4 rounded-xl hover:bg-[#a07d46] transition-colors"
               >
-                Book Free Walkthrough <ArrowRight size={18} />
+                Book a Free Safety Visit <ArrowRight size={18} />
               </Link>
               <a
                 href="tel:+12677179119"

@@ -6,14 +6,14 @@ import { normalizeServiceParam } from "@/lib/contact";
 import { PA_HIC_LINE } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: { absolute: "Contact ReadyNest | Book a Free Walkthrough, Bucks County" },
+  title: { absolute: "Contact ReadyNest | Book a Free Safety Visit, Bucks County" },
   description:
-    "Book a free 10-minute home safety walkthrough with Slav, CAPS, in Bucks County, PA. Call 267-717-9119 or fill out the form. We respond within 24 hours, usually the same day.",
+    "Book a free in-home safety visit and written flat quote with Slav, CAPS, in Bucks County, PA. Call 267-717-9119 or fill out the form. We respond within 24 hours, usually the same day.",
   alternates: { canonical: "https://readynestpa.com/contact" },
   openGraph: {
-    title: "Contact ReadyNest | Book a Free Walkthrough | Bucks County",
+    title: "Contact ReadyNest | Book a Free Safety Visit | Bucks County",
     description:
-      "Slav, CAPS, visits your home for a free 10-minute walkthrough and gives you a written flat quote, with no obligation. Serving Bucks County, PA.",
+      "Slav, CAPS, comes to your home for a free safety visit and gives you a written flat quote, with no obligation. Serving Bucks County, PA.",
     url: "https://readynestpa.com/contact",
   },
 };
@@ -33,14 +33,14 @@ export default async function ContactPage({
       <section className="bg-beige py-16 md:py-24 border-b border-soft-gray">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <p className="text-gold text-sm font-semibold tracking-wider uppercase mb-4">
-            Free 10-Minute Walkthrough
+            Free In-Home Safety Visit
           </p>
           <h1 className="font-serif text-5xl md:text-6xl text-charcoal mb-5">
-            Book Your Free Walkthrough
+            Book Your Free Safety Visit
           </h1>
           <p className="text-gray-500 text-xl max-w-2xl mx-auto leading-relaxed">
-            Slav, CAPS (Certified Aging-in-Place Specialist), visits your home for a free 10-minute
-            walkthrough and gives you a written flat quote, with no obligation.
+            Slav, CAPS (Certified Aging-in-Place Specialist), comes to your home for a free safety visit
+            and gives you a written flat quote, with no obligation.
           </p>
         </div>
       </section>
@@ -183,8 +183,8 @@ export default async function ContactPage({
                 text: "Slav calls or texts to confirm your preferred visit window.",
               },
               {
-                step: "Walkthrough day",
-                text: "A free 10-minute walkthrough, no obligation.",
+                step: "Safety visit day",
+                text: "A free in-home safety visit, no obligation.",
               },
               {
                 step: "Within 24 hours after",

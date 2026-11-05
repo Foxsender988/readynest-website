@@ -64,14 +64,14 @@ export default function ServicesGrid() {
           <div>
             <h3 className="font-serif text-xl text-white mb-3">Not sure where to start?</h3>
             <p className="text-white/80 text-sm leading-relaxed">
-              Book a free 10-minute walkthrough. Slav, CAPS, will look at what worries you and give you a written flat quote. No cost, no obligation.
+              Book a free in-home safety visit. Slav, CAPS, will look at what worries you and give you a written flat quote. No cost, no obligation.
             </p>
           </div>
           <Link
             href="/contact"
             className="mt-6 inline-flex items-center gap-2 bg-white text-gold font-semibold px-5 py-3 rounded-xl text-sm hover:bg-beige transition-colors self-start"
           >
-            Book Free Walkthrough <ArrowRight size={15} />
+            Book a Free Safety Visit <ArrowRight size={15} />
           </Link>
         </div>
       </AnimatedSection>

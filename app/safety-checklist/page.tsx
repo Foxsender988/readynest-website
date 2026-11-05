@@ -159,14 +159,14 @@ export default function SafetyChecklistPage() {
               professional installation to fix safely, which is exactly what ReadyNest does.
             </p>
             <p className="text-gray-600 text-lg leading-relaxed mb-8">
-              Book a free 10-minute walkthrough and Slav, CAPS (Certified Aging-in-Place Specialist),
+              Book a free in-home safety visit and Slav, CAPS (Certified Aging-in-Place Specialist),
               will look at what you found and give you a written flat quote.
             </p>
             <Link
               href="/contact"
               className="inline-flex items-center gap-2 bg-gold text-white font-semibold px-7 py-4 rounded-xl hover:bg-[#a07d46] transition-colors"
             >
-              Book Free Walkthrough <ArrowRight size={18} />
+              Book a Free Safety Visit <ArrowRight size={18} />
             </Link>
           </AnimatedSection>
         </div>

@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     template: "%s | ReadyNest",
   },
   description:
-    `Aging-in-place home safety in Bucks County, PA: grab bars, ramps, stair railings, smart home safety. ${packages.bathroom.name} ${packages.bathroom.display}. Free 10-minute walkthrough. Call 267-717-9119.`,
+    `Aging-in-place home safety in Bucks County, PA: grab bars, ramps, stair railings, smart home safety. ${packages.bathroom.name} ${packages.bathroom.display}. Free in-home safety visit and written flat quote. Call 267-717-9119.`,
   keywords: [
     "aging in place Bucks County PA",
     "home safety modifications seniors",
@@ -59,7 +59,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "ReadyNest: Aging-in-Place Home Safety | Bucks County, PA",
     description:
-      `Home safety modifications for seniors: grab bars, ramps, stair railings & smart home safety. ${packages.bathroom.name} ${packages.bathroom.display}. Overseen by Slav, CAPS, in Bucks County, PA. Free walkthrough.`,
+      `Home safety modifications for seniors: grab bars, ramps, stair railings & smart home safety. ${packages.bathroom.name} ${packages.bathroom.display}. Overseen by Slav, CAPS, in Bucks County, PA. Free in-home safety visit and written flat quote.`,
     images: ["/images/ReadyNest_home_prep_logo.png"],
   },
   robots: {

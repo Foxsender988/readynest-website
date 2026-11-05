@@ -99,13 +99,13 @@ export default function ResourcesPage() {
             </h2>
             <p className="text-white/85 text-lg mb-8 max-w-xl mx-auto leading-relaxed">
               Slav, CAPS (Certified Aging-in-Place Specialist), will walk through with you and give you
-              a written flat quote. The 10-minute walkthrough is free, with no obligation.
+              a written flat quote. The in-home safety visit is free, with no obligation.
             </p>
             <Link
               href="/contact"
               className="inline-flex items-center gap-2 bg-white text-gold font-semibold px-8 py-4 rounded-xl hover:bg-beige transition-colors text-base"
             >
-              Book Free Walkthrough
+              Book a Free Safety Visit
               <ArrowRight size={18} />
             </Link>
           </AnimatedSection>

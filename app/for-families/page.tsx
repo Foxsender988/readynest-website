@@ -13,12 +13,12 @@ import { assessment, packages } from "@/lib/pricing";
 export const metadata: Metadata = {
   title: { absolute: "For Families | ReadyNest: Home Safety for Aging Parents, Bucks County, PA" },
   description:
-    "ReadyNest helps adult children in Bucks County make a parent's home safer. Free 10-minute walkthrough, written flat quote, and affordable aging-in-place modifications. No pressure, no upsell.",
+    "ReadyNest helps adult children in Bucks County make a parent's home safer. Free in-home safety visit, written flat quote, and affordable aging-in-place modifications. No pressure, no upsell.",
   alternates: { canonical: "https://readynestpa.com/for-families" },
   openGraph: {
     title: "For Families | ReadyNest: Home Safety for Aging Parents",
     description:
-      "We help adult children identify and fix fall hazards in a parent's home. Free walkthrough, written flat quote, and modifications that fit your budget.",
+      "We help adult children identify and fix fall hazards in a parent's home. Free safety visit, written flat quote, and modifications that fit your budget.",
     url: "https://readynestpa.com/for-families",
   },
 };
@@ -90,7 +90,7 @@ const pricingItems = [
     label: packages.bathroom.name,
     range: packages.bathroom.display,
     description:
-      "Most-referred package. Up to 3 grab bars, non-slip treatment, motion-sensor nightlight, and a written home safety walkthrough report.",
+      "Up to 3 grab bars, non-slip treatment, motion-sensor nightlight, and a written home safety report.",
   },
   {
     label: "Whole-home safety",
@@ -124,7 +124,7 @@ export default function ForFamiliesPage() {
                 href="/contact"
                 className="inline-flex items-center justify-center gap-2 bg-gold text-white font-semibold px-7 py-4 rounded-xl hover:bg-[#a07d46] transition-colors"
               >
-                Book Free Walkthrough <ArrowRight size={18} />
+                Book a Free Safety Visit <ArrowRight size={18} />
               </Link>
               <a
                 href="tel:+12677179119"
@@ -152,7 +152,7 @@ export default function ForFamiliesPage() {
               id="empathy-heading"
               className="font-serif text-3xl md:text-4xl text-charcoal mb-6"
             >
-              Most families call us after a close call, not after a fall.
+              You don&apos;t have to wait for a fall to call us.
             </h2>
             <p className="text-gray-600 text-lg leading-relaxed mb-8">
               You noticed your mom gripping the wall on her way to the bathroom.
@@ -186,7 +186,7 @@ export default function ForFamiliesPage() {
             </h2>
             <p className="text-gray-500 text-center mb-12 max-w-2xl mx-auto leading-relaxed">
               Our room-by-room assessment with written report is {assessment.display}, credited toward
-              any package. Prefer to start smaller? The 10-minute walkthrough and written flat quote
+              any package. Prefer to start smaller? The in-home safety visit and written flat quote
               are free.
             </p>
           </AnimatedSection>
@@ -229,7 +229,7 @@ export default function ForFamiliesPage() {
               id="situations-heading"
               className="font-serif text-3xl md:text-4xl text-charcoal text-center mb-4"
             >
-              Situations We Help With Every Week
+              Situations We Help With
             </h2>
             <p className="text-gray-500 text-center mb-12 max-w-xl mx-auto leading-relaxed">
               Every family&apos;s situation is a little different. Here are the
@@ -332,7 +332,7 @@ export default function ForFamiliesPage() {
 
           <AnimatedSection delay={0.3}>
             <p className="text-center text-gray-500 text-sm mb-3">
-              The 10-minute walkthrough and written flat quote are free. No obligation to book anything.
+              The in-home safety visit and written flat quote are free. No obligation to book anything.
             </p>
             <p className="text-center">
               <Link
@@ -360,7 +360,7 @@ export default function ForFamiliesPage() {
               Ready to Get a Professional Set of Eyes on the Home?
             </h2>
             <p className="text-gray-400 text-lg mb-10 leading-relaxed">
-              Book a free 10-minute walkthrough. Slav will visit, point out the risks, and
+              Book a free in-home safety visit. Slav will visit, point out the risks, and
               give you a written flat quote.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -368,7 +368,7 @@ export default function ForFamiliesPage() {
                 href="/contact"
                 className="inline-flex items-center justify-center gap-2 bg-gold text-white font-semibold px-7 py-4 rounded-xl hover:bg-[#a07d46] transition-colors"
               >
-                Book Free Walkthrough <ArrowRight size={18} />
+                Book a Free Safety Visit <ArrowRight size={18} />
               </Link>
               <a
                 href="tel:+12677179119"

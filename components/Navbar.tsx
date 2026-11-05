@@ -86,7 +86,7 @@ export default function Navbar() {
                 href="/contact"
                 className="bg-gold text-white text-sm font-semibold px-5 py-2.5 rounded-lg hover:bg-[#a07d46] transition-colors"
               >
-                Free Walkthrough
+                Free Safety Visit
               </Link>
             </div>
 
@@ -181,7 +181,7 @@ export default function Navbar() {
                   href="/contact"
                   className="block text-center bg-gold text-white font-semibold px-5 py-3 rounded-lg hover:bg-[#a07d46] transition-colors"
                 >
-                  Book Free Walkthrough
+                  Book a Free Safety Visit
                 </Link>
               </div>
             </motion.div>

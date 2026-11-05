@@ -24,12 +24,12 @@ import { packages } from "@/lib/pricing";
 export const metadata: Metadata = {
   title: { absolute: "Aging-in-Place Home Safety Modifications | ReadyNest, Bucks County, PA" },
   description:
-    `Aging-in-place home safety in Bucks County, PA: grab bars, ramps, stair railings, smart home safety. ${packages.bathroom.name} ${packages.bathroom.display}. Free 10-minute walkthrough. Call 267-717-9119.`,
+    `Aging-in-place home safety in Bucks County, PA: grab bars, ramps, stair railings, smart home safety. ${packages.bathroom.name} ${packages.bathroom.display}. Free in-home safety visit and written flat quote. Call 267-717-9119.`,
   alternates: { canonical: "https://readynestpa.com/" },
   openGraph: {
     title: "Aging-in-Place Home Safety | ReadyNest, Bucks County, PA",
     description:
-      `Home safety modifications for seniors: grab bars, ramps, stair railings & smart home safety. ${packages.bathroom.name} ${packages.bathroom.display}. Overseen by Slav, CAPS, in Bucks County, PA. Free walkthrough.`,
+      `Home safety modifications for seniors: grab bars, ramps, stair railings & smart home safety. ${packages.bathroom.name} ${packages.bathroom.display}. Overseen by Slav, CAPS, in Bucks County, PA. Free in-home safety visit and written flat quote.`,
     url: "https://readynestpa.com/",
   },
 };
@@ -93,7 +93,7 @@ const trustPoints = [
   },
   {
     icon: <ClipboardList size={20} strokeWidth={1.5} />,
-    title: "Free 10-Minute Walkthrough",
+    title: "Free In-Home Safety Visit",
     body: "No pressure, no cost. Slav walks through with you, points out the risks, and gives you a written flat quote.",
   },
 ];
@@ -101,7 +101,7 @@ const trustPoints = [
 const steps = [
   {
     number: "1",
-    title: "Free 10-Minute Walkthrough",
+    title: "Free In-Home Safety Visit",
     body: "Slav comes to your home, looks at what worries you, and answers your questions at no charge.",
   },
   {
@@ -143,14 +143,14 @@ export default function HomePage() {
                 <span className="text-gold">Stay Independent.</span>
               </h1>
               <p className="text-lg md:text-xl text-gray-600 leading-relaxed mb-10 max-w-xl">
-                ReadyNest helps Bucks County families make their parents&apos; homes safer, without the cost or upheaval of a full remodel. One local owner, fair pricing, same-week service.
+                ReadyNest helps Bucks County families make their parents&apos; homes safer, without the cost or upheaval of a full remodel. One local owner, fair pricing, same-week service. Start with a free in-home safety visit and written flat quote.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link
                   href="/contact"
                   className="inline-flex items-center justify-center gap-2 bg-gold text-white font-semibold px-7 py-4 rounded-xl hover:bg-[#a07d46] transition-colors text-base"
                 >
-                  Book Free Walkthrough
+                  Book a Free Safety Visit
                   <ArrowRight size={18} />
                 </Link>
                 <a
@@ -385,7 +385,7 @@ export default function HomePage() {
                   href="/contact"
                   className="inline-flex items-center gap-2 text-gold font-semibold hover:underline text-sm"
                 >
-                  Book Free Walkthrough <ArrowRight size={15} />
+                  Book a Free Safety Visit <ArrowRight size={15} />
                 </Link>
               </div>
             </AnimatedSection>
@@ -501,7 +501,7 @@ export default function HomePage() {
                 Get Started
               </p>
               <h2 id="cta-heading" className="font-serif text-4xl md:text-5xl text-white mb-4">
-                Book Your Free 10-Minute Walkthrough
+                Book Your Free Safety Visit
               </h2>
               <p className="text-gray-400 text-lg max-w-xl mx-auto">
                 Slav will look at what worries you and give you a written flat quote. No cost, no obligation.

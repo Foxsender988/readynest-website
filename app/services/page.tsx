@@ -27,7 +27,7 @@ import {
   type PackageKey,
 } from "@/lib/pricing";
 
-const metaDescription = `${packages.bathroom.name} ${packages.bathroom.display}, ${packages.entryExit.name} ${packages.entryExit.display}, Whole-Home ${packages.wholeHome.display.toLowerCase()}, walk-in showers, and individual installs in Bucks County, PA. Free 10-minute walkthrough. Call 267-717-9119.`;
+const metaDescription = `${packages.bathroom.name} ${packages.bathroom.display}, ${packages.entryExit.name} ${packages.entryExit.display}, Whole-Home ${packages.wholeHome.display.toLowerCase()}, walk-in showers, and individual installs in Bucks County, PA. Free in-home safety visit and written flat quote. Call 267-717-9119.`;
 
 export const metadata: Metadata = {
   title: { absolute: "Home Safety Services | ReadyNest: Aging-in-Place Modifications, Bucks County, PA" },
@@ -69,7 +69,7 @@ const smartHomeItems = [
   },
   {
     title: "Leak & smoke alerts",
-    body: "Water leak sensors near the water heater, washer, and toilets, and smart smoke/CO alerts that notify family by phone. Quoted at your walkthrough.",
+    body: "Water leak sensors near the water heater, washer, and toilets, and smart smoke/CO alerts that notify family by phone. Quoted at your safety visit.",
   },
 ];
 
@@ -284,7 +284,7 @@ export default function ServicesPage() {
                       href={`/contact?service=${encodeURIComponent("Walk-In Shower Conversion" satisfies ServiceOption)}`}
                       className="mt-6 w-full flex items-center justify-center gap-2 bg-gold text-white font-semibold px-5 py-3 rounded-xl hover:bg-[#a07d46] transition-colors text-sm"
                     >
-                      Request a Walkthrough <ArrowRight size={15} />
+                      Request a Safety Visit <ArrowRight size={15} />
                     </Link>
                   </div>
                 </AnimatedSection>
@@ -293,7 +293,7 @@ export default function ServicesPage() {
 
             <AnimatedSection delay={0.18}>
               <p className="text-gray-400 text-sm text-center max-w-2xl mx-auto leading-relaxed">
-                Every project includes a free walkthrough, a written flat quote before work
+                Every project includes a free safety visit, a written flat quote before work
                 begins, and final walkthrough sign-off by Slav, whether the installation is
                 completed by Slav or one of our vetted trade partners.
               </p>
@@ -421,7 +421,7 @@ export default function ServicesPage() {
                 href={`/contact?service=${encodeURIComponent("Something else / not sure yet" satisfies ServiceOption)}`}
                 className="inline-flex items-center gap-2 border-2 border-charcoal/25 text-charcoal font-semibold px-7 py-4 rounded-xl hover:border-gold hover:text-gold transition-colors"
               >
-                Book Free Walkthrough
+                Book a Free Safety Visit
                 <ArrowRight size={18} />
               </Link>
             </div>
@@ -495,7 +495,7 @@ export default function ServicesPage() {
               Not Sure What You Need?
             </h2>
             <p className="text-gray-400 text-lg mb-10 leading-relaxed">
-              Every home is different. Book a free 10-minute walkthrough and Slav will
+              Every home is different. Book a free in-home safety visit and Slav will
               look at what worries you, recommend what makes sense, and give you a written
               flat quote. No pressure, no obligation.
             </p>
@@ -504,7 +504,7 @@ export default function ServicesPage() {
                 href="/contact"
                 className="inline-flex items-center justify-center gap-2 bg-gold text-white font-semibold px-7 py-4 rounded-xl hover:bg-[#a07d46] transition-colors"
               >
-                Book Free Walkthrough <ArrowRight size={18} />
+                Book a Free Safety Visit <ArrowRight size={18} />
               </Link>
               <a
                 href="tel:+12677179119"

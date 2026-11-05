@@ -28,7 +28,7 @@ const differentiators = [
   },
   {
     title: "No pressure, no upsell",
-    body: "The walkthrough is free. The recommendations are honest. Slav won't suggest a modification you don't need, only what will genuinely reduce risk.",
+    body: "The safety visit is free. The recommendations are honest. Slav won't suggest a modification you don't need, only what will genuinely reduce risk.",
   },
   {
     title: "Fair, transparent pricing",
@@ -85,8 +85,8 @@ export default function AboutPage() {
                   no business to call. There was no service.
                 </p>
                 <p>
-                  When I came to the United States, I worked in sales for ADT, ran fire safety
-                  projects with Oliver Fire Protection, and spent years in handyman and electrical
+                  When I came to the United States, I worked in sales, ran fire safety
+                  projects, and spent years in handyman and electrical
                   work. I learned how to do this kind of work the right way. But I also saw
                   something: in Bucks County, the help exists, but it&apos;s hard to find. Big
                   remodelers won&apos;t take a small job. Handymen are unreliable. The seniors and
@@ -220,7 +220,7 @@ export default function AboutPage() {
                 href="/contact"
                 className="inline-flex items-center gap-2 bg-gold text-white font-semibold px-7 py-4 rounded-xl hover:bg-[#a07d46] transition-colors"
               >
-                Book Free Walkthrough
+                Book a Free Safety Visit
                 <ArrowRight size={18} />
               </Link>
               <a

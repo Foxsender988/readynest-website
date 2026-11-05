@@ -106,8 +106,8 @@ export const pricingTerms = [
   "All prices include labor, standard hardware, travel within our core service area, and cleanup.",
   `${WORKMANSHIP_GUARANTEE}.`,
   `${minimumVisit.display} minimum visit for any job.`,
-  "Free 10-minute walkthrough with a written flat quote.",
-  `${assessment.name}: ${assessment.display}, credited toward any package.`,
+  "Free in-home safety visit and written flat quote.",
+  `Want a full written Home Safety Assessment report without a package? ${assessment.display}, credited toward any package.`,
   `PA-registered (HIC #${PA_HIC_NUMBER}), insured.`,
   "Premium brands and finishes (for example, designer grab bars) are quoted at the time of estimate.",
 ];
@@ -122,7 +122,7 @@ export const pricingNotIncluded = [
   "Travel outside our core service area",
 ];
 
-export const PACKAGES_TAGLINE = "Every package costs less than buying the same items separately.";
+export const PACKAGES_TAGLINE = "Packages bundle the visit, the hardware and the written safety report into one flat price.";
 
 // ─── Packages ─────────────────────────────────────────────────────────────────
 
@@ -161,15 +161,14 @@ export const packages: Record<PackageKey, Package> = {
     price: PRICE.bathroom,
     display: usd(PRICE.bathroom),
     isFrom: false,
-    badge: "Most Popular",
-    badgeTone: "gold",
+    badge: null,
     includesLabel: "WHAT'S INCLUDED",
-    note: "Most-purchased package. Most-referred-to by physical therapists, OTs, and hospital discharge planners.",
+    note: null,
     contents: [
       "Up to 3 ADA-rated stainless grab bars placed where your assessment shows the risk (typically shower back wall, shower entry, and toilet)",
       "Non-slip mat or applied tread in tub or shower",
       "Plug-in motion-sensor nightlight",
-      "Written home safety walkthrough report",
+      "Written home safety report",
     ],
     addOns: [
       line("Additional grab bar (4th+)", PRICE.extraGrabBar, " each"),
@@ -246,14 +245,14 @@ export const packages: Record<PackageKey, Package> = {
   wholeHome: {
     key: "wholeHome",
     name: "Whole-Home Aging-in-Place Package",
-    service: "Free Walkthrough and Quote",
+    service: "Free In-Home Safety Visit and Written Flat Quote",
     price: PRICE.wholeHome,
     display: `From ${usd(PRICE.wholeHome)}`,
     isFrom: true,
     badge: "Best Value",
     badgeTone: "gold",
     includesLabel: "WHAT'S INCLUDED",
-    note: "The package adult children buying for parents land on most often. Less than one month of assisted living.",
+    note: "Less than one month of assisted living.",
     contents: [
       "90-minute whole-home safety assessment with written report",
       "Bathroom Safety Package (Standard tier)",
@@ -267,17 +266,17 @@ export const packages: Record<PackageKey, Package> = {
   wholeHomePremium: {
     key: "wholeHomePremium",
     name: "Whole-Home Premium",
-    service: "Free Walkthrough and Quote",
+    service: "Free In-Home Safety Visit and Written Flat Quote",
     price: PRICE.wholeHomePremium,
     display: `From ${usd(PRICE.wholeHomePremium)}`,
     isFrom: true,
     badge: "Premium",
     badgeTone: "dark",
     includesLabel: "QUOTED AFTER ASSESSMENT, TYPICALLY INCLUDES",
-    note: "Quoted after in-home assessment.",
+    note: "Anti-scald / pressure-balance valve available, quoted after assessment.",
     contents: [
       "Everything in standard Whole-Home package",
-      "Premium Bathroom upgrade (toilet supplied, anti-scald, etc.)",
+      "Premium Bathroom upgrade (toilet supplied, etc.)",
       "Smart home safety bundle: 2 cameras, smart lock, 2 leak sensors, smoke/CO smart alerts",
       "Quarterly safety check visits for first year: INCLUDED",
       "Custom modifications based on assessment findings",
@@ -394,12 +393,6 @@ export const individualServices = {
       premiumLock: line("Premium smart lock (Schlage Encode Plus)", PRICE.premiumSmartLock),
     },
   },
-  assessment: {
-    title: "Assessment",
-    items: {
-      assessment: line(`${assessment.name}, credited toward any package`, PRICE.assessment),
-    },
-  },
 };
 
 export const individualServiceGroups: { title: string; items: PriceLine[] }[] = Object.values(
@@ -450,14 +443,21 @@ export function servicesJsonLd() {
       hasOfferCatalog: {
         "@type": "OfferCatalog",
         name: "Individual Home Safety Services",
-        itemListElement: individualServiceGroups.flatMap((group) =>
-          group.items
-            .filter((item): item is PriceLine & { price: number } => item.price !== null)
-            .map((item) => ({
-              ...offerFor(item),
-              itemOffered: { "@type": "Service", name: item.name },
-            })),
-        ),
+        itemListElement: [
+          ...individualServiceGroups.flatMap((group) =>
+            group.items
+              .filter((item): item is PriceLine & { price: number } => item.price !== null)
+              .map((item) => ({
+                ...offerFor(item),
+                itemOffered: { "@type": "Service", name: item.name },
+              })),
+          ),
+          // The Assessment is not a table row on the Services page, but it is still sold.
+          {
+            ...offerFor(assessment),
+            itemOffered: { "@type": "Service", name: `${assessment.name}, credited toward any package` },
+          },
+        ],
       },
     },
   ];

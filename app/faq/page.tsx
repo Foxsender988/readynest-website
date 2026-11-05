@@ -24,7 +24,7 @@ const townList = `${towns.map((t) => t.name).join(", ")}, and Ottsville`;
 const faqs = [
   {
     q: "How fast can you come out?",
-    a: "We respond within 24 hours, usually the same day, and can typically schedule your free 10-minute walkthrough the same week. If a parent is coming home from the hospital or rehab, tell us the discharge date and we'll prioritize it.",
+    a: "We respond within 24 hours, usually the same day, and can typically schedule your free in-home safety visit the same week. If a parent is coming home from the hospital or rehab, tell us the discharge date and we'll prioritize it.",
   },
   {
     q: "Do I need to be home?",
@@ -56,7 +56,7 @@ const faqs = [
   },
   {
     q: "What if my parent resists?",
-    a: "That's very common. A free 10-minute walkthrough is low-pressure: it's a conversation, not a sales pitch. Slav focuses on what your parent wants (staying in their own home, staying independent) and recommends only what genuinely reduces risk. Your parent decides what gets done, and there's no obligation.",
+    a: "That's very common. A free in-home safety visit is low-pressure: it's a conversation, not a sales pitch. Slav focuses on what your parent wants (staying in their own home, staying independent) and recommends only what genuinely reduces risk. Your parent decides what gets done, and there's no obligation.",
   },
   {
     // TODO: Add accepted payment methods (check, card, etc.) and deposit terms once confirmed.
@@ -128,14 +128,14 @@ export default function FaqPage() {
               Still Have Questions?
             </h2>
             <p className="text-gray-400 text-lg mb-10 leading-relaxed">
-              Call or text Slav, CAPS, or book a free 10-minute walkthrough.
+              Call or text Slav, CAPS, or book a free in-home safety visit.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 href="/contact"
                 className="inline-flex items-center justify-center gap-2 bg-gold text-white font-semibold px-7 py-4 rounded-xl hover:bg-[#a07d46] transition-colors"
               >
-                Book Free Walkthrough <ArrowRight size={18} />
+                Book a Free Safety Visit <ArrowRight size={18} />
               </Link>
               <a
                 href="tel:+12677179119"
