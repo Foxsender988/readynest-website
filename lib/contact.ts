@@ -1,7 +1,7 @@
 // ─── Contact form "Service Needed" options ───────────────────────────────────
 
 export const SERVICE_OPTIONS = [
-  "Free Home Safety Assessment",
+  "Free In-Home Safety Visit and Written Flat Quote",
   "Bathroom Safety",
   "Walk-In Shower Conversion",
   "Stairs, Entry & Lighting",
@@ -11,8 +11,8 @@ export const SERVICE_OPTIONS = [
 export type ServiceOption = (typeof SERVICE_OPTIONS)[number];
 
 /**
- * Maps a `?service=` query value (including legacy values from older links, e.g.
- * "Bathroom Safety Package — $995" or "Trash Valet Service") to the nearest current option.
+ * Maps a `?service=` query value (including legacy values from older links, such as old
+ * package names or retired subscriptions) to the nearest current option.
  */
 export function normalizeServiceParam(raw: string | undefined): ServiceOption | "" {
   if (!raw) return "";
@@ -25,6 +25,8 @@ export function normalizeServiceParam(raw: string | undefined): ServiceOption | 
   if (/entry|exit|stair|hallway|lighting|smart|doorbell|ramp|rail/.test(v)) {
     return "Stairs, Entry & Lighting";
   }
-  if (/assessment|whole-home|whole home/.test(v)) return "Free Home Safety Assessment";
+  if (/assessment|walkthrough|safety visit|whole-home|whole home/.test(v)) {
+    return "Free In-Home Safety Visit and Written Flat Quote";
+  }
   return "Something else / not sure yet";
 }

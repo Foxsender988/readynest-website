@@ -38,7 +38,7 @@ export default function LeadMagnetForm() {
         <p className="text-gray-500 text-sm leading-relaxed max-w-xs">
           We&apos;ll send the checklist within a few hours.
         </p>
-        {/* TODO: Set up automated checklist delivery — currently manual fulfillment via info@readynestpa.com */}
+        {/* TODO: Set up automated checklist delivery. Currently manual fulfillment via info@readynestpa.com */}
       </div>
     );
   }
@@ -61,7 +61,7 @@ export default function LeadMagnetForm() {
       {status === "error" && (
         <div className="flex items-center gap-2 text-red-500 text-xs bg-red-50 px-3 py-2 rounded-lg border border-red-200">
           <AlertCircle size={14} />
-          Something went wrong. Call Slav at{" "}
+          Something went wrong. Call Slav, CAPS, at{" "}
           <a href="tel:+12677179119" className="underline font-medium">267-717-9119</a>.
         </div>
       )}

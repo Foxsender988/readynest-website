@@ -7,6 +7,11 @@ const nextConfig: NextConfig = {
   async redirects() {
     return [
       {
+        source: "/trash-valet",
+        destination: "/services",
+        permanent: true,
+      },
+      {
         source: "/how-it-works",
         destination: "/process",
         permanent: true,

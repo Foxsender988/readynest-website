@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import FloatingCTA from "@/components/FloatingCTA";
+import { packages } from "@/lib/pricing";
 
 const dmSans = DM_Sans({
   subsets: ["latin"],
@@ -21,11 +22,11 @@ const dmSerifDisplay = DM_Serif_Display({
 export const metadata: Metadata = {
   metadataBase: new URL("https://readynestpa.com"),
   title: {
-    default: "ReadyNest — Aging-in-Place Home Safety | Bucks County, PA",
+    default: "ReadyNest: Aging-in-Place Home Safety | Bucks County, PA",
     template: "%s | ReadyNest",
   },
   description:
-    "ReadyNest provides aging-in-place home safety modifications in Bucks County, PA — grab bars, ramps, stair railings, smart home safety. Free home assessment. Call 267-717-9119.",
+    `Aging-in-place home safety in Bucks County, PA: grab bars, ramps, stair railings, smart home safety. ${packages.bathroom.name} ${packages.bathroom.display}. Free in-home safety visit and written flat quote. Call 267-717-9119.`,
   keywords: [
     "aging in place Bucks County PA",
     "home safety modifications seniors",
@@ -50,15 +51,15 @@ export const metadata: Metadata = {
         url: "/images/ReadyNest_home_prep_logo.png",
         width: 800,
         height: 600,
-        alt: "ReadyNest — Aging-in-Place Home Safety",
+        alt: "ReadyNest: Aging-in-Place Home Safety",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "ReadyNest — Aging-in-Place Home Safety | Bucks County, PA",
+    title: "ReadyNest: Aging-in-Place Home Safety | Bucks County, PA",
     description:
-      "Home safety modifications for seniors — grab bars, ramps, stair railings & smart home safety. Personally overseen by Slav in Bucks County, PA. Free assessment.",
+      `Home safety modifications for seniors: grab bars, ramps, stair railings & smart home safety. ${packages.bathroom.name} ${packages.bathroom.display}. Overseen by Slav, CAPS, in Bucks County, PA. Free in-home safety visit and written flat quote.`,
     images: ["/images/ReadyNest_home_prep_logo.png"],
   },
   robots: {

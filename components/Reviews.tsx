@@ -6,17 +6,17 @@ import { GOOGLE_REVIEWS_URL } from "@/lib/site";
 // client's permission). Use first name + last initial and town only. Don't publish until filled in.
 const reviews = [
   {
-    quote: "[Placeholder — paste a real client review here.]",
+    quote: "[Placeholder: paste a real client review here.]",
     name: "[First name L.]",
     town: "[Town]",
   },
   {
-    quote: "[Placeholder — paste a real client review here.]",
+    quote: "[Placeholder: paste a real client review here.]",
     name: "[First name L.]",
     town: "[Town]",
   },
   {
-    quote: "[Placeholder — paste a real client review here.]",
+    quote: "[Placeholder: paste a real client review here.]",
     name: "[First name L.]",
     town: "[Town]",
   },
