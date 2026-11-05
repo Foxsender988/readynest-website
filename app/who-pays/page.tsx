@@ -22,7 +22,7 @@ const sections = [
     id: "private-pay",
     title: "Private pay",
     body: [
-      `Most families pay out of pocket, and most projects cost less than people expect. Our ${packages.bathroom.name} is ${packages.bathroom.display}, the Stair & Hallway package is ${packages.stairHallway.display}, and the Entry & Exit package is ${packages.entryExit.display}. A ${packages.wholeHome.name} is ${packages.wholeHome.display.toLowerCase()}, less than one month of assisted living.`,
+      `Medicare usually doesn't cover home modifications, so most families pay privately. Most projects cost less than people expect. Our ${packages.bathroom.name} is ${packages.bathroom.display}, the Stair & Hallway package is ${packages.stairHallway.display}, and the Entry & Exit package is ${packages.entryExit.display}. A ${packages.wholeHome.name} is ${packages.wholeHome.display.toLowerCase()}, less than one month of assisted living.`,
       "Every quote is written, itemized, and fixed before work begins, so you know exactly what you're paying for.",
     ],
     link: { href: "/services", label: "See package pricing" },
@@ -85,8 +85,9 @@ export default function WhoPaysPage() {
             Who Pays for Home Safety Modifications?
           </h1>
           <p className="text-gray-500 text-xl max-w-2xl mx-auto leading-relaxed">
-            Most families pay privately, but there are other options worth checking. Here&apos;s
-            a plain-language overview.
+            Medicare usually doesn&apos;t cover home modifications, so most families pay
+            privately. There are other options worth checking. Here&apos;s a plain-language
+            overview.
           </p>
         </div>
       </section>

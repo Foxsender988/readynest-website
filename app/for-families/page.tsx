@@ -232,8 +232,8 @@ export default function ForFamiliesPage() {
               Situations We Help With
             </h2>
             <p className="text-gray-500 text-center mb-12 max-w-xl mx-auto leading-relaxed">
-              Every family&apos;s situation is a little different. Here are the
-              ones we hear about most often.
+              Every family&apos;s situation is a little different. Here are some
+              of the ways we can help.
             </p>
           </AnimatedSection>
 

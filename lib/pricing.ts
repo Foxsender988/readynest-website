@@ -393,6 +393,12 @@ export const individualServices = {
       premiumLock: line("Premium smart lock (Schlage Encode Plus)", PRICE.premiumSmartLock),
     },
   },
+  assessment: {
+    title: "Assessment",
+    items: {
+      assessment: line(`${assessment.name}, credited toward any package`, PRICE.assessment),
+    },
+  },
 };
 
 export const individualServiceGroups: { title: string; items: PriceLine[] }[] = Object.values(
@@ -443,21 +449,14 @@ export function servicesJsonLd() {
       hasOfferCatalog: {
         "@type": "OfferCatalog",
         name: "Individual Home Safety Services",
-        itemListElement: [
-          ...individualServiceGroups.flatMap((group) =>
-            group.items
-              .filter((item): item is PriceLine & { price: number } => item.price !== null)
-              .map((item) => ({
-                ...offerFor(item),
-                itemOffered: { "@type": "Service", name: item.name },
-              })),
-          ),
-          // The Assessment is not a table row on the Services page, but it is still sold.
-          {
-            ...offerFor(assessment),
-            itemOffered: { "@type": "Service", name: `${assessment.name}, credited toward any package` },
-          },
-        ],
+        itemListElement: individualServiceGroups.flatMap((group) =>
+          group.items
+            .filter((item): item is PriceLine & { price: number } => item.price !== null)
+            .map((item) => ({
+              ...offerFor(item),
+              itemOffered: { "@type": "Service", name: item.name },
+            })),
+        ),
       },
     },
   ];

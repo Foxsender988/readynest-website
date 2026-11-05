@@ -117,14 +117,6 @@ export default function ProcessPage() {
             ))}
           </div>
 
-          {/* Timeline note */}
-          <AnimatedSection delay={0.45}>
-            <div className="mt-14 bg-beige rounded-2xl px-8 py-6 border border-soft-gray text-center">
-              <p className="text-charcoal font-semibold text-lg">
-                Most families go from first call to completed installation within one week.
-              </p>
-            </div>
-          </AnimatedSection>
         </div>
       </section>
 
