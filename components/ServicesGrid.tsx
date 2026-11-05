@@ -1,13 +1,15 @@
 import Link from "next/link";
 import { ShieldCheck, DoorOpen, ArrowUpDown, Lightbulb, ArrowRight } from "lucide-react";
 import AnimatedSection from "@/components/sections/AnimatedSection";
+import { packages } from "@/lib/pricing";
 
 const services = [
   {
     icon: <ShieldCheck size={28} strokeWidth={1.5} />,
     name: "Bathroom Safety",
     description:
-      "Grab bars, walk-in shower conversions, raised toilet seats, and non-slip surfaces — the bathroom is where most falls happen.",
+      "Grab bars, walk-in shower conversions, raised toilet seats, and non-slip surfaces. The bathroom is where most falls happen.",
+    price: `${packages.bathroom.name}: ${packages.bathroom.display}`,
     href: "/services#bathroom-safety",
   },
   {
@@ -15,6 +17,7 @@ const services = [
     name: "Entry & Exit Safety",
     description:
       "Threshold ramps, handrails, keyless entry, and exterior lighting so getting in and out of home is confident and safe.",
+    price: `${packages.entryExit.name}: ${packages.entryExit.display}`,
     href: "/services#entry-exit",
   },
   {
@@ -22,13 +25,15 @@ const services = [
     name: "Stairs & Hallways",
     description:
       "Double-sided stair railings, improved hallway lighting, contrast strips, and clear path modifications throughout the home.",
+    price: `${packages.stairHallway.name}: ${packages.stairHallway.display}`,
     href: "/services#stairs-hallways",
   },
   {
     icon: <Lightbulb size={28} strokeWidth={1.5} />,
     name: "Smart Home Safety",
     description:
-      "Motion lighting, smart doorbells, and leak and smoke alerts — so your parent is safer at night and you get a heads-up when something's wrong.",
+      "Motion lighting, smart doorbells, and leak and smoke alerts, so your parent is safer at night and you get a heads-up when something's wrong.",
+    price: "Priced individually",
     href: "/services#smart-home",
   },
 ];
@@ -42,6 +47,7 @@ export default function ServicesGrid() {
             <div className="text-gold mb-4">{service.icon}</div>
             <h3 className="font-serif text-xl text-charcoal mb-2">{service.name}</h3>
             <p className="text-gray-500 text-sm leading-relaxed flex-1">{service.description}</p>
+            <p className="mt-4 text-gold text-sm font-semibold">{service.price}</p>
             <Link
               href={service.href}
               className="mt-5 inline-flex items-center gap-1.5 text-gold text-sm font-medium hover:gap-2.5 transition-all"
@@ -58,14 +64,14 @@ export default function ServicesGrid() {
           <div>
             <h3 className="font-serif text-xl text-white mb-3">Not sure where to start?</h3>
             <p className="text-white/80 text-sm leading-relaxed">
-              Book a free walk-through. Slav will assess your home room by room and give you a clear, prioritized plan — no cost, no obligation.
+              Book a free 10-minute walkthrough. Slav, CAPS, will look at what worries you and give you a written flat quote. No cost, no obligation.
             </p>
           </div>
           <Link
             href="/contact"
             className="mt-6 inline-flex items-center gap-2 bg-white text-gold font-semibold px-5 py-3 rounded-xl text-sm hover:bg-beige transition-colors self-start"
           >
-            Book Free Assessment <ArrowRight size={15} />
+            Book Free Walkthrough <ArrowRight size={15} />
           </Link>
         </div>
       </AnimatedSection>

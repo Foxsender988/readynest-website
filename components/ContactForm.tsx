@@ -89,7 +89,7 @@ export default function ContactForm({ dark = false, defaultService = "" }: Conta
           Request Received!
         </h3>
         <p className={clsx("text-sm max-w-sm leading-relaxed", dark ? "text-white/70" : "text-gray-500")}>
-          Thank you — Slav will be in touch within 24 hours to schedule your free home safety assessment.
+          Thank you. Slav, CAPS, will be in touch within 24 hours to schedule your free 10-minute walkthrough.
         </p>
         <button
           onClick={() => setStatus("idle")}
@@ -270,7 +270,7 @@ export default function ContactForm({ dark = false, defaultService = "" }: Conta
         ) : (
           <>
             <Send size={16} />
-            Book Free Assessment
+            Book Free Walkthrough
           </>
         )}
       </button>

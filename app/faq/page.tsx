@@ -2,18 +2,19 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, Phone } from "lucide-react";
 import AnimatedSection from "@/components/sections/AnimatedSection";
-import { PA_HIC_NUMBER } from "@/lib/site";
+import { GRAB_BAR_MOUNTING, PA_HIC_NUMBER } from "@/lib/site";
+import { WORKMANSHIP_GUARANTEE, assessment } from "@/lib/pricing";
 import { towns } from "@/lib/towns";
 
 export const metadata: Metadata = {
-  title: { absolute: "FAQ | ReadyNest — Aging-in-Place Home Safety Questions, Bucks County, PA" },
+  title: { absolute: "FAQ | ReadyNest: Aging-in-Place Home Safety Questions, Bucks County, PA" },
   description:
     "Answers to common questions about ReadyNest home safety modifications: scheduling, who installs, drilling into tile, insurance, working with OTs and PTs, service area, and payment.",
   alternates: { canonical: "https://readynestpa.com/faq" },
   openGraph: {
     title: "Frequently Asked Questions | ReadyNest",
     description:
-      "Scheduling, installation, insurance, service area, and more — answers about aging-in-place home safety modifications in Bucks County, PA.",
+      "Scheduling, installation, insurance, service area, and more: answers about aging-in-place home safety modifications in Bucks County, PA.",
     url: "https://readynestpa.com/faq",
   },
 };
@@ -23,15 +24,15 @@ const townList = `${towns.map((t) => t.name).join(", ")}, and Ottsville`;
 const faqs = [
   {
     q: "How fast can you come out?",
-    a: "We respond within 24 hours — usually the same day — and can typically schedule your free assessment the same week. If a parent is coming home from the hospital or rehab, tell us the discharge date and we'll prioritize it.",
+    a: "We respond within 24 hours, usually the same day, and can typically schedule your free 10-minute walkthrough the same week. If a parent is coming home from the hospital or rehab, tell us the discharge date and we'll prioritize it.",
   },
   {
     q: "Do I need to be home?",
-    a: "Someone needs to let us in, but it doesn't have to be you. Many adult children live out of the area, so your parent can be home for the visit while you join by phone. Either way, the written report is emailed to the family contact you choose.",
+    a: "Someone needs to let us in, but it doesn't have to be you. Many adult children live out of the area, so your parent can be home for the visit while you join by phone. Either way, the written flat quote goes to the family contact you choose.",
   },
   {
     q: "Can you drill into tile or fiberglass?",
-    a: "Yes. We drill tile with the right bits to avoid cracking, and for fiberglass or acrylic tub surrounds we use anchoring systems rated for those surfaces. We check what's behind the wall before anything goes up, so every grab bar is solidly mounted.",
+    a: `Yes. We drill tile with the right bits to avoid cracking, and we check what's behind the wall before anything goes up. ${GRAB_BAR_MOUNTING}`,
   },
   {
     q: "Will it look institutional?",
@@ -39,15 +40,15 @@ const faqs = [
   },
   {
     q: "Who does the installation?",
-    a: "Every job is assessed and signed off by Slav. Installation is done by Slav or his trained, insured team, and larger remodeling projects like walk-in shower conversions are completed by our vetted local trade partners. Slav personally does the final walkthrough with you on every job.",
+    a: "Every job is assessed and signed off by Slav, CAPS (Certified Aging-in-Place Specialist). Installation is done by Slav or his trained, insured team, and larger remodeling projects like walk-in shower conversions are completed by our vetted local trade partners. Slav personally does the final walkthrough with you on every job.",
   },
   {
     q: "Are you insured?",
-    a: `Yes. ReadyNest is fully insured and registered as a Pennsylvania Home Improvement Contractor (PA HIC #${PA_HIC_NUMBER}). Slav is also a Certified Aging-in-Place Specialist (CAPS) through the National Association of Home Builders.`,
+    a: `Yes. ReadyNest is PA-registered (HIC #${PA_HIC_NUMBER}), insured, and every installation comes with a ${WORKMANSHIP_GUARANTEE}. Slav, CAPS, is a Certified Aging-in-Place Specialist through the National Association of Home Builders.`,
   },
   {
     q: "Do you work with my parent's OT or PT?",
-    a: "Gladly. If your parent's occupational or physical therapist has made recommendations, share them with us and we'll install to match — grab bar placement, heights, and which side of the stairs needs a rail. We can also send our written report to the therapist.",
+    a: `Gladly. If your parent's occupational or physical therapist has made recommendations, share them with us and we'll install to match: grab bar placement, heights, and which side of the stairs needs a rail. If you order our ${assessment.name.toLowerCase()} (${assessment.display}, credited toward any package), we can send that report to the therapist too.`,
   },
   {
     q: "Do you serve my town?",
@@ -55,7 +56,7 @@ const faqs = [
   },
   {
     q: "What if my parent resists?",
-    a: "That's very common. A free assessment is low-pressure — it's a conversation, not a sales pitch. Slav focuses on what your parent wants (staying in their own home, staying independent) and recommends only what genuinely reduces risk. Your parent decides what gets done, and there's no obligation.",
+    a: "That's very common. A free 10-minute walkthrough is low-pressure: it's a conversation, not a sales pitch. Slav focuses on what your parent wants (staying in their own home, staying independent) and recommends only what genuinely reduces risk. Your parent decides what gets done, and there's no obligation.",
   },
   {
     // TODO: Add accepted payment methods (check, card, etc.) and deposit terms once confirmed.
@@ -127,14 +128,14 @@ export default function FaqPage() {
               Still Have Questions?
             </h2>
             <p className="text-gray-400 text-lg mb-10 leading-relaxed">
-              Call or text Slav, or book a free in-home assessment.
+              Call or text Slav, CAPS, or book a free 10-minute walkthrough.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 href="/contact"
                 className="inline-flex items-center justify-center gap-2 bg-gold text-white font-semibold px-7 py-4 rounded-xl hover:bg-[#a07d46] transition-colors"
               >
-                Book Free Assessment <ArrowRight size={18} />
+                Book Free Walkthrough <ArrowRight size={18} />
               </Link>
               <a
                 href="tel:+12677179119"

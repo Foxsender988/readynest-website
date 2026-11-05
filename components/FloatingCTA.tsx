@@ -40,7 +40,7 @@ export default function FloatingCTA() {
               className="flex-1 flex items-center justify-center gap-2 bg-gold text-white py-4 font-semibold text-sm hover:bg-[#a07d46] transition-colors"
             >
               <ClipboardList size={18} />
-              Free Assessment
+              Free Walkthrough
             </Link>
           </div>
         </motion.div>

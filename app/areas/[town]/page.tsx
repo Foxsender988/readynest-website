@@ -13,7 +13,7 @@ export function generateStaticParams() {
   return towns.map((town) => ({ town: town.slug }));
 }
 
-// Next.js 15 — params is a Promise
+// Next.js 15: params is a Promise
 type Props = { params: Promise<{ town: string }> };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
@@ -54,7 +54,7 @@ export default async function TownPage({ params }: Props) {
               href="#contact"
               className="inline-flex items-center justify-center gap-2 bg-gold text-white font-semibold px-7 py-4 rounded-xl hover:bg-[#a07d46] transition-colors"
             >
-              Book Free Assessment <ArrowRight size={18} />
+              Book Free Walkthrough <ArrowRight size={18} />
             </Link>
             <a
               href="tel:+12677179119"
@@ -111,10 +111,10 @@ export default async function TownPage({ params }: Props) {
           <AnimatedSection>
             <div className="text-center mb-12">
               <h2 id="town-cta-heading" className="font-serif text-4xl md:text-5xl text-white mb-4">
-                Book Your Free {town.name} Home Safety Assessment
+                Book Your Free {town.name} Walkthrough
               </h2>
               <p className="text-gray-400 text-lg max-w-xl mx-auto">
-                No cost, no obligation. We respond within 24 hours — usually the same day.
+                No cost, no obligation. We respond within 24 hours, usually the same day.
               </p>
             </div>
           </AnimatedSection>

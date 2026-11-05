@@ -2,11 +2,12 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, Phone } from "lucide-react";
 import AnimatedSection from "@/components/sections/AnimatedSection";
+import { packages } from "@/lib/pricing";
 
 export const metadata: Metadata = {
-  title: { absolute: "Who Pays for Home Safety Modifications? | ReadyNest — Bucks County, PA" },
+  title: { absolute: "Who Pays for Home Safety Modifications? | ReadyNest, Bucks County, PA" },
   description:
-    "Private pay, long-term care insurance, the VA HISA grant, Pennsylvania programs, HSA/FSA, and tax deductions — a plain-language guide to paying for grab bars, railings, and other home safety modifications.",
+    "Private pay, long-term care insurance, the VA HISA grant, Pennsylvania programs, HSA/FSA, and tax deductions: a plain-language guide to paying for grab bars, railings, and other home safety modifications.",
   alternates: { canonical: "https://readynestpa.com/who-pays" },
   openGraph: {
     title: "Who Pays for Home Safety Modifications? | ReadyNest",
@@ -21,7 +22,7 @@ const sections = [
     id: "private-pay",
     title: "Private pay",
     body: [
-      "Most families pay out of pocket — and most projects cost less than people expect. Our Bathroom Safety Package is $995, the Stair & Hallway package is $1,195, and the Entry & Exit package is $1,295. A Whole-Home Aging-in-Place Package starts at $3,950 — less than one month of assisted living.",
+      `Most families pay out of pocket, and most projects cost less than people expect. Our ${packages.bathroom.name} is ${packages.bathroom.display}, the Stair & Hallway package is ${packages.stairHallway.display}, and the Entry & Exit package is ${packages.entryExit.display}. A ${packages.wholeHome.name} is ${packages.wholeHome.display.toLowerCase()}, less than one month of assisted living.`,
       "Every quote is written, itemized, and fixed before work begins, so you know exactly what you're paying for.",
     ],
     link: { href: "/services", label: "See package pricing" },
@@ -38,7 +39,7 @@ const sections = [
     id: "veterans",
     title: "Veterans: VA HISA grant",
     body: [
-      "The VA's Home Improvements and Structural Alterations (HISA) grant helps eligible veterans pay for medically necessary changes to their home — things like grab bars, railings, accessible showers, and entry ramps. The benefit amount depends on whether the need is service-connected, and the veteran's VA provider must prescribe the modification.",
+      "The VA's Home Improvements and Structural Alterations (HISA) grant helps eligible veterans pay for medically necessary changes to their home, things like grab bars, railings, accessible showers, and entry ramps. The benefit amount depends on whether the need is service-connected, and the veteran's VA provider must prescribe the modification.",
       "Approval is required before work begins, so start the conversation with the VA early. We're happy to provide the written estimate the application needs.",
     ],
     link: {
@@ -52,14 +53,14 @@ const sections = [
     title: "Pennsylvania programs",
     body: [
       "Pennsylvania's Community HealthChoices (CHC) waiver can cover home adaptations for people who qualify for Medicaid long-term services and supports. The Bucks County Area Agency on Aging also runs programs and can point older residents toward help with home safety.",
-      "Eligibility rules are specific. Ask us — we can tell you if you may qualify and who to call next.",
+      "Eligibility rules are specific. Ask us: we can tell you if you may qualify and who to call next.",
     ],
   },
   {
     id: "hsa-fsa",
     title: "HSA / FSA",
     body: [
-      "Grab bars, railings, and similar safety modifications may qualify as eligible expenses for a Health Savings Account or Flexible Spending Account — usually with a letter of medical necessity from a doctor. Check with your plan before you pay.",
+      "Grab bars, railings, and similar safety modifications may qualify as eligible expenses for a Health Savings Account or Flexible Spending Account, usually with a letter of medical necessity from a doctor. Check with your plan before you pay.",
     ],
   },
   {
@@ -126,7 +127,7 @@ export default function WhoPaysPage() {
 
           <p className="text-gray-400 text-xs leading-relaxed">
             This page is general information, not legal, tax, or financial advice. Program rules
-            change — confirm details with the program, your insurer, or a qualified professional.
+            change, so confirm details with the program, your insurer, or a qualified professional.
           </p>
         </div>
       </section>
@@ -136,10 +137,10 @@ export default function WhoPaysPage() {
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <AnimatedSection>
             <h2 id="who-pays-cta" className="font-serif text-4xl md:text-5xl text-white mb-4">
-              Start With a Free Assessment
+              Start With a Free Walkthrough
             </h2>
             <p className="text-gray-400 text-lg mb-10 leading-relaxed">
-              Slav will walk through the home, give you a written plan with clear prices, and
+              Slav, CAPS (Certified Aging-in-Place Specialist), will walk through the home, give you a written flat quote, and
               help you figure out which payment options might apply.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -147,7 +148,7 @@ export default function WhoPaysPage() {
                 href="/contact"
                 className="inline-flex items-center justify-center gap-2 bg-gold text-white font-semibold px-7 py-4 rounded-xl hover:bg-[#a07d46] transition-colors"
               >
-                Book Free Assessment <ArrowRight size={18} />
+                Book Free Walkthrough <ArrowRight size={18} />
               </Link>
               <a
                 href="tel:+12677179119"

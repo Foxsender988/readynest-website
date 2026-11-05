@@ -8,16 +8,17 @@ import {
   Heart,
 } from "lucide-react";
 import AnimatedSection from "@/components/sections/AnimatedSection";
+import { assessment, packages } from "@/lib/pricing";
 
 export const metadata: Metadata = {
-  title: { absolute: "For Families | ReadyNest — Home Safety for Aging Parents, Bucks County, PA" },
+  title: { absolute: "For Families | ReadyNest: Home Safety for Aging Parents, Bucks County, PA" },
   description:
-    "ReadyNest helps adult children in Bucks County make a parent's home safer. Free assessment, written report within 24 hours, and affordable aging-in-place modifications — no pressure, no upsell.",
+    "ReadyNest helps adult children in Bucks County make a parent's home safer. Free 10-minute walkthrough, written flat quote, and affordable aging-in-place modifications. No pressure, no upsell.",
   alternates: { canonical: "https://readynestpa.com/for-families" },
   openGraph: {
-    title: "For Families | ReadyNest — Home Safety for Aging Parents",
+    title: "For Families | ReadyNest: Home Safety for Aging Parents",
     description:
-      "We help adult children identify and fix fall hazards in a parent's home. Free assessment, written report, and modifications that fit your budget.",
+      "We help adult children identify and fix fall hazards in a parent's home. Free walkthrough, written flat quote, and modifications that fit your budget.",
     url: "https://readynestpa.com/for-families",
   },
 };
@@ -26,7 +27,7 @@ const assessmentSteps = [
   {
     number: "1",
     icon: <ClipboardList size={22} strokeWidth={1.5} />,
-    text: "Slav walks every room and identifies fall risks, mobility challenges, and lighting gaps.",
+    text: "Slav, CAPS (Certified Aging-in-Place Specialist), walks every room and identifies fall risks, mobility challenges, and lighting gaps.",
   },
   {
     number: "2",
@@ -36,7 +37,7 @@ const assessmentSteps = [
   {
     number: "3",
     icon: <ClipboardList size={22} strokeWidth={1.5} />,
-    text: "You receive a written report — clear language, no jargon — with prioritized recommendations.",
+    text: "You receive a written report in clear language, no jargon, with prioritized recommendations.",
   },
   {
     number: "4",
@@ -54,10 +55,10 @@ const situations = [
   {
     title: "Dad lives alone and refuses to move",
     description:
-      "We make his home genuinely safer so he can stay independent — and you can worry less.",
+      "We make his home genuinely safer so he can stay independent, and you can worry less.",
   },
   {
-    title: "Mom fell once — we want to prevent the next one",
+    title: "Mom fell once, and we want to prevent the next one",
     description:
       "We identify the exact conditions that contributed and address them directly.",
   },
@@ -80,20 +81,20 @@ const situations = [
 
 const pricingItems = [
   {
-    label: "Entry packages",
-    range: "From $1,195",
+    label: "Entry and stair packages",
+    range: `From ${packages.entryExit.display}`,
     description:
-      "Entry & Exit or Stair & Hallway safety — installed in a single visit, labor and materials included.",
+      "Entry & Exit or Stair & Hallway safety, installed in a single visit, labor and materials included.",
   },
   {
-    label: "Bathroom Safety Package",
-    range: "$995",
+    label: packages.bathroom.name,
+    range: packages.bathroom.display,
     description:
       "Most-referred package. Up to 3 grab bars, non-slip treatment, motion-sensor nightlight, and a written home safety walkthrough report.",
   },
   {
     label: "Whole-home safety",
-    range: "From $3,950",
+    range: packages.wholeHome.display,
     description:
       "Comprehensive aging-in-place modifications across every area of the home.",
   },
@@ -114,7 +115,7 @@ export default function ForFamiliesPage() {
             </h1>
             <p className="text-gray-500 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed mb-10">
               ReadyNest works with adult children across Bucks County to
-              identify and fix the hazards most likely to cause a fall — before
+              identify and fix the hazards most likely to cause a fall, before
               something happens. No pressure, no upsell, just an honest
               assessment and a clear plan.
             </p>
@@ -123,7 +124,7 @@ export default function ForFamiliesPage() {
                 href="/contact"
                 className="inline-flex items-center justify-center gap-2 bg-gold text-white font-semibold px-7 py-4 rounded-xl hover:bg-[#a07d46] transition-colors"
               >
-                Book Free Assessment <ArrowRight size={18} />
+                Book Free Walkthrough <ArrowRight size={18} />
               </Link>
               <a
                 href="tel:+12677179119"
@@ -151,7 +152,7 @@ export default function ForFamiliesPage() {
               id="empathy-heading"
               className="font-serif text-3xl md:text-4xl text-charcoal mb-6"
             >
-              Most families call us after a close call — not after a fall.
+              Most families call us after a close call, not after a fall.
             </h2>
             <p className="text-gray-600 text-lg leading-relaxed mb-8">
               You noticed your mom gripping the wall on her way to the bathroom.
@@ -162,7 +163,7 @@ export default function ForFamiliesPage() {
             </p>
             <hr className="border-charcoal/15 mb-8" />
             <p className="text-gray-600 text-lg leading-relaxed">
-              ReadyNest was built specifically for this moment — to give
+              ReadyNest was built specifically for this moment: to give
               families a trusted local professional to call, a clear process to
               follow, and an affordable way to make home genuinely safer.
             </p>
@@ -181,10 +182,12 @@ export default function ForFamiliesPage() {
               id="assessment-heading"
               className="font-serif text-3xl md:text-4xl text-charcoal text-center mb-4"
             >
-              What Happens During a Safety Assessment
+              What Happens During a Home Safety Assessment
             </h2>
             <p className="text-gray-500 text-center mb-12 max-w-2xl mx-auto leading-relaxed">
-              A straightforward visit with a clear deliverable at the end.
+              Our room-by-room assessment with written report is {assessment.display}, credited toward
+              any package. Prefer to start smaller? The 10-minute walkthrough and written flat quote
+              are free.
             </p>
           </AnimatedSection>
 
@@ -207,7 +210,7 @@ export default function ForFamiliesPage() {
             <div className="bg-gold/10 border border-gold/25 rounded-2xl px-6 py-5">
               <p className="text-charcoal text-sm leading-relaxed">
                 <span className="font-semibold">The written report goes to you</span>{" "}
-                — the family contact — so you can review it, share it with
+                (the family contact), so you can review it, share it with
                 siblings, or discuss it with your parent&apos;s doctor.
               </p>
             </div>
@@ -266,7 +269,7 @@ export default function ForFamiliesPage() {
             </h2>
             <p className="text-gray-600 text-lg leading-relaxed mb-8">
               After every assessment and every installation, Slav sends a
-              written summary to the designated family contact — what was found,
+              written summary to the designated family contact: what was found,
               what was installed, and what&apos;s still recommended. You stay in
               the loop even when you can&apos;t be there.
             </p>
@@ -329,7 +332,7 @@ export default function ForFamiliesPage() {
 
           <AnimatedSection delay={0.3}>
             <p className="text-center text-gray-500 text-sm mb-3">
-              Every assessment is free. No obligation to book anything.
+              The 10-minute walkthrough and written flat quote are free. No obligation to book anything.
             </p>
             <p className="text-center">
               <Link
@@ -357,15 +360,15 @@ export default function ForFamiliesPage() {
               Ready to Get a Professional Set of Eyes on the Home?
             </h2>
             <p className="text-gray-400 text-lg mb-10 leading-relaxed">
-              Book a free assessment — Slav will visit, identify the risks, and
-              give you a written report within 24 hours.
+              Book a free 10-minute walkthrough. Slav will visit, point out the risks, and
+              give you a written flat quote.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 href="/contact"
                 className="inline-flex items-center justify-center gap-2 bg-gold text-white font-semibold px-7 py-4 rounded-xl hover:bg-[#a07d46] transition-colors"
               >
-                Book Free Assessment <ArrowRight size={18} />
+                Book Free Walkthrough <ArrowRight size={18} />
               </Link>
               <a
                 href="tel:+12677179119"

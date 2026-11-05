@@ -6,19 +6,19 @@ import { normalizeServiceParam } from "@/lib/contact";
 import { PA_HIC_LINE } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: { absolute: "Contact ReadyNest | Book a Free Home Safety Assessment, Bucks County" },
+  title: { absolute: "Contact ReadyNest | Book a Free Walkthrough, Bucks County" },
   description:
-    "Book a free aging-in-place home safety assessment with Slav in Bucks County, PA. Call 267-717-9119 or fill out the form. We respond within 24 hours — usually the same day.",
+    "Book a free 10-minute home safety walkthrough with Slav, CAPS, in Bucks County, PA. Call 267-717-9119 or fill out the form. We respond within 24 hours, usually the same day.",
   alternates: { canonical: "https://readynestpa.com/contact" },
   openGraph: {
-    title: "Contact ReadyNest | Book a Free Home Safety Assessment | Bucks County",
+    title: "Contact ReadyNest | Book a Free Walkthrough | Bucks County",
     description:
-      "Slav visits your home, walks through every room, and gives you a written safety report — at no cost and no obligation. Serving Bucks County, PA.",
+      "Slav, CAPS, visits your home for a free 10-minute walkthrough and gives you a written flat quote, with no obligation. Serving Bucks County, PA.",
     url: "https://readynestpa.com/contact",
   },
 };
 
-// Next.js 15 — searchParams is a Promise
+// Next.js 15: searchParams is a Promise
 export default async function ContactPage({
   searchParams,
 }: {
@@ -33,14 +33,14 @@ export default async function ContactPage({
       <section className="bg-beige py-16 md:py-24 border-b border-soft-gray">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <p className="text-gold text-sm font-semibold tracking-wider uppercase mb-4">
-            Free Home Safety Assessment
+            Free 10-Minute Walkthrough
           </p>
           <h1 className="font-serif text-5xl md:text-6xl text-charcoal mb-5">
-            Book Your Free Assessment
+            Book Your Free Walkthrough
           </h1>
           <p className="text-gray-500 text-xl max-w-2xl mx-auto leading-relaxed">
-            Slav visits your home, walks through every room, and gives you a written safety
-            report — at no cost and no obligation.
+            Slav, CAPS (Certified Aging-in-Place Specialist), visits your home for a free 10-minute
+            walkthrough and gives you a written flat quote, with no obligation.
           </p>
         </div>
       </section>
@@ -50,20 +50,20 @@ export default async function ContactPage({
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-5 gap-12">
 
-            {/* Form — wider column */}
+            {/* Form: wider column */}
             <div className="lg:col-span-3">
               <AnimatedSection>
                 <div className="bg-white border border-soft-gray rounded-3xl p-8 md:p-10 shadow-sm">
                   <h2 className="font-serif text-2xl text-charcoal mb-1">Request a Visit</h2>
                   <p className="text-gray-500 text-sm mb-8">
-                    We respond within 24 hours — usually the same day.
+                    We respond within 24 hours, usually the same day.
                   </p>
                   <ContactForm defaultService={defaultService} />
                 </div>
               </AnimatedSection>
             </div>
 
-            {/* Sidebar — narrower column */}
+            {/* Sidebar: narrower column */}
             <div className="lg:col-span-2 space-y-6">
               <AnimatedSection delay={0.1}>
                 {/* Contact card */}
@@ -134,7 +134,7 @@ export default async function ContactPage({
                       </div>
                       <div>
                         <p className="text-gray-400 text-xs uppercase tracking-wide mb-0.5">
-                          License &amp; Insurance
+                          Registration &amp; Insurance
                         </p>
                         <p className="text-white font-medium text-sm">{PA_HIC_LINE}</p>
                       </div>
@@ -183,12 +183,12 @@ export default async function ContactPage({
                 text: "Slav calls or texts to confirm your preferred visit window.",
               },
               {
-                step: "Assessment day",
-                text: "60–90 minute walk-through — free, no obligation, every room covered.",
+                step: "Walkthrough day",
+                text: "A free 10-minute walkthrough, no obligation.",
               },
               {
                 step: "Within 24 hours after",
-                text: "Written report emailed to your family contact with findings and recommendations.",
+                text: "Written flat quote sent to you or your family contact.",
               },
             ].map((item, i) => (
               <AnimatedSection key={item.step} delay={i * 0.08}>

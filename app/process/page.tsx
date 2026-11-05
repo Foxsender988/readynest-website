@@ -10,16 +10,18 @@ import {
   ArrowRight,
 } from "lucide-react";
 import AnimatedSection from "@/components/sections/AnimatedSection";
+import { GRAB_BAR_MOUNTING } from "@/lib/site";
+import { WORKMANSHIP_GUARANTEE, assessment } from "@/lib/pricing";
 
 export const metadata: Metadata = {
-  title: { absolute: "Our Process | ReadyNest — How Home Safety Modifications Work" },
+  title: { absolute: "Our Process | ReadyNest: How Home Safety Modifications Work" },
   description:
-    "A clear 5-step process for aging-in-place home safety modifications in Bucks County, PA. Free phone call, in-home assessment, written quote, professional installation, and 30-day follow-up.",
+    "A clear 5-step process for aging-in-place home safety modifications in Bucks County, PA. Free phone call, free 10-minute walkthrough, written flat quote, professional installation, and one-month follow-up.",
   alternates: { canonical: "https://readynestpa.com/process" },
   openGraph: {
-    title: "Our Process | ReadyNest — How Home Safety Modifications Work",
+    title: "Our Process | ReadyNest: How Home Safety Modifications Work",
     description:
-      "No surprises. No pressure. A clear 5-step process designed around you and your family. Free home safety assessment in Bucks County, PA.",
+      "No surprises. No pressure. A clear 5-step process designed around you and your family. Free 10-minute walkthrough in Bucks County, PA.",
     url: "https://readynestpa.com/process",
   },
 };
@@ -29,31 +31,31 @@ const steps = [
     number: "1",
     icon: <Phone size={28} strokeWidth={1.5} />,
     title: "Free Phone Call",
-    body: "Tell me what you're dealing with — a recent fall, a concern about stairs, or just a general 'I want to make sure mom's home is safe.' We'll talk through the situation and decide if an in-home visit makes sense. There's no charge for this call and no commitment required.",
+    body: "Tell me what you're dealing with: a recent fall, a concern about stairs, or just a general 'I want to make sure mom's home is safe.' We'll talk through the situation and decide if an in-home visit makes sense. There's no charge for this call and no commitment required.",
   },
   {
     number: "2",
     icon: <Home size={28} strokeWidth={1.5} />,
-    title: "In-Home Safety Assessment",
-    body: "I come to your home and walk through every room — bathroom, hallways, stairs, entries, and common areas. I'm looking for fall risks, mobility challenges, and lighting gaps. This takes about 60–90 minutes. It's free, thorough, and there's no obligation to book anything.",
+    title: "Free 10-Minute Walkthrough",
+    body: `I come to your home and look at what worries you: bathroom, stairs, entries, or lighting. It takes about 10 minutes, it's free, and there's no obligation to book anything. If you'd like every room reviewed, our ${assessment.name} is ${assessment.display}, credited toward any package.`,
   },
   {
     number: "3",
     icon: <FileText size={28} strokeWidth={1.5} />,
-    title: "Written Quote & Recommendations",
-    body: "Within 24 hours, you receive a written report with two things: what I found, and what I recommend. Each recommendation includes a clear price so you can decide what to prioritize. Most families start with the highest-risk items and add more over time.",
+    title: "Written Flat Quote",
+    body: "Within 24 hours, you receive a written flat quote with what I recommend and a clear price for each item, so you can decide what to prioritize. Most families start with the highest-risk items and add more over time.",
   },
   {
     number: "4",
     icon: <Wrench size={28} strokeWidth={1.5} />,
     title: "Professional Installation",
-    body: "Core safety work — grab bars, railings, lighting, ramps — is installed by me or my trained, insured team. For larger remodeling-scope projects, I work with vetted local trade partners I've used for years. Either way, everything is installed to code, rated for proper weight loads, and I'm on-site for the final walkthrough before the job is done. We clean up completely before we leave.",
+    body: `Core safety work (grab bars, railings, lighting, ramps) is installed by me or my trained, insured team. For larger remodeling-scope projects, I work with vetted local trade partners I've used for years. Either way, everything is installed to code, rated for proper weight loads, and I'm on-site for the final walkthrough before the job is done. We clean up completely before we leave. ${GRAB_BAR_MOUNTING}`,
   },
   {
     number: "5",
     icon: <CheckCircle size={28} strokeWidth={1.5} />,
-    title: "30-Day Check-In",
-    body: "A month after installation, I follow up — by phone or text — to confirm everything is working as expected and that your family member feels confident using the modifications. If anything needs adjustment, I come back at no charge.",
+    title: "One-Month Check-In",
+    body: `A month after installation, I follow up by phone or text to confirm everything is working as expected and that your family member feels confident using the modifications. Every installation also comes with a ${WORKMANSHIP_GUARANTEE}.`,
   },
 ];
 
@@ -140,7 +142,7 @@ export default function ProcessPage() {
               Start With Our Free Home Safety Checklist
             </h2>
             <p className="text-gray-600 text-lg leading-relaxed mb-8 max-w-2xl mx-auto">
-              Before you book anything, download the free ReadyNest Home Safety Checklist — 40
+              Before you book anything, download the free ReadyNest Home Safety Checklist: 40
               items that walk you through every room and flag the most common fall risks. Takes
               about 10 minutes. No email required.
             </p>
@@ -154,15 +156,15 @@ export default function ProcessPage() {
               </Link>
             </div>
             <p className="mt-6 text-gray-500 text-sm">
-              Or call Slav directly at{" "}
+              Or call Slav, CAPS, directly at{" "}
               <a
                 href="tel:+12677179119"
                 className="text-gold font-semibold hover:underline"
                 aria-label="Call Slav at 267-717-9119"
               >
                 267-717-9119
-              </a>{" "}
-              — no menus, no hold music.
+              </a>.{" "}
+              No menus, no hold music.
             </p>
           </AnimatedSection>
         </div>
@@ -183,7 +185,7 @@ export default function ProcessPage() {
                 href="/contact"
                 className="inline-flex items-center gap-2 bg-gold text-white font-semibold px-7 py-4 rounded-xl hover:bg-[#a07d46] transition-colors"
               >
-                Book Free Assessment
+                Book Free Walkthrough
                 <ArrowRight size={18} />
               </Link>
               <a

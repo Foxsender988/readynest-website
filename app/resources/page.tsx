@@ -6,14 +6,14 @@ import AnimatedSection from "@/components/sections/AnimatedSection";
 // TODO: Build out full resources/blog section. Add more articles over time.
 
 export const metadata: Metadata = {
-  title: { absolute: "Home Safety Resources | ReadyNest — Fall Prevention Guides, Bucks County, PA" },
+  title: { absolute: "Home Safety Resources | ReadyNest: Fall Prevention Guides, Bucks County, PA" },
   description:
-    "Practical guides for older adults and their families — fall prevention, aging-in-place planning, and home safety resources from ReadyNest in Bucks County.",
+    "Practical guides for older adults and their families: fall prevention, aging-in-place planning, and home safety resources from ReadyNest in Bucks County.",
   alternates: { canonical: "https://readynestpa.com/resources" },
   openGraph: {
     title: "Home Safety Resources | ReadyNest",
     description:
-      "Practical guides for older adults and their families — fall prevention, aging-in-place planning, and more. Bucks County, PA.",
+      "Practical guides for older adults and their families: fall prevention, aging-in-place planning, and more. Bucks County, PA.",
     url: "https://readynestpa.com/resources",
   },
 };
@@ -31,7 +31,7 @@ export default function ResourcesPage() {
             Home Safety Resources
           </h1>
           <p className="text-gray-500 text-xl max-w-2xl mx-auto leading-relaxed">
-            Practical guides for older adults and their families — fall prevention,
+            Practical guides for older adults and their families: fall prevention,
             aging-in-place planning, and more.
           </p>
         </div>
@@ -67,7 +67,7 @@ export default function ResourcesPage() {
                   10 Warning Signs Your Parent&apos;s Home Needs a Safety Assessment
                 </h2>
                 <p className="text-gray-500 text-sm leading-relaxed mb-5">
-                  What to look for during a family visit — and what to do if you spot a risk.
+                  What to look for during a family visit, and what to do if you spot a risk.
                 </p>
 
                 {/* TODO: Link to actual article when published */}
@@ -95,17 +95,17 @@ export default function ResourcesPage() {
               id="resources-cta-heading"
               className="font-serif text-3xl md:text-4xl text-white mb-5"
             >
-              Want a professional assessment instead?
+              Want a professional set of eyes instead?
             </h2>
             <p className="text-white/85 text-lg mb-8 max-w-xl mx-auto leading-relaxed">
-              Slav will walk through your home, identify every risk, and give you a clear
-              written report — free of charge, no obligation.
+              Slav, CAPS (Certified Aging-in-Place Specialist), will walk through with you and give you
+              a written flat quote. The 10-minute walkthrough is free, with no obligation.
             </p>
             <Link
               href="/contact"
               className="inline-flex items-center gap-2 bg-white text-gold font-semibold px-8 py-4 rounded-xl hover:bg-beige transition-colors text-base"
             >
-              Book Free Assessment
+              Book Free Walkthrough
               <ArrowRight size={18} />
             </Link>
           </AnimatedSection>

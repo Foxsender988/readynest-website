@@ -27,7 +27,7 @@ export default function RecentWork() {
               Safer Homes Across Bucks County
             </h2>
             <p className="text-gray-500 text-lg max-w-2xl mx-auto">
-              Clean, sturdy modifications that fit the home — not hospital equipment.
+              Clean, sturdy modifications that fit the home, not hospital equipment.
             </p>
           </div>
         </AnimatedSection>

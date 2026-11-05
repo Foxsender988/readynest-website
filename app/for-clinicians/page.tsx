@@ -2,34 +2,34 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, Phone, Mail, CheckCircle, CalendarCheck } from "lucide-react";
 import AnimatedSection from "@/components/sections/AnimatedSection";
-import { PA_HIC_NUMBER } from "@/lib/site";
+import { GRAB_BAR_MOUNTING, PA_HIC_LINE } from "@/lib/site";
+import { individualServices, showerConversions } from "@/lib/pricing";
 
 export const metadata: Metadata = {
-  title: { absolute: "For OTs, PTs & Discharge Planners | ReadyNest — Home Modifications, Bucks County, PA" },
+  title: { absolute: "For OTs, PTs & Discharge Planners | ReadyNest: Home Modifications, Bucks County, PA" },
   description:
     "Refer a patient for grab bars, rails, ramps, raised toilets, or a tub-to-shower conversion. Flat pricing, installed to clinical standards, and scheduled around discharge. Serving Bucks County, PA.",
   alternates: { canonical: "https://readynestpa.com/for-clinicians" },
   openGraph: {
     title: "For OTs, PTs & Discharge Planners | ReadyNest",
     description:
-      "A simple referral process for home safety modifications in Bucks County, PA — flat pricing, installed to clinical standards, done before discharge.",
+      "A simple referral process for home safety modifications in Bucks County, PA: flat pricing, installed to clinical standards, done before discharge.",
     url: "https://readynestpa.com/for-clinicians",
   },
 };
 
 const pricing = [
-  { item: "Single grab bar installed", price: "$225" },
-  { item: "Two grab bars (same visit)", price: "$375" },
+  { item: "Single grab bar installed", price: individualServices.grabBars.items.first.display },
+  { item: "Two grab bars (same visit)", price: individualServices.grabBars.items.two.display },
   { item: "Stair rails, threshold ramps, raised toilets", price: "Flat quote" },
-  { item: "Tub-to-shower conversion", price: "From $7,500" },
+  { item: "Tub-to-shower conversion", price: showerConversions.accessible.display },
 ];
 
 const standards = [
-  "Anchored into studs or added blocking — never drywall anchors alone",
-  "Hardware rated for 250+ lb loads",
+  GRAB_BAR_MOUNTING,
   "ADA-informed mounting heights and placement",
-  `PA-registered home improvement contractor (PA HIC #${PA_HIC_NUMBER}), fully insured`,
-  "Every job inspected by the owner before sign-off",
+  PA_HIC_LINE,
+  "Every job inspected by Slav, CAPS, Owner, before sign-off",
 ];
 
 const steps = [
@@ -57,7 +57,7 @@ export default function ForCliniciansPage() {
             For OTs, PTs &amp; Discharge Planners
           </p>
           <h1 className="font-serif text-4xl md:text-6xl text-charcoal mb-5 leading-tight">
-            Home Modifications, Done Right — and Done Before Discharge
+            Home Modifications, Done Right, and Done Before Discharge
           </h1>
           <p className="text-gray-500 text-xl max-w-2xl mx-auto leading-relaxed">
             A simple referral process, flat pricing, and installations built to the standards

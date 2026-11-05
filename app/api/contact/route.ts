@@ -35,11 +35,11 @@ export async function POST(request: NextRequest) {
     await resend.emails.send({
       from: "ReadyNest Website <noreply@readynestpa.com>",
       to: "info@readynestpa.com",
-      subject: `New Assessment Request from ${body.name}`,
+      subject: `New Walkthrough Request from ${body.name}`,
       html: `
         <div style="font-family: sans-serif; max-width: 600px; margin: 0 auto;">
           <h2 style="color: #B8975A; border-bottom: 2px solid #B8975A; padding-bottom: 8px;">
-            New Assessment Request — ReadyNest
+            New Walkthrough Request: ReadyNest
           </h2>
           <table style="width: 100%; border-collapse: collapse; margin-top: 16px;">
             <tr>
