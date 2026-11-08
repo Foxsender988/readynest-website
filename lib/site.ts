@@ -3,7 +3,10 @@
 export const SITE_URL = "https://readynestpa.com";
 
 export const PA_HIC_NUMBER = "PA220398";
-export const PA_HIC_LINE = `PA HIC #${PA_HIC_NUMBER} · Fully Insured`;
+export const PA_HIC_LINE = `PA-registered (HIC #${PA_HIC_NUMBER}), insured`;
+
+export const GRAB_BAR_MOUNTING =
+  "Grab bars go into studs, blocking, or Moen SecureMount engineered anchors, rated 300+ lbs, never plastic drywall plugs.";
 
 // Flip to true once real client reviews replace the placeholders in components/Reviews.tsx.
 export const SHOW_REVIEWS = false;

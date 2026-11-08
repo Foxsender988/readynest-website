@@ -14,7 +14,6 @@ const pages: { path: string; priority: number }[] = [
   { path: "/about", priority: 0.7 },
   { path: "/safety-checklist", priority: 0.6 },
   { path: "/resources", priority: 0.6 },
-  { path: "/trash-valet", priority: 0.5 },
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {

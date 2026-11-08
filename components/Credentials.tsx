@@ -8,11 +8,11 @@ const credentials = [
   },
   {
     icon: <BadgeCheck size={20} strokeWidth={1.5} />,
-    label: `PA Registered Home Improvement Contractor (#${PA_HIC_NUMBER})`,
+    label: `PA-registered (HIC #${PA_HIC_NUMBER})`,
   },
   {
     icon: <ShieldCheck size={20} strokeWidth={1.5} />,
-    label: "Fully Insured",
+    label: "Insured",
   },
 ];
 

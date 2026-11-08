@@ -5,14 +5,14 @@ import Headshot from "@/components/Headshot";
 import AnimatedSection from "@/components/sections/AnimatedSection";
 
 export const metadata: Metadata = {
-  title: { absolute: "About Slav | ReadyNest — Aging-in-Place Specialist, Bucks County, PA" },
+  title: { absolute: "About Slav, CAPS | ReadyNest: Certified Aging-in-Place Specialist, Bucks County, PA" },
   description:
-    "Meet Slav, the owner of ReadyNest. Licensed and insured aging-in-place specialist who assesses and signs off on every safety modification in Bucks County, PA.",
+    "Meet Slav, CAPS, Owner of ReadyNest. PA-registered (HIC #PA220398), insured Certified Aging-in-Place Specialist who assesses and signs off on every safety modification in Bucks County, PA.",
   alternates: { canonical: "https://readynestpa.com/about" },
   openGraph: {
-    title: "About Slav | ReadyNest — Aging-in-Place Specialist, Bucks County",
+    title: "About Slav, CAPS | ReadyNest, Bucks County",
     description:
-      "One point of accountability. Slav personally assesses and signs off on every job in Bucks County, PA. Licensed and insured.",
+      "One point of accountability. Slav, CAPS, personally assesses and signs off on every job in Bucks County, PA. PA-registered (HIC #PA220398), insured.",
     url: "https://readynestpa.com/about",
   },
 };
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
 const differentiators = [
   {
     title: "One person accountable for everything",
-    body: "Slav assesses every home and signs off on every job. Installation is done by Slav or his trained, insured team — not a rotating crew of strangers — and Slav does the final walkthrough with you.",
+    body: "Slav assesses every home and signs off on every job. Installation is done by Slav or his trained, insured team, not a rotating crew of strangers, and Slav does the final walkthrough with you.",
   },
   {
     title: "Written reports every time",
@@ -28,7 +28,7 @@ const differentiators = [
   },
   {
     title: "No pressure, no upsell",
-    body: "The assessment is free. The recommendations are honest. Slav won't suggest a modification you don't need — only what will genuinely reduce risk.",
+    body: "The safety visit is free. The recommendations are honest. Slav won't suggest a modification you don't need, only what will genuinely reduce risk.",
   },
   {
     title: "Fair, transparent pricing",
@@ -60,9 +60,9 @@ export default function AboutPage() {
           <p className="text-gold text-sm font-semibold tracking-wider uppercase mb-4">
             The Person Behind ReadyNest
           </p>
-          <h1 className="font-serif text-5xl md:text-6xl text-charcoal mb-5">About Slav</h1>
+          <h1 className="font-serif text-5xl md:text-6xl text-charcoal mb-5">About Slav, CAPS, Owner</h1>
           <p className="text-gray-500 text-xl max-w-2xl mx-auto leading-relaxed">
-            One point of accountability. Slav personally assesses every home and signs off on every completed job — no exceptions.
+            One point of accountability. Slav, a Certified Aging-in-Place Specialist (CAPS), personally assesses every home and signs off on every completed job, no exceptions.
           </p>
         </div>
       </section>
@@ -81,7 +81,7 @@ export default function AboutPage() {
               <div className="space-y-6 text-gray-600 text-base leading-relaxed pt-4">
                 <p>
                   I grew up in Ukraine. When older relatives needed help making their home safer
-                  — a grab bar, a stair rail, a ramp at the door — family handled it. There was
+                  (a grab bar, a stair rail, a ramp at the door), family handled it. There was
                   no business to call. There was no service.
                 </p>
                 <p>
@@ -89,18 +89,18 @@ export default function AboutPage() {
                   projects with Oliver Fire Protection, and spent years in handyman and electrical
                   work. I learned how to do this kind of work the right way. But I also saw
                   something: in Bucks County, the help exists, but it&apos;s hard to find. Big
-                  remodelers won&apos;t take a $200 job. Handymen are unreliable. The seniors and
-                  their families are the ones who lose — left to figure it out alone.
+                  remodelers won&apos;t take a small job. Handymen are unreliable. The seniors and
+                  their families are the ones who lose, left to figure it out alone.
                 </p>
                 <p>
-                  I started ReadyNest to be the person I wish more older people had — local,
+                  I started ReadyNest to be the person I wish more older people had: local,
                   dependable, fairly priced, and serious about the work. I personally assess
-                  every home and I&apos;m on-site for the final walkthrough on every project —
+                  every home and I&apos;m on-site for the final walkthrough on every project,
                   no exceptions. For larger jobs, I work with a small, vetted team of local
                   trade partners I&apos;ve used for years, so you still get one accountable
                   person and consistent quality, just with the capacity to take on bigger
-                  projects without long wait times. I&apos;m licensed and insured in
-                  Pennsylvania. I treat every home like it belongs to someone I care about.
+                  projects without long wait times. I&apos;m a Certified Aging-in-Place Specialist (CAPS), PA-registered
+                  (HIC #PA220398), and insured. I treat every home like it belongs to someone I care about.
                   Because it does.
                 </p>
               </div>
@@ -121,13 +121,13 @@ export default function AboutPage() {
             </h2>
             <p className="text-gray-600 text-base leading-relaxed mb-4">
               For larger remodeling-scope projects, ReadyNest works with a small group of
-              licensed, insured local trade partners — the same people, project after project.
+              insured local trade partners: the same people, project after project.
               Slav personally scopes every job and inspects every completed project before
               it&apos;s considered done. You always have one number to call, and one person
               accountable for the result.
             </p>
             <p className="text-gray-500 text-sm leading-relaxed">
-              Core safety installs — grab bars, railings, lighting, ramps — are assessed and
+              Core safety installs (grab bars, railings, lighting, ramps) are assessed and
               signed off by Slav, and installed by Slav or his trained team.
             </p>
           </AnimatedSection>
@@ -213,14 +213,14 @@ export default function AboutPage() {
               id="about-cta-heading"
               className="font-serif text-4xl md:text-5xl text-white mb-8"
             >
-              Want to Work with Slav?
+              Want to Work with Slav, CAPS?
             </h2>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Link
                 href="/contact"
                 className="inline-flex items-center gap-2 bg-gold text-white font-semibold px-7 py-4 rounded-xl hover:bg-[#a07d46] transition-colors"
               >
-                Book Free Assessment
+                Book a Free Safety Visit
                 <ArrowRight size={18} />
               </Link>
               <a

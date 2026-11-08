@@ -13,7 +13,7 @@ export default function Headshot({ size = "lg" }: { size?: "md" | "lg" }) {
       >
         <PhotoWithFallback
           src="/images/slav-headshot.jpg"
-          alt="Slav, owner of ReadyNest and Certified Aging-in-Place Specialist"
+          alt="Slav, CAPS, Owner of ReadyNest and Certified Aging-in-Place Specialist"
           sizes="(min-width: 768px) 320px, 256px"
           className="object-cover"
           fallback={

@@ -9,7 +9,6 @@ const serviceLinks = [
   { href: "/services#entry-exit", label: "Entry & Exit Safety" },
   { href: "/services#stairs-hallways", label: "Stairs & Hallways" },
   { href: "/services#smart-home", label: "Smart Home Safety" },
-  { href: "/trash-valet", label: "Trash Valet" },
 ];
 
 const quickLinks = [
@@ -18,7 +17,7 @@ const quickLinks = [
   { href: "/who-pays", label: "Who Pays?" },
   { href: "/for-clinicians", label: "For OTs, PTs & Discharge Planners" },
   { href: "/faq", label: "FAQ" },
-  { href: "/about", label: "About Slav" },
+  { href: "/about", label: "About Slav, CAPS" },
   { href: "/contact", label: "Contact" },
   { href: "/safety-checklist", label: "Free Safety Checklist" },
 ];
@@ -33,13 +32,13 @@ export default function Footer() {
           <div>
             <Image
               src="/images/ReadyNest_home_prep_logo.png"
-              alt="ReadyNest — Aging-in-Place Home Safety"
+              alt="ReadyNest: Aging-in-Place Home Safety"
               width={150}
               height={48}
               className="h-11 w-auto object-contain mb-4"
             />
             <p className="text-gray-400 text-sm leading-relaxed mb-4">
-              Aging-in-place home safety modifications for seniors and their families in Bucks County, PA — every job assessed and signed off by Slav.
+              Aging-in-place home safety modifications for seniors and their families in Bucks County, PA. Every job assessed and signed off by Slav, CAPS (Certified Aging-in-Place Specialist), Owner.
             </p>
             <p className="text-gold text-xs font-semibold tracking-wide mb-4">{PA_HIC_LINE}</p>
             <div className="flex items-start gap-2 text-gray-400 text-sm">
@@ -122,7 +121,7 @@ export default function Footer() {
       <div className="border-t border-white/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 flex flex-col sm:flex-row items-center justify-between gap-2">
           <p className="text-gray-500 text-xs text-center sm:text-left">
-            &copy; {new Date().getFullYear()} ReadyNest, a DBA of Gulko Construction LLC · PA HIC #{PA_HIC_NUMBER} · Fully Insured · Bucks County, Pennsylvania
+            &copy; {new Date().getFullYear()} ReadyNest. A DBA of Gulko Construction LLC · PA-registered (HIC #{PA_HIC_NUMBER}), insured · Bucks County, Pennsylvania
           </p>
           <p className="text-gray-500 text-xs">
             Aging-in-Place Specialists
