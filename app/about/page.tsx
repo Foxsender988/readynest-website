@@ -85,8 +85,8 @@ export default function AboutPage() {
                   no business to call. There was no service.
                 </p>
                 <p>
-                  When I came to the United States, I worked in sales, ran fire safety
-                  projects, and spent years in handyman and electrical
+                  When I came to the United States, I worked in sales for ADT, ran fire safety
+                  projects with Oliver Fire Protection, and spent years in handyman and electrical
                   work. I learned how to do this kind of work the right way. But I also saw
                   something: in Bucks County, the help exists, but it&apos;s hard to find. Big
                   remodelers won&apos;t take a small job. Handymen are unreliable. The seniors and
