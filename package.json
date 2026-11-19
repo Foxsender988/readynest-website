@@ -4,9 +4,10 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "node scripts/check-prices.mjs && next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "check:prices": "node scripts/check-prices.mjs"
   },
   "dependencies": {
     "clsx": "^2.1.1",
